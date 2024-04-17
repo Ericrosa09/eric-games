@@ -62,7 +62,7 @@ if (tab) {
 }
 
 const settingsdefaulttab = {
-  title: "settings - UTC Games",
+  title: "settings - utc games",
   icon: "https://github.com/sz-games/home/blob/main/g.png?raw=true",
 };
 
