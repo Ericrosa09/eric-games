@@ -1,7 +1,7 @@
-/* =================== Import + Root =================== */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+/* =================== import + root =================== */
+@import url('https://fonts.googleapis.com/css?family=montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 
-/* =================== Main =================== */
+/* =================== main =================== */
 .neon {
 	color: #fff;
 	text-shadow:
@@ -131,9 +131,9 @@ img {
 }
 
 .btn-animated {
-	-webkit-animation: moveInBottom 5s ease-out;
+	-webkit-animation: moveinbottom 5s ease-out;
 	-webkit-animation-fill-mode: backwards;
-	animation: moveInBottom 5s ease-out;
+	animation: moveinbottom 5s ease-out;
 	animation-fill-mode: backwards
 }
 
@@ -142,17 +142,17 @@ body {
 	font-weight: 500;
 	font-size: 15px;
 	line-height: 1.7;
-	color: #FFFFFF;
+	color: #ffffff;
 	background-color: var(--bg);
 	overflow-x: hidden;
 	letter-spacing: 0.2px;
 	-webkit-transition: all 200ms linear;
 	transition: all 200ms linear;
-	text-rendering: optimizeLegibility !important;
+	text-rendering: optimizelegibility !important;
 	-webkit-font-smoothing: antialiased !important;
 	scroll-behavior: smooth;
 	background-color: var(--bg-color);
-	/* Create the parallax scrolling effect */
+	/* create the parallax scrolling effect */
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: repeat;
@@ -200,7 +200,7 @@ h2 {
 }
 
 
-/* =================== User Counter =================== */
+/* =================== user counter =================== */
 
 .counter-frame {
 	line-height: 0;
@@ -212,7 +212,7 @@ h2 {
 	display: none;
 }
 
-/* =================== Button =================== */
+/* =================== button =================== */
 
 .bn1 {
 	font-family: inherit;
@@ -292,7 +292,7 @@ h2 {
 	border-radius: 10px;
 }
 
-/* =================== Scrollbar =================== */
+/* =================== scrollbar =================== */
 ::-webkit-scrollbar {
 	width: 20px;
 }
@@ -316,7 +316,7 @@ h2 {
 	background-color: var(--scroll-active);
 }
 
-/* =================== Swipe In =================== */
+/* =================== swipe in =================== */
 .hero-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -338,7 +338,7 @@ h2 {
 }
 
 .hero-alt {
-	color: #FFF;
+	color: #fff;
 	font-size: 100px;
 	font-weight: 900;
 	text-transform: uppercase;
@@ -351,7 +351,7 @@ h2 {
 	text-transform: uppercase;
 }
 
-/* =================== Navigation =================== */
+/* =================== navigation =================== */
 .hide {
 	display: none;
 }
@@ -376,7 +376,7 @@ h2 {
 	box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* =================== Logo =================== */
+/* =================== logo =================== */
 .aa-nav-icon-container {
 	position: relative;
 	float: left;
@@ -395,7 +395,7 @@ h2 {
 	height: 45px;
 }
 
-/* =================== Navigation Items =================== */
+/* =================== navigation items =================== */
 .aa-nav-items {
 	position: relative;
 	float: right;
@@ -437,7 +437,7 @@ h2 {
 	font-size: 20px;
 	transition: 0.2s linear all;
 	color: var(--users-online) !important;
-	font-family: Arimo;
+	font-family: arimo;
 }
 
 
@@ -446,7 +446,7 @@ h2 {
 	text-decoration: none;
 }
 
-/* =================== Hamburger Menu =================== */
+/* =================== hamburger menu =================== */
 .aa-icon-bar {
 	background-color: #fff;
 	display: block;
@@ -474,30 +474,30 @@ h2 {
 }
 
 .aa-hamburger-menu:hover>.aa-icon-bar {
-	background-color: #E77E7E;
+	background-color: #e77e7e;
 }
 
 .aa-hamburger-menu:not(.collapsed) .aa-icon-bar:nth-child(1) {
-	transform: translateY(6px) rotate(45deg);
+	transform: translatey(6px) rotate(45deg);
 }
 
 .aa-hamburger-menu:not(.collapsed) .aa-icon-bar:nth-child(2) {
 	opacity: 0;
-	transform: translateX(-10px);
+	transform: translatex(-10px);
 }
 
 .aa-hamburger-menu:not(.collapsed) .aa-icon-bar:nth-child(3) {
-	transform: translateY(-6px) rotate(-45deg);
+	transform: translatey(-6px) rotate(-45deg);
 }
 
-/* =================== Mobile =================== */
+/* =================== mobile =================== */
 .aa-mobile-overlay {
 	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100%;
 	width: 100%;
-	background: #170E1F;
+	background: #170e1f;
 	overflow: auto;
 	z-index: 99;
 	display: none;
@@ -522,10 +522,10 @@ h2 {
 }
 
 .aa-mobile-nav-items>li>a:hover {
-	color: #E77E7E;
+	color: #e77e7e;
 }
 
-/* =================== Media Query =================== */
+/* =================== media query =================== */
 @media screen and (max-width: 768px) {
 	.aa-hamburger-menu {
 		display: block;
@@ -536,7 +536,7 @@ h2 {
 	}
 }
 
-/* =================== Footer =================== */
+/* =================== footer =================== */
 .footer {
 	color :var(--shadow);
 position: fixed;
@@ -601,7 +601,7 @@ right: 14px;
 .footer-content__title>span {
 	position: relative;
 	z-index: 3;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'montserrat', sans-serif;
 	font-weight: 900;
 	font-size: 31.5555px;
 	line-height: 1.15;
@@ -651,11 +651,11 @@ right: 14px;
 
 .footer-content__text {
 	margin-top: 32px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'montserrat', sans-serif;
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 1.71;
-	color: #FFFFFF;
+	color: #ffffff;
 }
 
 @media (max-width: 768px) {
@@ -711,11 +711,11 @@ right: 14px;
 }
 
 .footer-content__nav-link {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'montserrat', sans-serif;
 	font-weight: 500;
 	font-size: 14px;
 	line-height: 1.15;
-	color: #FFFFFF;
+	color: #ffffff;
 	margin-top: 24px;
 }
 
@@ -740,11 +740,11 @@ right: 14px;
 
 .footer-copyright__text,
 .footer-copyright__nav-link {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'montserrat', sans-serif;
 	font-weight: 500;
 	font-size: 13px;
 	line-height: 1.53;
-	color: #C8C8C8;
+	color: #c8c8c8;
 }
 
 @media (max-width: 395px) {
@@ -825,7 +825,7 @@ right: 14px;
 	text-indent: 4px;
 	line-height: 14px;
 	padding-bottom: 2px;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: helvetica, arial, sans-serif;
 	font-weight: bold;
 }
 

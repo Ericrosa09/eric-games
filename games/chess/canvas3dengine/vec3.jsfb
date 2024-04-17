@@ -1,105 +1,105 @@
 /*
- * Javascript/Canvas Textured 3D Renderer v0.3
- * Copyright (c) 2008 Jacob Seidelin, cupboy@gmail.com
- * This software is free to use for non-commercial purposes. For anything else, please contact the author.
- * This is a version modified by Stefano Gioffre'.
+ * javascript/canvas textured 3d renderer v0.3
+ * copyright (c) 2008 jacob seidelin, cupboy@gmail.com
+ * this software is free to use for non-commercial purposes. for anything else, please contact the author.
+ * this is a version modified by stefano gioffre'.
  */
 
-Canvas3D.Vec3 = function(vx, vy, vz) {
+canvas3d.vec3 = function(vx, vy, vz) {
 	this.x = vx;
 	this.y = vy;
 	this.z = vz;
 }
 
-Canvas3D.Vec3.prototype.set = function(vx, vy, vz) {
+canvas3d.vec3.prototype.set = function(vx, vy, vz) {
 	this.x = vx;
 	this.y = vy;
 	this.z = vz;
 }
 
-Canvas3D.Vec3.prototype.addVector = function(V) {
-	this.x += V.x;
-	this.y += V.y;
-	this.z += V.z;
+canvas3d.vec3.prototype.addvector = function(v) {
+	this.x += v.x;
+	this.y += v.y;
+	this.z += v.z;
 	return this;
 }
 
-Canvas3D.Vec3.prototype.multiply = function(fScalar) {
-	this.x *= fScalar;
-	this.y *= fScalar;
-	this.z *= fScalar;
+canvas3d.vec3.prototype.multiply = function(fscalar) {
+	this.x *= fscalar;
+	this.y *= fscalar;
+	this.z *= fscalar;
 	return this;
 }
 
-Canvas3D.Vec3.prototype.subVector = function(V) {
-	this.x -= V.x;
-	this.y -= V.y;
-	this.z -= V.z;
+canvas3d.vec3.prototype.subvector = function(v) {
+	this.x -= v.x;
+	this.y -= v.y;
+	this.z -= v.z;
 	return this;
 }
 
-Canvas3D.Vec3.prototype.returnAdd = function(V) {
-	return new Canvas3D.Vec3(this.x + V.x, this.y + V.y, this.z + V.z);
+canvas3d.vec3.prototype.returnadd = function(v) {
+	return new canvas3d.vec3(this.x + v.x, this.y + v.y, this.z + v.z);
 }
 
-Canvas3D.Vec3.prototype.returnSub = function(V) {
-	return new Canvas3D.Vec3(this.x - V.x, this.y - V.y, this.z - V.z);
+canvas3d.vec3.prototype.returnsub = function(v) {
+	return new canvas3d.vec3(this.x - v.x, this.y - v.y, this.z - v.z);
 }
 
-Canvas3D.Vec3.prototype.clone = function() {
-	return new Canvas3D.Vec3(this.x, this.y, this.z);
+canvas3d.vec3.prototype.clone = function() {
+	return new canvas3d.vec3(this.x, this.y, this.z);
 }
 
-Canvas3D.Vec3.prototype.dot = function(V) {
-	return ((this.x * V.x) + (this.y * V.y) + (this.z * V.z));
+canvas3d.vec3.prototype.dot = function(v) {
+	return ((this.x * v.x) + (this.y * v.y) + (this.z * v.z));
 }
 
-Canvas3D.Vec3.prototype.cross = function(V) {
-	var vx = V.x;
-	var vy = V.y;
-	var vz = V.z;
-	return new Canvas3D.Vec3((this.y * vz) - (this.z * vy), (this.z * vx) - (this.x * vz), (this.x * vy) - (this.y * vx));
+canvas3d.vec3.prototype.cross = function(v) {
+	var vx = v.x;
+	var vy = v.y;
+	var vz = v.z;
+	return new canvas3d.vec3((this.y * vz) - (this.z * vy), (this.z * vx) - (this.x * vz), (this.x * vy) - (this.y * vx));
 }
 
-Canvas3D.Vec3.prototype.length = function() {
-	return Math.sqrt((this.x * this.x) + (this.y * this.y) + (this.z * this.z));
+canvas3d.vec3.prototype.length = function() {
+	return math.sqrt((this.x * this.x) + (this.y * this.y) + (this.z * this.z));
 }
 
-Canvas3D.Vec3.prototype.unit = function() {
-	var l = 1/Math.sqrt((this.x * this.x) + (this.y * this.y) + (this.z * this.z));
-	return new Canvas3D.Vec3(this.x * l, this.y * l, this.z * l);
+canvas3d.vec3.prototype.unit = function() {
+	var l = 1/math.sqrt((this.x * this.x) + (this.y * this.y) + (this.z * this.z));
+	return new canvas3d.vec3(this.x * l, this.y * l, this.z * l);
 }
 
-Canvas3D.Vec3.prototype.rotateX = function(a) {
+canvas3d.vec3.prototype.rotatex = function(a) {
 	var ry = this.y;
 	var rz = this.z;
-	var c = Math.cos(a);
-	var s = Math.sin(a);
+	var c = math.cos(a);
+	var s = math.sin(a);
 	this.y = c * ry - s * rz;
 	this.z = s * ry + c * rz;
 }
 
-Canvas3D.Vec3.prototype.rotateY = function(a) {
+canvas3d.vec3.prototype.rotatey = function(a) {
 	var rx = this.x;
 	var rz = this.z;
-	var c = Math.cos(a);
-	var s = Math.sin(a);
+	var c = math.cos(a);
+	var s = math.sin(a);
 	this.x = c * rx - s * rz;
 	this.z = s * rx + c * rz;
 }
 
-Canvas3D.Vec3.prototype.rotateZ = function(a) {
+canvas3d.vec3.prototype.rotatez = function(a) {
 	var rx = this.x;
 	var ry = this.y;
-	var c = Math.cos(a);
-	var s = Math.sin(a);
+	var c = math.cos(a);
+	var s = math.sin(a);
 	this.x = c * rx - s * ry;
 	this.y = s * rx + c * ry;
 }
 
-Canvas3D.Vec3.prototype.dist = function(oVec) {
-	var x = oVec.x - this.x;
-	var y = oVec.y - this.y;
-	var z = oVec.z - this.z;
-	return Math.sqrt(x*x + y*y + z*z);
+canvas3d.vec3.prototype.dist = function(ovec) {
+	var x = ovec.x - this.x;
+	var y = ovec.y - this.y;
+	var z = ovec.z - this.z;
+	return math.sqrt(x*x + y*y + z*z);
 }

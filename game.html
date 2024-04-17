@@ -1,88 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
   <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <link rel="icon" href="https://github.com/sz-games/home/blob/main/G.png?raw=true">
-    <title>Sz Games - Game</title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" href="https://github.com/sz-games/home/blob/main/g.png?raw=true">
+    <title>UTC Games - game</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=material+icons">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('https://sz-games.github.io/service-worker.js');
+  if ('serviceworker' in navigator) {
+    navigator.serviceworker.register('https://sz-games.github.io/service-worker.js');
   }
 </script>
 
 
 
- <!--PageScript1-->
- <!--script id="CHECK">
-  function getCookie2(name) {
-const cookieName = name + "=";
+ <!--pagescript1-->
+ <!--script id="check">
+  function getcookie2(name) {
+const cookiename = name + "=";
 const cookies = document.cookie.split(';');
 for (let i = 0; i < cookies.length; i++) {
     let cookie = cookies[i];
-    while (cookie.charAt(0) === ' ') {
+    while (cookie.charat(0) === ' ') {
         cookie = cookie.substring(1);
     }
-    if (cookie.indexOf(cookieName) === 0) {
-        return cookie.substring(cookieName.length, cookie.length);
+    if (cookie.indexof(cookiename) === 0) {
+        return cookie.substring(cookiename.length, cookie.length);
     }
 }
 return '';
 }
 
 
-let Setting14bu = getCookie2("PagePrevent");
+let setting14bu = getcookie2("pageprevent");
 
-function checkPageClose(event) {
+function checkpageclose(event) {
 
 
-    event.returnValue = "Prevent Page Close Is Active, You Can Click Off Of This";
+    event.returnvalue = "prevent page close is active, you can click off of this";
 
 
 
 }
-function checkPageClose2() {
-if(Setting14bu==="true") {
+function checkpageclose2() {
+if(setting14bu==="true") {
 
     window.onbeforeunload = function(event) {
         // return a string to prevent the page from closing
-        event.preventDefault();
-        return "Prevent Page Close Is Active, You Can Click Off Of This";
+        event.preventdefault();
+        return "prevent page close is active, you can click off of this";
     };
-    window.addEventListener("beforeunload", checkPageClose);
+    window.addeventlistener("beforeunload", checkpageclose);
 
 } 
-if(Setting14bu==="false") {
+if(setting14bu==="false") {
 
 }
 }
-console.log('CookiePAGE Value: ' + Setting14bu + "SzGames-Scripts Loaded")
-checkPageClose2()
+console.log('cookiepage value: ' + setting14bu + "szgames-scripts loaded")
+checkpageclose2()
 
 </script-->
-<!--PageScript1-->
+<!--pagescript1-->
 
 <link rel="manifest" href="https://sz-games.github.io/manifest.json">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C78TXR0XFK"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=g-c78txr0xfk"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  window.datalayer = window.datalayer || [];
+  function gtag(){datalayer.push(arguments);}
+  gtag('js', new date());
 
-  gtag('config', 'G-C78TXR0XFK');
+  gtag('config', 'g-c78txr0xfk');
 
 
 </script>
-<script src=".GobalSettings.js"></script>
+<script src=".gobalsettings.js"></script>
 
 <style>
 
 body {
   margin: 0;
  overflow: hidden;
- font-family: Arial, Helvetica, sans-serif;
+ font-family: arial, helvetica, sans-serif;
  background-color: rgb(117, 117, 117);
 }
 ::-webkit-scrollbar {
@@ -96,15 +96,15 @@ body {
   
 }
 .btn-group button {
-  background-color: black; /* Green background */
+  background-color: black; /* green background */
  
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  float: left; /* Float the buttons side by side */
+  color: white; /* white text */
+  padding: 10px 24px; /* some padding */
+  cursor: pointer; /* pointer/hand icon */
+  float: left; /* float the buttons side by side */
 }
 
-/* Clear floats (clearfix hack) */
+/* clear floats (clearfix hack) */
 .btn-group:after {
   content: "";
   clear: both;
@@ -112,15 +112,15 @@ body {
 }
 
 .btn-group button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
+  border-right: none; /* prevent double borders */
 }
 
-/* Add a background color on hover */
+/* add a background color on hover */
 .btn-group button:hover {
   background-color: grey;
 }
 
-/* Header/Logo Title */
+/* header/logo title */
 .header {
   padding: 60px;
   text-align: center;
@@ -133,7 +133,7 @@ body {
   border-radius: 15px;
 }
 
-/* Page Content */
+/* page content */
 
 </style>
 </head>
@@ -145,7 +145,7 @@ color: white;
 
   transform: scale(1.8);
   z-index: 3;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: arial, helvetica, sans-serif;
     }
    .fade {
         position: absolute;
@@ -154,10 +154,10 @@ color: white;
         height: 150px;
      border-radius: 15px;
     }
-    .buttonForMenu {
+    .buttonformenu {
       transition: 0.5s;
     }
-    .buttonForMenu:hover {
+    .buttonformenu:hover {
       color: #9a9a9a;
     }
 
@@ -225,35 +225,35 @@ button > svg {
 
 button:hover > svg {
  font-size: 1.2em;
- transform: translateX(-5px);
+ transform: translatex(-5px);
 }
 
 button:hover {
- transform: translateY(-2px);
+ transform: translatey(-2px);
 }
 </style>
 
 
 
 
-<div id="LOADINGSCREEN11" style="display: block; opacity: 1; transition: 0.8s; background-color: #525252; z-index: 100; position: fixed; width: 100%; height: 100%;">
-  <div id="FRONT" style="z-index: 103;">
+<div id="loadingscreen11" style="display: block; opacity: 1; transition: 0.8s; background-color: #525252; z-index: 100; position: fixed; width: 100%; height: 100%;">
+  <div id="front" style="z-index: 103;">
     <div style="position: absolute; top: 25%; left: 5px; width: 100%; height: 200px;">
-  <img src="https://raw.githubusercontent.com/sz-games/home/main/G.png" style="position:relative; z-index: 107; width: 100px; height: 100px; left: 30px; " alt="Sz Games">
-  <h1 style=" z-index: 103; bottom: 60%; transform: translate(-0%, 50%); font-size: 40px; left: 150px; color: white; font-family: Arial, Helvetica, sans-serif; position: relative;">Sz Games</h1>
-  <p  style="font-family: Arial, Helvetica, sans-serif; position: absolute; z-index: 103; color: rgb(164, 164, 164); left: 405px; top: 85px; " id="loading-percentage">0%</p>
+  <img src="https://raw.githubusercontent.com/sz-games/home/main/g.png" style="position:relative; z-index: 107; width: 100px; height: 100px; left: 30px; " alt="UTC Games">
+  <h1 style=" z-index: 103; bottom: 60%; transform: translate(-0%, 50%); font-size: 40px; left: 150px; color: white; font-family: arial, helvetica, sans-serif; position: relative;">UTC Games</h1>
+  <p  style="font-family: arial, helvetica, sans-serif; position: absolute; z-index: 103; color: rgb(164, 164, 164); left: 405px; top: 85px; " id="loading-percentage">0%</p>
   
   <button style="left: 40px; z-index: 107; position: relative;">
-    <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024"><path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path></svg>
-    <span>Home</span>
+    <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1" viewbox="0 0 1024 1024"><path d="m874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0c865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path></svg>
+    <span>home</span>
   </button>
   
 <div style="z-index: 103; left: 50px; top: 125px; position: absolute;" class="loader"></div>
 </div>
 </div>
-  <div id="BACKLOAD" style="z-index: 101;">
-    <div style="position: absolute; transform: scale(1.0) translate(-0%, -50%); right: -10px; top: 50%;" id="SCREENSHOT">
-      <img style="border-radius: 15px;" src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/SZ-BG.png"/>
+  <div id="backload" style="z-index: 101;">
+    <div style="position: absolute; transform: scale(1.0) translate(-0%, -50%); right: -10px; top: 50%;" id="screenshot">
+      <img style="border-radius: 15px;" src="https://raw.githubusercontent.com/sz-games/sz-games.github.io/main/sz-bg.png"/>
       <div style="width: 100%; height: 85px; z-index: 102; position: absolute; right: 0; bottom: 0%;  background-image: linear-gradient(to top, #525252, #525252, rgba(255, 255, 0, 0));">
 
       </div>
@@ -263,81 +263,81 @@ button:hover {
 
 
 <script>
-  var LoadPWA = false
-  let LOADCHECK = sessionStorage.getItem("HasLoadedPWA0");
+  var loadpwa = false
+  let loadcheck = sessionstorage.getitem("hasloadedpwa0");
 
  
-    document.getElementById('LOADINGSCREEN11').style.display = "block"
+    document.getelementbyid('loadingscreen11').style.display = "block"
 
-      //LOADING PERCENTAGE
+      //loading percentage
 
-      window.addEventListener('load', function() {
-        // All resources have finished loading
-        document.getElementById('loading-percentage').textContent = '100%';
+      window.addeventlistener('load', function() {
+        // all resources have finished loading
+        document.getelementbyid('loading-percentage').textcontent = '100%';
       });
 
-      window.addEventListener('DOMContentLoaded', function() {
-        // DOM content has finished loading
-        const totalResources = document.getElementsByTagName('*').length;
-        let loadedResources = 0;
+      window.addeventlistener('domcontentloaded', function() {
+        // dom content has finished loading
+        const totalresources = document.getelementsbytagname('*').length;
+        let loadedresources = 0;
 
-        const loadingPercentage = document.getElementById('loading-percentage');
+        const loadingpercentage = document.getelementbyid('loading-percentage');
 
-        function updateLoadingPercentage() {
-          loadedResources++;
-          const percentage = ((loadedResources / totalResources) * 100).toFixed(2);
-          loadingPercentage.textContent = percentage + '%';
+        function updateloadingpercentage() {
+          loadedresources++;
+          const percentage = ((loadedresources / totalresources) * 100).tofixed(2);
+          loadingpercentage.textcontent = percentage + '%';
         }
 
        
 
-        const elements = document.getElementsByTagName('*');
+        const elements = document.getelementsbytagname('*');
         for (let i = 0; i < elements.length; i++) {
-          elements[i].addEventListener('load', updateLoadingPercentage);
-          elements[i].addEventListener('error', updateLoadingPercentage); // Handle resource load errors
+          elements[i].addeventlistener('load', updateloadingpercentage);
+          elements[i].addeventlistener('error', updateloadingpercentage); // handle resource load errors
         }
       });
-      //END
+      //end
 
    
-      window.addEventListener('load', function() {
+      window.addeventlistener('load', function() {
 
         
 
-        document.getElementById('LOADINGSCREEN11').style.opacity = 0
-        setTimeout(() => {
-          document.getElementById('LOADINGSCREEN11').style.display = 'none'
+        document.getelementbyid('loadingscreen11').style.opacity = 0
+        settimeout(() => {
+          document.getelementbyid('loadingscreen11').style.display = 'none'
         }, 800);
       });
     
 
 </script>
 
-<iframe frameBorder="0" id="game" style="text-align: center; align-items: center; overflow: hidden; width: 100%; " src="" allowfullscreen></iframe>
+<iframe frameborder="0" id="game" style="text-align: center; align-items: center; overflow: hidden; width: 100%; " src="" allowfullscreen></iframe>
 
-<!--h2 onclick="window.location = 'https://sz-games.github.io'" style="display: none; cursor: pointer; position: fixed; bottom: -20px;  ">Back</h2>
+<!--h2 onclick="window.location = 'https://sz-games.github.io'" style="display: none; cursor: pointer; position: fixed; bottom: -20px;  ">back</h2>
 <h2  style="position: fixed; bottom: 10px;">____</h2>
-<h2 onclick="makeFullScreen()" style="cursor: pointer; position: fixed; bottom: 20px;">Fullscreen</h2-->
-<div  style="transition: 0.5s; cursor: pointer; position: fixed; border-radius: 15px; color: rgb(224, 224, 224); background-color: #1d1d1dc0; left: 0; bottom: 0px; margin: 10px;" id="Menu">
+<h2 onclick="makefullscreen()" style="cursor: pointer; position: fixed; bottom: 20px;">fullscreen</h2-->
+<div  style="transition: 0.5s; cursor: pointer; position: fixed; border-radius: 15px; color: rgb(224, 224, 224); background-color: #1d1d1dc0; left: 0; bottom: 0px; margin: 10px;" id="menu">
 
 
-<span class="material-icons buttonForMenu" style="margin: 5px;" onclick="window.location = 'https://sz-games.github.io'" >
+<span class="material-icons buttonformenu" style="margin: 5px;" onclick="window.location = 'https://sz-games.github.io'" >
   arrow_back
   </span>
-  <span class="material-icons buttonForMenu" style="margin: 5px;" onclick="makeFullScreen()" >
+  <span class="material-icons buttonformenu" style="margin: 5px;" onclick="makefullscreen()" >
     fullscreen
     </span>
 
-    <!--span class="material-icons buttonForMenu" style="margin: 5px;" onclick="ToggleChat()" >
+    <!--span class="material-icons buttonformenu" style="margin: 5px;" onclick="togglechat()" >
       chat
       </span-->
     <script>
-      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const ismobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.useragent);
 
-      if (isMobile) {
-          document.getElementById('Menu').style.transform = "scale(1.1)"
+      if (ismobile) {
+          document.getelementbyid('menu').style.transform = "scale(1.1)"
       } else {
-        document.getElementById('Menu').style.transform = "scale(1.0)"
+        document.getelementbyid('menu').style.transform = "scale(1.0)"
       }         
 
 
@@ -349,65 +349,65 @@ button:hover {
 
 
 
-var isFUll = false
+var isfull = false
 
 document.body.onkeyup = function(e) {
-  if( e.keyCode == 27 ) {
-    if(isFUll) {
-    //document.getElementById('game').style.width = '800px';
+  if( e.keycode == 27 ) {
+    if(isfull) {
+    //document.getelementbyid('game').style.width = '800px';
     }
   }
 }
 
-function requestFullScreen(element) {
-    // Supports most browsers and their versions.
-    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullscreen;
+function requestfullscreen(element) {
+    // supports most browsers and their versions.
+    var requestmethod = element.requestfullscreen || element.webkitrequestfullscreen || element.mozrequestfullscreen || element.msrequestfullscreen;
     
-    if (requestMethod) { // Native full screen.
-        requestMethod.call(element);
-        let hh = window.innerHeight;
+    if (requestmethod) { // native full screen.
+        requestmethod.call(element);
+        let hh = window.innerheight;
 
-document.getElementById('game').height = hh;
-    } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
-        var wscript = new ActiveXObject("WScript.Shell");
+document.getelementbyid('game').height = hh;
+    } else if (typeof window.activexobject !== "undefined") { // older ie.
+        var wscript = new activexobject("wscript.shell");
         if (wscript !== null) {
-            wscript.SendKeys("{F11}");
+            wscript.sendkeys("{f11}");
         }
     }
 }
-var canvas = document.getElementById('game');
+var canvas = document.getelementbyid('game');
 
-function makeFullScreen() {
+function makefullscreen() {
 
-    isFUll = true
-    requestFullScreen(canvas);
+    isfull = true
+    requestfullscreen(canvas);
 }
 
 
 
-let hh = window.innerHeight;
+let hh = window.innerheight;
 
 
-document.getElementById('game').height = hh;
+document.getelementbyid('game').height = hh;
 window.onresize = function(event) {
-  let hh = window.innerHeight;
+  let hh = window.innerheight;
 
-document.getElementById('game').height = hh;
+document.getelementbyid('game').height = hh;
 }
-// Get the text element
-var textElement = document.getElementById("game");
+// get the text element
+var textelement = document.getelementbyid("game");
 
-// Get the current URL
-var currentUrl = new URL(window.location.href);
+// get the current url
+var currenturl = new url(window.location.href);
 
-// Check for the presence of the "text" parameter in the URL
-if (currentUrl.searchParams.has("game")) {
-  // Set the text of the element to the value of the "text" parameter
-  textElement.src = currentUrl.searchParams.get("game");
+// check for the presence of the "text" parameter in the url
+if (currenturl.searchparams.has("game")) {
+  // set the text of the element to the value of the "text" parameter
+  textelement.src = currenturl.searchparams.get("game");
 }
 
 
-console.log(currentUrl.searchParams.get("game"))
+console.log(currenturl.searchparams.get("game"))
 
   </script>
 </html>

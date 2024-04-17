@@ -194,7 +194,7 @@ h1 {
     background-color: #d8d8d8;
     transition: all .3s ease 0s;
     box-shadow: 3px 3px 3px rgba(0,0,0,.3);
-    transform: translateY(-5px)
+    transform: translatey(-5px)
 }
 
 .img-container {

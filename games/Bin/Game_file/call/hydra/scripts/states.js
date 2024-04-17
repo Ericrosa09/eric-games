@@ -3,20 +3,20 @@
 function menu() {
     
     //show the menu screen
-    mainMenuScene.visible = true;
-    gameScene.visible = false;
-    gameOverScene.visible = false;
-    restartButtonContainer.visible = false;
+    mainmenuscene.visible = true;
+    gamescene.visible = false;
+    gameoverscene.visible = false;
+    restartbuttoncontainer.visible = false;
 
 }
 
 // play state
 function play(delta) {
 
-    let rotationValue = 0.2;
-    let enemyVY = enemy.vy + enemyMoveSpeed;
-    let enemyY = enemy.y;
-    let despawnPoint = h;
+    let rotationvalue = 0.2;
+    let enemyvy = enemy.vy + enemymovespeed;
+    let enemyy = enemy.y;
+    let despawnpoint = h;
 
     //use the player's velocity to make it move
     player.x += player.vx;
@@ -24,29 +24,29 @@ function play(delta) {
 
     // min x = 70px | max x = 430px
     // min y = 100px | max y = 400px
-    minBoundX = Math.round(app.renderer.width / 7.14);
-    maxBoundX = Math.round(app.renderer.width / 1.162);
-    minBoundY = Math.round(app.renderer.height / 5);
-    maxBoundY = Math.round(app.renderer.height / 1.25);
+    minboundx = math.round(app.renderer.width / 7.14);
+    maxboundx = math.round(app.renderer.width / 1.162);
+    minboundy = math.round(app.renderer.height / 5);
+    maxboundy = math.round(app.renderer.height / 1.25);
 
     // stop player from going out of bounds
     // horizontal axis
-    if (player.x <= minBoundX) {
+    if (player.x <= minboundx) {
         player.vx = 0;
-        player.x = minBoundX;
-    } else if (player.x >= maxBoundX) {
+        player.x = minboundx;
+    } else if (player.x >= maxboundx) {
         player.vx = 0;
-        player.x = maxBoundX;
+        player.x = maxboundx;
     }
     
     // stop player from going out of bounds
     // vertical axis
-    if (player.y <= minBoundY) {
+    if (player.y <= minboundy) {
         player.vy = 0;
-        player.y = minBoundY;
-    } else if (player.y >= maxBoundY) {
+        player.y = minboundy;
+    } else if (player.y >= maxboundy) {
         player.vy = 0;
-        player.y = maxBoundY;
+        player.y = maxboundy;
     }
 
     enemy.rotation += 0.1;
@@ -54,45 +54,45 @@ function play(delta) {
     //move the enemy along the y axis and increase its size
     //to create the 3d effect of a object getting closer
     //despawn when enemy is too close
-    if (enemyY >= despawnPoint && enemyIsAlive === true) {
+    if (enemyy >= despawnpoint && enemyisalive === true) {
 
-        earnPointSfx.play();
-        scoreMultiplier += 0.5;
-        score += 100 * scoreMultiplier;
-        enemyIsAlive = false;
-        enemySize = 0.3;
-        enemy.scale.set(enemySize, enemySize);
-        enemy.x = spawnX(minSpawnX, maxSpawnX);
-        enemy.y = spawnY;
+        earnpointsfx.play();
+        scoremultiplier += 0.5;
+        score += 100 * scoremultiplier;
+        enemyisalive = false;
+        enemysize = 0.3;
+        enemy.scale.set(enemysize, enemysize);
+        enemy.x = spawnx(minspawnx, maxspawnx);
+        enemy.y = spawny;
         enemy.anchor.set(0.5, 0.4);
-        gameScene.removeChild(enemy);
+        gamescene.removechild(enemy);
 
-    } else if (enemyY < despawnPoint && enemyIsAlive === true) {
+    } else if (enemyy < despawnpoint && enemyisalive === true) {
         
-        enemy.y += enemyVY;
-        enemy.scale.set(enemySize += 0.003, enemySize += 0.003);
+        enemy.y += enemyvy;
+        enemy.scale.set(enemysize += 0.003, enemysize += 0.003);
 
     } else {
 
-        enemyIsAlive = true;
-        gameScene.addChildAt(enemy, 2);
+        enemyisalive = true;
+        gamescene.addchildat(enemy, 2);
 
     }
 
-    scoreMultiplierLabel.text = "x" + scoreMultiplier;
-    scoreLabel.text = score;
-    endScoreMultiplierLabel.text = "x" + scoreMultiplier;
-    endScoreLabel.text = score;
+    scoremultiplierlabel.text = "x" + scoremultiplier;
+    scorelabel.text = score;
+    endscoremultiplierlabel.text = "x" + scoremultiplier;
+    endscorelabel.text = score;
     
     //check for collision between player and enemy
-    if (hitTestRectangle(player, enemy)) {
+    if (hittestrectangle(player, enemy)) {
 
         bgm.pause();
-        // planeSfx.pause();
-        crashSfx.play();
+        // planesfx.pause();
+        crashsfx.play();
 
         //if there's collision do these
-        player.rotation += rotationValue;
+        player.rotation += rotationvalue;
         state = end;
 
     }
@@ -111,15 +111,15 @@ function end() {
 
     //launch the gameover scene
     score = -100;
-    endScore = -100;
-    scoreMultiplier = 0.5;
-    endScoreMultiplier = 0.5;
-    player.x = halfOfRendererWidth;
-    player.y = halfOfRendererWidth;
+    endscore = -100;
+    scoremultiplier = 0.5;
+    endscoremultiplier = 0.5;
+    player.x = halfofrendererwidth;
+    player.y = halfofrendererwidth;
     enemy.y = 500;
-    enemyIsAlive = true;
-    gameScene.visible = false;
-    gameOverScene.visible = true;
-    restartButtonContainer.visible = true;
+    enemyisalive = true;
+    gamescene.visible = false;
+    gameoverscene.visible = true;
+    restartbuttoncontainer.visible = true;
 
 }

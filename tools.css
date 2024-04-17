@@ -1,20 +1,20 @@
-@charset "UTF-8";
-/* CSS Document */
+@charset "utf-8";
+/* css document */
 body {
     background: rgb(35, 35, 35);
     color: white;
     margin: 0;
     min-width: 470px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: arial, helvetica, sans-serif;
 }
-.NAV {
+.nav {
     position: relative; 
     top: 0; 
     width: 100%; 
     height: 50px; 
     background-color: #1d1d1d;
 }
-.NAVTXT {
+.navtxt {
     top: -13px; 
     left: 60px;  
     position: relative;
@@ -22,7 +22,7 @@ body {
      font-size: 25px;
 }
 #imageupload {
-    /* Add your desired styles here */
+    /* add your desired styles here */
     padding: 10px;
     border: 3px solid #575757;
     border-radius: 15px;
@@ -35,7 +35,7 @@ body {
     color: #ffffff;
     font-size: 16px;
   }
-  .UPBTN {
+  .upbtn {
     border: 3px solid #575757;
     top: 15px;
     position: relative;

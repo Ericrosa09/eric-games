@@ -1,32 +1,32 @@
 
-// retrieves a file via XMLHTTPRequest, calls fncCallback when done or fncError on error.
+// retrieves a file via xmlhttprequest, calls fnccallback when done or fncerror on error.
 
-function XHR(strURL, fncCallback /*, argumentToPass1, argumentToPass2, etc. */) {
-	var oHTTP, argsArr = Array.prototype.slice.call(arguments, 2);
-	if (window.XMLHttpRequest) { oHTTP = new XMLHttpRequest(); }
-	else if (window.ActiveXObject) { oHTTP = new ActiveXObject("Microsoft.XMLHTTP"); }
-	if (oHTTP) {
-		if (fncCallback) {
-			if (typeof(oHTTP.onload) !== "undefined")
-				oHTTP.onload = function() {
-					fncCallback.apply(oHTTP, argsArr);
-					oHTTP = null;
+function xhr(strurl, fnccallback /*, argumenttopass1, argumenttopass2, etc. */) {
+	var ohttp, argsarr = array.prototype.slice.call(arguments, 2);
+	if (window.xmlhttprequest) { ohttp = new xmlhttprequest(); }
+	else if (window.activexobject) { ohttp = new activexobject("microsoft.xmlhttp"); }
+	if (ohttp) {
+		if (fnccallback) {
+			if (typeof(ohttp.onload) !== "undefined")
+				ohttp.onload = function() {
+					fnccallback.apply(ohttp, argsarr);
+					ohttp = null;
 				};
 			else {
-				oHTTP.onreadystatechange = function() {
-					if (oHTTP.readyState === 4) {
-						fncCallback.apply(oHTTP, argsArr);
-						oHTTP = null;
+				ohttp.onreadystatechange = function() {
+					if (ohttp.readystate === 4) {
+						fnccallback.apply(ohttp, argsarr);
+						ohttp = null;
 					}
 				};
 			}
 		}
-		oHTTP.open("GET", strURL, true);
-  		oHTTP.setRequestHeader("Content-Type", "text/plain");
-		oHTTP.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
-		oHTTP.send(null);
+		ohttp.open("get", strurl, true);
+  		ohttp.setrequestheader("content-type", "text/plain");
+		ohttp.setrequestheader("if-modified-since", "sat, 1 jan 2000 00:00:00 gmt");
+		ohttp.send(null);
 	}
 }
 
-function setAttribs() { for (var iAttr = 0; iAttr < arguments.length; iAttr++) { this[arguments[iAttr][0]] = arguments[iAttr][1]; } return(this); }
-function setStyles() { for (var iPropr = 0; iPropr < arguments.length; iPropr++) { this.style[arguments[iPropr][0]] = arguments[iPropr][1]; } return(this); }
+function setattribs() { for (var iattr = 0; iattr < arguments.length; iattr++) { this[arguments[iattr][0]] = arguments[iattr][1]; } return(this); }
+function setstyles() { for (var ipropr = 0; ipropr < arguments.length; ipropr++) { this.style[arguments[ipropr][0]] = arguments[ipropr][1]; } return(this); }

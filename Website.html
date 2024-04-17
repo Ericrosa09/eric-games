@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
   <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <link rel="icon" href="https://github.com/sz-games/home/blob/main/G.png?raw=true">
-    <title>Sz Games | Loader</title>
-<meta charset="UTF-8">
+    <link rel="icon" href="https://github.com/sz-games/home/blob/main/g.png?raw=true">
+    <title>UTC Games | loader</title>
+<meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -12,19 +12,19 @@
 body {
   margin: 0;
  overflow: hidden;
- font-family: Arial, Helvetica, sans-serif;
+ font-family: arial, helvetica, sans-serif;
 }
 
 .btn-group button {
-  background-color: black; /* Green background */
+  background-color: black; /* green background */
  
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  float: left; /* Float the buttons side by side */
+  color: white; /* white text */
+  padding: 10px 24px; /* some padding */
+  cursor: pointer; /* pointer/hand icon */
+  float: left; /* float the buttons side by side */
 }
 
-/* Clear floats (clearfix hack) */
+/* clear floats (clearfix hack) */
 .btn-group:after {
   content: "";
   clear: both;
@@ -32,15 +32,15 @@ body {
 }
 
 .btn-group button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
+  border-right: none; /* prevent double borders */
 }
 
-/* Add a background color on hover */
+/* add a background color on hover */
 .btn-group button:hover {
   background-color: grey;
 }
 
-/* Header/Logo Title */
+/* header/logo title */
 .header {
   padding: 60px;
   text-align: center;
@@ -53,7 +53,7 @@ body {
   border-radius: 15px;
 }
 
-/* Page Content */
+/* page content */
 #loading-screen {
   position: absolute;
   top: 0;
@@ -76,10 +76,10 @@ body {
   right: 100px;
   height: 20px;
   position: absolute;
-  -webkit-animation: spin 0.8s linear infinite; /* Safari */
+  -webkit-animation: spin 0.8s linear infinite; /* safari */
   animation: spin 0.8s linear infinite;
     z-index: 9999;
-    /* Add styles for your loading indicator here */
+    /* add styles for your loading indicator here */
 }
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
@@ -138,7 +138,7 @@ color: white;
 
   transform: scale(1.8);
   z-index: 3;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: arial, helvetica, sans-serif;
     }
    .fade {
         position: absolute;
@@ -150,73 +150,73 @@ color: white;
 </style>
 <div id="loading-ind">
   <div id="loading-indicator"></div>
-  <h3 style="position: absolute; right: 5px; top: -12px; font-family: Arial, Helvetica, sans-serif;">Loading...</h3>
+  <h3 style="position: absolute; right: 5px; top: -12px; font-family: arial, helvetica, sans-serif;">loading...</h3>
 </div>
 
 <div id="loading-screen">
   <div class="loading-bar">
     <div class="loading-progress"></div>
   </div>
-  <div id="loading-text" class="loading-text">Loading...</div>
+  <div id="loading-text" class="loading-text">loading...</div>
 </div>
 
 
 
-<iframe frameBorder="0" id="game" style="text-align: center; align-items: center; overflow: hidden; width: 100%; " src="" allowfullscreen></iframe>
+<iframe frameborder="0" id="game" style="text-align: center; align-items: center; overflow: hidden; width: 100%; " src="" allowfullscreen></iframe>
 
-<h2 onclick="window.location = 'https://sz-games.github.io/unblock.html'" style="cursor: pointer; position: fixed; bottom: -20px;  ">Back</h2>
+<h2 onclick="window.location = 'https://sz-games.github.io/unblock.html'" style="cursor: pointer; position: fixed; bottom: -20px;  ">back</h2>
 <h2  style="position: fixed; bottom: 10px;">____</h2>
-<h2 onclick="makeFullScreen()" style="cursor: pointer; position: fixed; bottom: 20px;">Fullscreen</h2>
+<h2 onclick="makefullscreen()" style="cursor: pointer; position: fixed; bottom: 20px;">fullscreen</h2>
 
 
 
   </body>
 
   <script>
-    var currentUrl = new URL(window.location.href);
+    var currenturl = new url(window.location.href);
 
-var textElement = document.getElementById("game");
-var loadtext = document.getElementById("loading-text");
-var progressBar = document.querySelector(".loading-progress");
-var iframeg = document.getElementById('port');
-var loadingIndicator = document.getElementById('loading-ind');
+var textelement = document.getelementbyid("game");
+var loadtext = document.getelementbyid("loading-text");
+var progressbar = document.queryselector(".loading-progress");
+var iframeg = document.getelementbyid('port');
+var loadingindicator = document.getelementbyid('loading-ind');
 
 var percent = 0;
 var number = 1;
 
-var iframeUrl = textElement.contentWindow.location.href;
-setInterval(() => {
-  if (iframeUrl.indexOf("kazwire.com") !== -1) {
-    //console.log(iframeUrl)
-    console.log('Outside')
-    textElement.contentWindow.location.href = currentUrl.searchParams.get("game");
+var iframeurl = textelement.contentwindow.location.href;
+setinterval(() => {
+  if (iframeurl.indexof("kazwire.com") !== -1) {
+    //console.log(iframeurl)
+    console.log('outside')
+    textelement.contentwindow.location.href = currenturl.searchparams.get("game");
   } else {
     console.log('inside')
-   // console.log(iframeUrl)
+   // console.log(iframeurl)
   }
 
 }, 1500);
 
-loadingIndicator.style.display = "none";
+loadingindicator.style.display = "none";
 
 
-  setInterval(function() {
+  setinterval(function() {
     //percent += 10;
-    progressBar.style.width = percent + "%";
+    progressbar.style.width = percent + "%";
     if (percent >= 100) {
 
  
       
-      clearInterval();
-      document.getElementById('loading-screen').style.opacity = 0;
-      setTimeout(() => {
-        document.getElementById('loading-screen').style.display = 'none'
+      clearinterval();
+      document.getelementbyid('loading-screen').style.opacity = 0;
+      settimeout(() => {
+        document.getelementbyid('loading-screen').style.display = 'none'
       }, 800);
     }
   }, 100);
   percent += 20;
  
-  loadtext.innerHTML = "Connecting To The Server..."
+  loadtext.innerhtml = "connecting to the server..."
 
 
       step2();
@@ -224,9 +224,9 @@ loadingIndicator.style.display = "none";
 
   function step2() {
     if (number===1) {
-        textElement.src = currentUrl.searchParams.get("game");
-        loadtext.innerHTML = "Launching..."
-        setTimeout(() => {
+        textelement.src = currenturl.searchparams.get("game");
+        loadtext.innerhtml = "launching..."
+        settimeout(() => {
           percent += 100;
         }, 1500);
         
@@ -242,56 +242,56 @@ loadingIndicator.style.display = "none";
 
 
 document.body.onkeyup = function(e) {
-  if( e.keyCode == 27 ) {
-    document.getElementById('game').style.width = '800px';
+  if( e.keycode == 27 ) {
+    document.getelementbyid('game').style.width = '800px';
   }
 }
 
-function requestFullScreen(element) {
-    // Supports most browsers and their versions.
-    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullscreen;
+function requestfullscreen(element) {
+    // supports most browsers and their versions.
+    var requestmethod = element.requestfullscreen || element.webkitrequestfullscreen || element.mozrequestfullscreen || element.msrequestfullscreen;
     
-    if (requestMethod) { // Native full screen.
-        requestMethod.call(element);
-        let hh = window.innerHeight - 10;
+    if (requestmethod) { // native full screen.
+        requestmethod.call(element);
+        let hh = window.innerheight - 10;
 
-document.getElementById('game').height = hh;
-    } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
-        var wscript = new ActiveXObject("WScript.Shell");
+document.getelementbyid('game').height = hh;
+    } else if (typeof window.activexobject !== "undefined") { // older ie.
+        var wscript = new activexobject("wscript.shell");
         if (wscript !== null) {
-            wscript.SendKeys("{F11}");
+            wscript.sendkeys("{f11}");
         }
     }
 }
-var canvas = document.getElementById('game');
+var canvas = document.getelementbyid('game');
 
-function makeFullScreen() {
+function makefullscreen() {
 
 
-    requestFullScreen(canvas);
+    requestfullscreen(canvas);
 }
 
 
 
-let hh = window.innerHeight - 10;
+let hh = window.innerheight - 10;
 
 
-document.getElementById('game').height = hh;
+document.getelementbyid('game').height = hh;
 window.onresize = function(event) {
-  let hh = window.innerHeight - 10;
+  let hh = window.innerheight - 10;
 
-document.getElementById('game').height = hh;
+document.getelementbyid('game').height = hh;
 }
-// Get the text element
+// get the text element
 
-// Get the current URL
+// get the current url
 
-// Check for the presence of the "text" parameter in the URL
-if (currentUrl.searchParams.has("game")) {
-  // Set the text of the element to the value of the "text" parameter
+// check for the presence of the "text" parameter in the url
+if (currenturl.searchparams.has("game")) {
+  // set the text of the element to the value of the "text" parameter
   
 }
-console.log(currentUrl.searchParams.get("game"))
+console.log(currenturl.searchparams.get("game"))
 
   </script>
 </html>

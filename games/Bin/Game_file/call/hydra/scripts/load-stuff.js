@@ -1,42 +1,42 @@
 // load everything
-function loadStuff() {
+function loadstuff() {
 
     // set the max width/height of your app
-    maxWidth = 500;
-    maxHeight = 500;
+    maxwidth = 500;
+    maxheight = 500;
 
-    // limits the app's width/height according to maxWidth/maxHeight
-    if (w <= maxWidth && h <= maxHeight) {
+    // limits the app's width/height according to maxwidth/maxheight
+    if (w <= maxwidth && h <= maxheight) {
         //don't do anything;
     } else {
 
-        // resize to maxWidth/maxHeight if the renderer is larger than the one has set
-        app.renderer.resize(maxWidth, maxHeight);
-        w = maxWidth;
-        h = maxHeight;
+        // resize to maxwidth/maxheight if the renderer is larger than the one has set
+        app.renderer.resize(maxwidth, maxheight);
+        w = maxwidth;
+        h = maxheight;
 
     }
 
     // formats the text (currently all labels are set to this format
     //  so changing this will also change the format for text in main menu, game over, etc.)
-    textStyle = new TextStyle({
+    textstyle = new textstyle({
 
-        fontFamily: "Arial",
-        fontSize: 18,
+        fontfamily: "arial",
+        fontsize: 18,
         fill: "white",
-        fontWeight: "bold"
+        fontweight: "bold"
 
     });
 
     // create the loading screen
-    loadingContainer = new Container();
-    loadingLabel = new Text("Game is loading please wait..", textStyle);
-    loadingLabel.anchor.set(0.5, 0.5);
-    loadingLabel.position.set(w / 2, h / 2);
-    loadingContainer.addChild(loadingLabel);
+    loadingcontainer = new container();
+    loadinglabel = new text("game is loading please wait..", textstyle);
+    loadinglabel.anchor.set(0.5, 0.5);
+    loadinglabel.position.set(w / 2, h / 2);
+    loadingcontainer.addchild(loadinglabel);
 
     // show the loading screen
-    app.stage.addChild(loadingContainer);
+    app.stage.addchild(loadingcontainer);
 
     // preload the sounds
     sounds.load([
@@ -47,29 +47,29 @@ function loadStuff() {
         "sounds/bounce.mp3"
     ]);
 
-    // call function loadSprite after sound has loaded
-    sounds.whenLoaded = loadSprite;
+    // call function loadsprite after sound has loaded
+    sounds.whenloaded = loadsprite;
 
 }
 
 // load textures
-function loadSprite() {
+function loadsprite() {
 
     //preload sprite and assign them a name
     loader
-        .add("buttonPlay", "sprite/play-button.png")
-        .add("buttonAbout", "sprite/about-button.png")
-        .add("buttonPause", "sprite/pause-button.png")
+        .add("buttonplay", "sprite/play-button.png")
+        .add("buttonabout", "sprite/about-button.png")
+        .add("buttonpause", "sprite/pause-button.png")
         .add("player", "sprite/player.png")
         .add("enemy", "sprite/enemy.png")
-        .add("buttonRestart", "sprite/restart-button.png")
-        .add("buttonMenu", "sprite/menu-button.png")
+        .add("buttonrestart", "sprite/restart-button.png")
+        .add("buttonmenu", "sprite/menu-button.png")
         .add("spritesheet/cloud.json")
         .add("spritesheet/road.json")
-        .on("progress", loadProgressHandler)
+        .on("progress", loadprogresshandler)
         .once('complete', function() {
-            console.log("All files finished loading");
-            app.stage.removeChild(loadingContainer);
+            console.log("all files finished loading");
+            app.stage.removechild(loadingcontainer);
             setup();
         })
         .load();
@@ -77,9 +77,9 @@ function loadSprite() {
 }
 
 // loading progress in console
-function loadProgressHandler(loader) {
+function loadprogresshandler(loader) {
 
     // show loading progress in percentage
-    console.log("Loading sprites.. " + Math.round(loader.progress) + "%");
+    console.log("loading sprites.. " + math.round(loader.progress) + "%");
 
 }

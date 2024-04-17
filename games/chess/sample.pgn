@@ -1,16 +1,16 @@
-[Event "ICS Unrated Chess Match"]
-[Site "?"]
-[Date "2010.07.18"]
-[Round "?"]
-[White "GuestSXJG"]
-[Black "GuestRBZS"]
-[TimeControl "300+0"]
-[Result "1-0"]
+[event "ics unrated chess match"]
+[site "?"]
+[date "2010.07.18"]
+[round "?"]
+[white "guestsxjg"]
+[black "guestrbzs"]
+[timecontrol "300+0"]
+[result "1-0"]
 
-1. e4 e6 2. d4 g6 3. d5 Bg7 4. dxe6 fxe6 5. Nf3 Ne7 6. Bg5 c6 7. e5 Qa5+ 
-8. Qd2 Qb6 9. Bxe7 Kxe7 10. Qg5+ Ke8 11. b3 Rf8 12. Bd3 d6 13. c3 dxe5 
-14. Nxe5 Qxf2+ 15. Kd1 Bxe5 16. Qxe5 Qxg2 17. Be4 Rf1+ 18. Rxf1 Qxf1+ 19. Kc2 
-Nd7 20. Qh8+ Qf8 21. Qxh7 Ne5 22. Nd2 Bd7 23. Nc4 Qf2+ 24. Nd2 Rd8 25. Rf1 
-Qe3 26. Bxg6+ Nxg6 27. Qf7# 
-{GuestRBZS checkmated} 1-0
+1. e4 e6 2. d4 g6 3. d5 bg7 4. dxe6 fxe6 5. nf3 ne7 6. bg5 c6 7. e5 qa5+ 
+8. qd2 qb6 9. bxe7 kxe7 10. qg5+ ke8 11. b3 rf8 12. bd3 d6 13. c3 dxe5 
+14. nxe5 qxf2+ 15. kd1 bxe5 16. qxe5 qxg2 17. be4 rf1+ 18. rxf1 qxf1+ 19. kc2 
+nd7 20. qh8+ qf8 21. qxh7 ne5 22. nd2 bd7 23. nc4 qf2+ 24. nd2 rd8 25. rf1 
+qe3 26. bxg6+ nxg6 27. qf7# 
+{guestrbzs checkmated} 1-0
 

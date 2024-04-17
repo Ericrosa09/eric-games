@@ -1,5 +1,5 @@
-var status = 'Online'
+var status = 'online'
 var problem = false;
-var issueName = ''
+var issuename = ''
 var statustxt = ''
-var statusTime = 'Last Updated: 10PM PST'
+var statustime = 'last updated: 10pm pst'

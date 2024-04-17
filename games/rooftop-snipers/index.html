@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Rooftop Snipers</title>
+		<title>rooftop snipers</title>
 
 		<link rel="icon" sizes="192x192" href="img/thumb.png" />
 		<link rel="shortcut icon" href="img/thumb.png" type="image/x-icon" />
@@ -8,17 +8,17 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta content="#000000" data-react-helmet="true" name="theme-color" />
-		<meta name="title" content="Rooftop Snipers" />
+		<meta name="title" content="rooftop snipers" />
 
-		<link rel="stylesheet" href="TemplateData/style.css" />
-		<script src="TemplateData/UnityProgress.js"></script>
-		<script src="TemplateData/UnityLoader.js"></script>
+		<link rel="stylesheet" href="templatedata/style.css" />
+		<script src="templatedata/unityprogress.js"></script>
+		<script src="templatedata/unityloader.js"></script>
 		<script>
-			var gameInstance = UnityLoader.instantiate('gameContainer', 'Build/rooftop-snipers.json', {
-				onProgress: UnityProgress,
-				Module: {
-					onRuntimeInitialized: function () {
-						UnityProgress(gameInstance, 'complete');
+			var gameinstance = unityloader.instantiate('gamecontainer', 'build/rooftop-snipers.json', {
+				onprogress: unityprogress,
+				module: {
+					onruntimeinitialized: function () {
+						unityprogress(gameinstance, 'complete');
 					}
 				}
 			});
@@ -26,7 +26,7 @@
 	</head>
 	<body style="margin: 0; overflow: hidden">
 		<div class="webgl-content">
-			<div id="gameContainer" style="width: 100%; height: 100%; margin: 0"></div>
+			<div id="gamecontainer" style="width: 100%; height: 100%; margin: 0"></div>
 		</div>
 	</body>
 </html>

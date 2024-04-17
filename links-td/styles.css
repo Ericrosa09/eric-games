@@ -1,8 +1,8 @@
 body {
-    background-image: url('background.jpg'); /* Replace 'background.jpg' with your custom background image */
+    background-image: url('background.jpg'); /* replace 'background.jpg' with your custom background image */
     background-size: cover;
     background-position: center;
-    font-family: Arial, sans-serif;
+    font-family: arial, sans-serif;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -16,7 +16,7 @@ body {
     top: 0;
     width: 100%;
     z-index: 9;
-    background-color: rgba(37, 37, 37, 0.369); /* Soft look background color */
+    background-color: rgba(37, 37, 37, 0.369); /* soft look background color */
     border-radius: 20px;
     padding: 10px;
 }
@@ -50,10 +50,10 @@ body {
     cursor: pointer;
 }
 
-.ITEMCLASS {
+.itemclass {
     left: 50%; margin: 10px; transition: 0.5s; width: 65%; color: white; cursor: pointer; height: 50px; border-radius: 15px; background-color: rgba(176, 176, 176, 0.231); position: relative; transform: translate(-50%, -0%);
 }
-.ITEMCLASS:hover {
+.itemclass:hover {
     width: 75%;
     border-radius: 25px;
 }

@@ -1,6 +1,6 @@
 @font-face {
 	font-family: jetpackia;
-	src: url('font/Jetpackia.ttf');
+	src: url('font/jetpackia.ttf');
 }
 
 * {
@@ -16,13 +16,13 @@ body {
 	margin: 0;
 }
 
-.fontLoader {
+.fontloader {
 	position: absolute;
 	left: -1000px;
 	visibility: hidden;
 }
 
-.bannerAds {
+.bannerads {
 	height: 100px !important;
 	/*background-color: yellow;*/
 	display: block;
@@ -62,7 +62,7 @@ body {
 	overflow: hidden;
 }
 
-#divAds,
+#divads,
 #tempads {
 	display: none;
 	/*background-color: green;*/
@@ -78,7 +78,7 @@ body {
   max-height: 100vh !important;
 }*/
 
-/*ROTATE SCREEN */
+/*rotate screen */
 .center {
 	display: none;
 	width: 100%;
@@ -88,8 +88,8 @@ body {
 	transform: translate(-50%, -50%);
 	position: absolute;
 }
-/*ROTATE SCREEN */
-/*================ START ADS ===================*/
+/*rotate screen */
+/*================ start ads ===================*/
 .softkey {
 	position: absolute;
 	bottom: 0px;
@@ -113,7 +113,7 @@ body {
 .ads {
 	position: absolute !important;
 }
-#bannerAds_container {
+#bannerads_container {
 	top: 0;
 	height: 40px;
 	background-color: black;
@@ -123,14 +123,14 @@ body {
 	height: 40px;
 	background-color: black !important;
 }
-.bannerAds {
+.bannerads {
 	height: 100px !important;
 	display: block;
 	text-align: center;
 	margin: 0 auto;
 }
-#divAds,
+#divads,
 #tempads {
 	display: none;
 }
-/*================ END ADS ===================*/
+/*================ end ads ===================*/

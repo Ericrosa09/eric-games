@@ -1,293 +1,293 @@
 /*
- * Javascript/Canvas Textured 3D Renderer v0.3.1
- * Copyright (c) 2008 Jacob Seidelin, cupboy@gmail.com
- * This software is free to use for non-commercial purposes. For anything else, please contact the author.
- * This is a version modified by Stefano Gioffre'.
+ * javascript/canvas textured 3d renderer v0.3.1
+ * copyright (c) 2008 jacob seidelin, cupboy@gmail.com
+ * this software is free to use for non-commercial purposes. for anything else, please contact the author.
+ * this is a version modified by stefano gioffre'.
  */
 
-Canvas3D.Camera = function() {
+canvas3d.camera = function() {
 
-	this._oPosition = new Canvas3D.Vec3(0,0,0);
+	this._oposition = new canvas3d.vec3(0,0,0);
 
-	this._oSideVec = new Canvas3D.Vec3(1,0,0);
-	this._oUpVec = new Canvas3D.Vec3(0,1,0);
-	this._oOutVec = new Canvas3D.Vec3(0,0,1);
+	this._osidevec = new canvas3d.vec3(1,0,0);
+	this._oupvec = new canvas3d.vec3(0,1,0);
+	this._ooutvec = new canvas3d.vec3(0,0,1);
 
-	this._oRotMat = new Canvas3D.Matrix3();
+	this._orotmat = new canvas3d.matrix3();
 
-	this._bDirty = false;
-	this._fFocal = 500;
-	this._fFocalDistance = this._fFocal;
+	this._bdirty = false;
+	this._ffocal = 500;
+	this._ffocaldistance = this._ffocal;
 
-	this._bReverseX = false;
-	this._bReverseY = false;
+	this._breversex = false;
+	this._breversey = false;
 
-	this._bTarget = true;
+	this._btarget = true;
 
-	this._iClipNear = 1;
-	this._iClipFar = 10000000;
+	this._iclipnear = 1;
+	this._iclipfar = 10000000;
 
-	this._fScale = 1;
+	this._fscale = 1;
 
-	this._oLookAt = new Canvas3D.Vec3(0,0,0);
+	this._olookat = new canvas3d.vec3(0,0,0);
 
 };
 
-var proto = Canvas3D.Camera.prototype;
+var proto = canvas3d.camera.prototype;
 
-proto.getDirty = function() {
-	return this._bDirty;
+proto.getdirty = function() {
+	return this._bdirty;
 }
 
-proto.setDirty = function(bDirty) {
-	this._bDirty = bDirty;
+proto.setdirty = function(bdirty) {
+	this._bdirty = bdirty;
 }
 
-proto.setPosition = function(oPos) {
-	this._oPosition.set(oPos.x, oPos.y, oPos.z);
-	this._bDirty = true;
+proto.setposition = function(opos) {
+	this._oposition.set(opos.x, opos.y, opos.z);
+	this._bdirty = true;
 }
 
-proto.getPosition = function() {
-	return this._oPosition;
+proto.getposition = function() {
+	return this._oposition;
 }
 
-proto.setScale = function(fScale) {
-	this._fScale = fScale;
-	this._bDirty = true;
+proto.setscale = function(fscale) {
+	this._fscale = fscale;
+	this._bdirty = true;
 }
 
-proto.getScale = function() {
-	return this._fScale;
+proto.getscale = function() {
+	return this._fscale;
 }
 
-proto.getSide = function() {
-	return this._oSideVec;
+proto.getside = function() {
+	return this._osidevec;
 }
 
-proto.getUp = function() {
-	return this._oUpVec;
+proto.getup = function() {
+	return this._oupvec;
 }
 
-proto.setUp = function(oVec) {
-	this._oUpVec = oVec;
+proto.setup = function(ovec) {
+	this._oupvec = ovec;
 }
 
-proto.getOut = function() {
-	return this._oOutVec;
+proto.getout = function() {
+	return this._ooutvec;
 }
 
-proto.moveSideways = function(d) {
-	this._oPosition.x += this._oSideVec.x * d;
-	this._oPosition.y += this._oSideVec.y * d;
-	this._oPosition.z += this._oSideVec.z * d;
-	this.setDirty(true);
+proto.movesideways = function(d) {
+	this._oposition.x += this._osidevec.x * d;
+	this._oposition.y += this._osidevec.y * d;
+	this._oposition.z += this._osidevec.z * d;
+	this.setdirty(true);
 }
 
-proto.moveUpwards = function(d) {
-	this._oPosition.x += this._oUpVec.x * d;
-	this._oPosition.y += this._oUpVec.y * d;
-	this._oPosition.z += this._oUpVec.z * d;
-	this.setDirty(true);
+proto.moveupwards = function(d) {
+	this._oposition.x += this._oupvec.x * d;
+	this._oposition.y += this._oupvec.y * d;
+	this._oposition.z += this._oupvec.z * d;
+	this.setdirty(true);
 }
 
-proto.moveForward = function(d) {
-	this._oPosition.x += this._oOutVec.x * d;
-	this._oPosition.y += this._oOutVec.y * d;
-	this._oPosition.z += this._oOutVec.z * d;
-	this.setDirty(true);
+proto.moveforward = function(d) {
+	this._oposition.x += this._ooutvec.x * d;
+	this._oposition.y += this._ooutvec.y * d;
+	this._oposition.z += this._ooutvec.z * d;
+	this.setdirty(true);
 }
 
-// rotate around the camera's side axis with a target center point (uses camera target if oTarget is null)
-proto.pitchAroundTarget = function(fTheta, oTarget) {
-	var M = new Canvas3D.Matrix3();
-	var oPos = this.getPosition();
-	oTarget = oTarget || this.getLookAt();
+// rotate around the camera's side axis with a target center point (uses camera target if otarget is null)
+proto.pitcharoundtarget = function(ftheta, otarget) {
+	var m = new canvas3d.matrix3();
+	var opos = this.getposition();
+	otarget = otarget || this.getlookat();
 
 	// translate position to target space
-	oPos.subVector(oTarget);
+	opos.subvector(otarget);
 
 	// rotate around side axis
-	M.loadRotationAxis(this._oSideVec, Math.sin(fTheta * Math.PI / 180.0), Math.cos(fTheta * Math.PI / 180.0));
-	oPos = M.multiplyVector(oPos);
+	m.loadrotationaxis(this._osidevec, math.sin(ftheta * math.pi / 180.0), math.cos(ftheta * math.pi / 180.0));
+	opos = m.multiplyvector(opos);
 
 	// translate position out of target space
-	oPos.addVector(oTarget);
+	opos.addvector(otarget);
 
-	this.setPosition(oPos);
-	this.setDirty(true);
+	this.setposition(opos);
+	this.setdirty(true);
 }
 
-proto.yaw = function(fTheta) {
-	var M = new Canvas3D.Matrix3();
-	M.loadRotationAxis(this._oUpVec, Math.sin(fTheta), Math.cos(fTheta));
-	this._oSideVec = M.multiplyVector(this._oSideVec);
-	this._oOutVec = M.multiplyVector(this._oOutVec);
-	this.setDirty(true);
+proto.yaw = function(ftheta) {
+	var m = new canvas3d.matrix3();
+	m.loadrotationaxis(this._oupvec, math.sin(ftheta), math.cos(ftheta));
+	this._osidevec = m.multiplyvector(this._osidevec);
+	this._ooutvec = m.multiplyvector(this._ooutvec);
+	this.setdirty(true);
 }
 
-// rotate around the camera's up axis with a target center point (uses camera target if oTarget is null)
-proto.yawAroundTarget = function(fTheta, oTarget) {
-	var M = new Canvas3D.Matrix3();
-	var oPos = this.getPosition();
-	oTarget = oTarget || this.getLookAt();
+// rotate around the camera's up axis with a target center point (uses camera target if otarget is null)
+proto.yawaroundtarget = function(ftheta, otarget) {
+	var m = new canvas3d.matrix3();
+	var opos = this.getposition();
+	otarget = otarget || this.getlookat();
 
 	// translate position to target space
-	oPos.subVector(oTarget);
+	opos.subvector(otarget);
 
 	// rotate around up axis
-	M.loadRotationAxis(this._oUpVec, Math.sin(fTheta * Math.PI / 180.0), Math.cos(fTheta * Math.PI / 180.0));
-	oPos = M.multiplyVector(oPos);
+	m.loadrotationaxis(this._oupvec, math.sin(ftheta * math.pi / 180.0), math.cos(ftheta * math.pi / 180.0));
+	opos = m.multiplyvector(opos);
 
 	// translate position out of target space
-	oPos.addVector(oTarget);
+	opos.addvector(otarget);
 
-	this.setPosition(oPos);
-	this.setDirty(true);
+	this.setposition(opos);
+	this.setdirty(true);
 }
 
-// rotate around the camera's out axis with a target center point (uses camera target if oTarget is null)
-proto.rollAroundTarget = function(fTheta, oTarget) {
-	var M = new Canvas3D.Matrix3();
-	var oPos = this.getPosition();
-	oTarget = oTarget || this.getLookAt();
+// rotate around the camera's out axis with a target center point (uses camera target if otarget is null)
+proto.rollaroundtarget = function(ftheta, otarget) {
+	var m = new canvas3d.matrix3();
+	var opos = this.getposition();
+	otarget = otarget || this.getlookat();
 
 	// translate position to target space
-	oPos.subVector(oTarget);
+	opos.subvector(otarget);
 
 	// rotate around out axis
-	M.loadRotationAxis(this._oOutVec, Math.sin(fTheta * Math.PI / 180.0), Math.cos(fTheta * Math.PI / 180.0));
-	oPos = M.multiplyVector(oPos);
+	m.loadrotationaxis(this._ooutvec, math.sin(ftheta * math.pi / 180.0), math.cos(ftheta * math.pi / 180.0));
+	opos = m.multiplyvector(opos);
 
 	// translate position out of target space
-	oPos.addVector(oTarget);
+	opos.addvector(otarget);
 
-	this.setPosition(oPos);
-	this.setDirty(true);
+	this.setposition(opos);
+	this.setdirty(true);
 }
 
-proto.rotateY = function(sine, cosine) {
-	var M = new Canvas3D.Matrix3();
-	M.loadRotationY(sine, cosine);
-	this._oSideVec = M.multiplyVector(this._oSideVec);
-	this._oUpVec   = M.multiplyVector(this._oUpVec);
-	this._oOutVec  = M.multiplyVector(this._oOutVec);
-	this.setDirty(true);
+proto.rotatey = function(sine, cosine) {
+	var m = new canvas3d.matrix3();
+	m.loadrotationy(sine, cosine);
+	this._osidevec = m.multiplyvector(this._osidevec);
+	this._oupvec   = m.multiplyvector(this._oupvec);
+	this._ooutvec  = m.multiplyvector(this._ooutvec);
+	this.setdirty(true);
 }
 
 
-proto.lookAt = function(P, Up) {
-	Up = Up || this._oUpVec;
-	this._oOutVec  = P.returnSub(this._oPosition).unit();
+proto.lookat = function(p, up) {
+	up = up || this._oupvec;
+	this._ooutvec  = p.returnsub(this._oposition).unit();
 
-	//this._oSideVec = this._oOutVec.cross(new Canvas3D.Vec3 (0.0, 1.0, 0.0)).unit();
-	//this._oSideVec = this._oOutVec.cross(this._oUpVec).unit();
-	this._oSideVec = this._oOutVec.cross(Up).unit();
-	this._oUpVec   = this._oSideVec.cross(this._oOutVec).unit();
-	this._vecLookAt = P.clone();
-	this.setDirty(true);
+	//this._osidevec = this._ooutvec.cross(new canvas3d.vec3 (0.0, 1.0, 0.0)).unit();
+	//this._osidevec = this._ooutvec.cross(this._oupvec).unit();
+	this._osidevec = this._ooutvec.cross(up).unit();
+	this._oupvec   = this._osidevec.cross(this._ooutvec).unit();
+	this._veclookat = p.clone();
+	this.setdirty(true);
 }
 
-proto.getLookAt = function() {
-	return this._vecLookAt;
+proto.getlookat = function() {
+	return this._veclookat;
 }
 
-proto.updateRotationMatrix = function() {
-	var e0 = this._oRotMat.e[0];
-	var e1 = this._oRotMat.e[1];
-	var e2 = this._oRotMat.e[2];
+proto.updaterotationmatrix = function() {
+	var e0 = this._orotmat.e[0];
+	var e1 = this._orotmat.e[1];
+	var e2 = this._orotmat.e[2];
 
-	e0[0] = this._oSideVec.x;
-	e0[1] = this._oSideVec.y;
-	e0[2] = this._oSideVec.z;
+	e0[0] = this._osidevec.x;
+	e0[1] = this._osidevec.y;
+	e0[2] = this._osidevec.z;
 
-	e1[0] = this._oUpVec.x;
-	e1[1] = this._oUpVec.y;
-	e1[2] = this._oUpVec.z;
+	e1[0] = this._oupvec.x;
+	e1[1] = this._oupvec.y;
+	e1[2] = this._oupvec.z;
 
-	e2[0] = this._oOutVec.x;
-	e2[1] = this._oOutVec.y;
-	e2[2] = this._oOutVec.z;
+	e2[0] = this._ooutvec.x;
+	e2[1] = this._ooutvec.y;
+	e2[2] = this._ooutvec.z;
 }
 
-proto.transformPoint = function(P) {
-	var e = this._oRotMat.e;
-	var oPos = this._oPosition;
+proto.transformpoint = function(p) {
+	var e = this._orotmat.e;
+	var opos = this._oposition;
 
 	var e0 = e[0];
 	var e1 = e[1];
 	var e2 = e[2];
 
-	var vx = P.x - oPos.x;
-	var vy = P.y - oPos.y;
-	var vz = P.z - oPos.z;
+	var vx = p.x - opos.x;
+	var vy = p.y - opos.y;
+	var vz = p.z - opos.z;
 
-	return new Canvas3D.Vec3(
+	return new canvas3d.vec3(
 		(vx * e0[0] + vy * e0[1] + vz * e0[2]),
 		(vx * e1[0] + vy * e1[1] + vz * e1[2]),
 		(vx * e2[0] + vy * e2[1] + vz * e2[2])
 	);
 }
 
-proto.project = function(P) {
-	var fFocal = this._fFocal;
+proto.project = function(p) {
+	var ffocal = this._ffocal;
 	return {
-		x: P.x * fFocal / (P.z + this._fFocalDistance) * this._fScale * (this._bReverseX?-1:1),
-		y: -P.y * fFocal / (P.z + this._fFocalDistance) * this._fScale * (this._bReverseY?-1:1)
+		x: p.x * ffocal / (p.z + this._ffocaldistance) * this._fscale * (this._breversex?-1:1),
+		y: -p.y * ffocal / (p.z + this._ffocaldistance) * this._fscale * (this._breversey?-1:1)
 	};
 }
 
-proto.clip = function(P) {
-	if (P.z < 0) {
+proto.clip = function(p) {
+	if (p.z < 0) {
 		return true;
 	}
 	return false;
 }
 
-proto.isBehind = function(P) {
-	if (P.z > 0) return false;
+proto.isbehind = function(p) {
+	if (p.z > 0) return false;
 	return false;
 }
 
-proto.getClipNear = function() {
-	return this._iClipNear;
+proto.getclipnear = function() {
+	return this._iclipnear;
 }
 
-proto.getClipFar = function() {
-	return this._iClipFar;
+proto.getclipfar = function() {
+	return this._iclipfar;
 }
 
-proto.clip = function(P) {
-	if (P.z > this._iClipNear && P.z < this._iClipFar) {
+proto.clip = function(p) {
+	if (p.z > this._iclipnear && p.z < this._iclipfar) {
 		return false;
 	} else {
 		return true;
 	}
 }
 
-proto.setFOV = function(fFOV) {
-	this._fFOV = fFOV;
-	var fFocal = 1 / Math.tan(105 * Math.PI*Math.PI / (180*180 * 2));
-	this._fFocal = fFocal;
-	this._fFocalDistance = fFocal;
+proto.setfov = function(ffov) {
+	this._ffov = ffov;
+	var ffocal = 1 / math.tan(105 * math.pi*math.pi / (180*180 * 2));
+	this._ffocal = ffocal;
+	this._ffocaldistance = ffocal;
 }
 
-proto.getFOV = function() {
-	return this._fFOV;
+proto.getfov = function() {
+	return this._ffov;
 }
 
-proto.getFocal = function() {
-	return this._fFocal;
+proto.getfocal = function() {
+	return this._ffocal;
 }
 
-proto.setFocalDistance = function(fValue) {
-	this._fFocalDistance = fValue;
+proto.setfocaldistance = function(fvalue) {
+	this._ffocaldistance = fvalue;
 }
 
-proto.setReverseX = function(bEnable) {
-	this._bReverseX = bEnable;
+proto.setreversex = function(benable) {
+	this._breversex = benable;
 }
 
-proto.setReverseY = function(bEnable) {
-	this._bReverseY = bEnable;
+proto.setreversey = function(benable) {
+	this._breversey = benable;
 }

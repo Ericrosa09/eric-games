@@ -1,34 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
   <link rel="stylesheet" href="./tools.css">
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C78TXR0XFK"></script>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=material+icons">
+<!-- google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=g-c78txr0xfk"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  window.datalayer = window.datalayer || [];
+  function gtag(){datalayer.push(arguments);}
+  gtag('js', new date());
 
-  gtag('config', 'G-C78TXR0XFK');
+  gtag('config', 'g-c78txr0xfk');
 </script>
-<script src="./GobalSettings.js"></script>
+<script src="./gobalsettings.js"></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     
   </style>
-  <title>Image Classification | Sz Games</title>
+  <title>image classification | UTC Games</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
 <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
 </head>
 <body>
-  <div id="TOPNAV" class="NAV" >
-    <a href="https://sz-games.github.io" aria-label="Home">  <img alt="Icon" fetchpriority="low" src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style=" z-index: 7; position: relative; left: 10px; top: 5px; height: 40px; width: 40px;"> </a>
+  <div id="topnav" class="nav" >
+    <a href="https://sz-games.github.io" aria-label="home">  <img alt="icon" fetchpriority="low" src="https://github.com/sz-games/home/blob/main/g.png?raw=true" style=" z-index: 7; position: relative; left: 10px; top: 5px; height: 40px; width: 40px;"> </a>
     <div style="position: absolute; top: 0; width: fit-content;">
-      <h3 class="NAVTXT">Image Classification</h3>
-      <p class="tag">AI</p>
+      <h3 class="navtxt">image classification</h3>
+      <p class="tag">ai</p>
     </div>
   </div>
   <a style="text-decoration: none;" href="https://sz-games.github.io/">
@@ -39,7 +39,7 @@
 <br>
 <br>
 
-  <button class="UPBTN" onclick="classifyimg()">Classify Image</button>
+  <button class="upbtn" onclick="classifyimg()">classify image</button>
 
   <input  type="file" id="imageupload" accept="image/*">
 
@@ -47,21 +47,21 @@
   <div id="results" style="border-radius: 15px; text-align: center;  position: fixed; left: 50%; transform: translate(-50%); bottom: 15px; width: 90%; height: 60px; font-size: 15px; background-color: rgba(62, 62, 62, 0.741); "></div>
 
   <script>
-    const classif = ml5.imageClassifier('MobileNet', modelLoad);
+    const classif = ml5.imageclassifier('mobilenet', modelload);
 
-    function modelLoad() {
-      console.log('loadedTheThing')
+    function modelload() {
+      console.log('loadedthething')
     }
 
     function classifyimg() {
-      const uploadedimage = document.getElementById('uploadedimage');
-      const resultsDiv = document.getElementById('results');
+      const uploadedimage = document.getelementbyid('uploadedimage');
+      const resultsdiv = document.getelementbyid('results');
 
-      const imageupload = document.getElementById('imageupload');
+      const imageupload = document.getelementbyid('imageupload');
       const file = imageupload.files[0];
 
       if (file) {
-        const reader = new FileReader();
+        const reader = new filereader();
 
         reader.onload = function(event) {
           uploadedimage.src = event.target.result;
@@ -70,18 +70,18 @@
             if (err) {
               console.error(err);
             } else {
-              resultsDiv.innerHTML = '<h2>Classification Results:</h2>';
+              resultsdiv.innerhtml = '<h2>classification results:</h2>';
               for (let i = 0; i < results.length; i++) {
                 let num = results[0].confidence * 100;
-    resultsDiv.innerHTML = results[0].label + "<br>Confidence: " + num.toFixed(2) + "%";
+    resultsdiv.innerhtml = results[0].label + "<br>confidence: " + num.tofixed(2) + "%";
               }
             }
           });
         };
 
-        reader.readAsDataURL(file);
+        reader.readasdataurl(file);
       } else {
-        alert('Please select an image before classifying.');
+        alert('please select an image before classifying.');
       }
     }
   </script>

@@ -1,53 +1,53 @@
-#flatChessboard { /* Table element */
+#flatchessboard { /* table element */
 	/**
-	* margin-top: [DYNAMIC VALUE];
-	* margin-bottom: [DYNAMIC VALUE];
+	* margin-top: [dynamic value];
+	* margin-bottom: [dynamic value];
 	*/
 	margin-left: auto;
 	margin-right: auto;
 	border-collapse: collapse;
 	border: 0;
 }
-#flatChessboard tr td.blackSquares, #flatChessboard tr td.whiteSquares {
+#flatchessboard tr td.blacksquares, #flatchessboard tr td.whitesquares {
 	width: 11%;
 	height: 11%;
 	font-size: 52px;
 	line-height: 42px;
 	text-align: center;
-	font-family: Times New Roman;
+	font-family: times new roman;
 }
 
-#flatChessboard tr td.blackSquares span, #flatChessboard tr td.whiteSquares span { cursor: pointer; }
+#flatchessboard tr td.blacksquares span, #flatchessboard tr td.whitesquares span { cursor: pointer; }
 
-#flatChessboard tr th.horizCoords {
+#flatchessboard tr th.horizcoords {
 	width: 11%;
 	height: 6%;
 }
 
-#flatChessboard tr th.vertCoords {
+#flatchessboard tr th.vertcoords {
 	width: 6%;
 	height: 11%;
 }
 
-#flatChessboard tr td.blackSquares { background-color: #cccccc; }
+#flatchessboard tr td.blacksquares { background-color: #cccccc; }
 
-/* #flatChessboard tr td.blackSquares:hover { background-color: #ccccaa; } */
+/* #flatchessboard tr td.blacksquares:hover { background-color: #ccccaa; } */
 
-#flatChessboard tr td.whiteSquares { background-color: #ffffff; }
+#flatchessboard tr td.whitesquares { background-color: #ffffff; }
 
-/* #flatChessboard tr td.whiteSquares:hover { background-color: #ddddaa; } */
+/* #flatchessboard tr td.whitesquares:hover { background-color: #ddddaa; } */
 
-#flatChessboard tr td.boardAngle /*, #bottomBorder */ { height: 6%; }
+#flatchessboard tr td.boardangle /*, #bottomborder */ { height: 6%; }
 
-#flatChessboard tr td.boardAngle { background-color: #ffffff;}
+#flatchessboard tr td.boardangle { background-color: #ffffff;}
 
-#flatChessboard tr td.boardAngle /*, #rightBorder */ {
+#flatchessboard tr td.boardangle /*, #rightborder */ {
 	width: 6%;
 }
-#flatChessboard tr th, #flatChessboard tr td.boardAngle /*, #rightBorder, #bottomBorder */ {
+#flatchessboard tr th, #flatchessboard tr td.boardangle /*, #rightborder, #bottomborder */ {
 	overflow: visible;
 	background-color: #ce5c00;
 	color: #f9ac6d;
-	font-family: Arial;
+	font-family: arial;
 	font-size: 100%;
 }

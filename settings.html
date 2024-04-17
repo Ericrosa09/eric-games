@@ -1,36 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 
 
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C78TXR0XFK"></script>
+<!-- google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=g-c78txr0xfk"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  window.datalayer = window.datalayer || [];
+  function gtag(){datalayer.push(arguments);}
+  gtag('js', new date());
 
-  gtag('config', 'G-C78TXR0XFK');
+  gtag('config', 'g-c78txr0xfk');
 </script>
 
 
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="https://github.com/sz-games/home/blob/main/G.png?raw=true">
-<title>Settings - Sz Games</title>
+<link rel="icon" href="https://github.com/sz-games/home/blob/main/g.png?raw=true">
+<title>settings - UTC Games</title>
 
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+<link href="https://fonts.googleapis.com/icon?family=material+icons"
       rel="stylesheet">
 <script>
   
 </script>
-<script src="./GobalSettings.js"></script>
+<script src="./gobalsettings.js"></script>
 <style>
-  .Preset {
+  .preset {
     cursor: pointer;
 
   }
-  .Preset:hover {
+  .preset:hover {
     transition: 0.5s;
     transform: scale(1.1);
   }
@@ -39,87 +39,87 @@
   fetch("./cloak.json")
   .then((response) => response.json())
   .then((data) => {
-    const container = document.getElementById("buttons-container");
+    const container = document.getelementbyid("buttons-container");
 
-    data.forEach((link) => {
-      const img = document.createElement("img");
-      img.className = "presets";
+    data.foreach((link) => {
+      const img = document.createelement("img");
+      img.classname = "presets";
       img.style.width = "50px";
       img.style.height = "50px";
-      img.style.borderRadius = "50%";
-      img.classList.add('Preset')
-      img.style.objectFit = "cover";
-      img.style.borderColor = "black";
+      img.style.borderradius = "50%";
+      img.classlist.add('preset')
+      img.style.objectfit = "cover";
+      img.style.bordercolor = "black";
 
-      const faviconUrl = `https://www.google.com/s2/favicons?sz=64&domain=${link.favicon}`;
+      const faviconurl = `https://www.google.com/s2/favicons?sz=64&domain=${link.favicon}`;
       img.src = link.favicon;
 
-      // Check if the image failed to load, and fallback to link.favicon if it did
+      // check if the image failed to load, and fallback to link.favicon if it did
       img.onerror = () => {
-        img.src = faviconUrl;
+        img.src = faviconurl;
       };
 
-      img.addEventListener("click", function () {
-        setTitle(link.title);
-        setFavicon(link.favicon);
+      img.addeventlistener("click", function () {
+        settitle(link.title);
+        setfavicon(link.favicon);
       });
-      container.appendChild(img);
+      container.appendchild(img);
     });
   });
 
 </script>
 
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
- <!--PageScript1-->
- <script id="CHECK">
-  function getCookie2(name) {
-const cookieName = name + "=";
+ <!--pagescript1-->
+ <script id="check">
+  function getcookie2(name) {
+const cookiename = name + "=";
 const cookies = document.cookie.split(';');
 for (let i = 0; i < cookies.length; i++) {
     let cookie = cookies[i];
-    while (cookie.charAt(0) === ' ') {
+    while (cookie.charat(0) === ' ') {
         cookie = cookie.substring(1);
     }
-    if (cookie.indexOf(cookieName) === 0) {
-        return cookie.substring(cookieName.length, cookie.length);
+    if (cookie.indexof(cookiename) === 0) {
+        return cookie.substring(cookiename.length, cookie.length);
     }
 }
 return '';
 }
 
 
-let Setting14bu = getCookie2("PagePrevent");
+let setting14bu = getcookie2("pageprevent");
 
-function checkPageClose(event) {
+function checkpageclose(event) {
 
 
-    event.returnValue = "Prevent Page Close Is Active, You Can Click Off Of This";
+    event.returnvalue = "prevent page close is active, you can click off of this";
 
 
 
 }
-function checkPageClose2() {
-if(Setting14bu==="true") {
+function checkpageclose2() {
+if(setting14bu==="true") {
 
     window.onbeforeunload = function(event) {
         // return a string to prevent the page from closing
-        event.preventDefault();
-        return "Prevent Page Close Is Active, You Can Click Off Of This";
+        event.preventdefault();
+        return "prevent page close is active, you can click off of this";
     };
-    window.addEventListener("beforeunload", checkPageClose);
+    window.addeventlistener("beforeunload", checkpageclose);
 
 } 
-if(Setting14bu==="false") {
+if(setting14bu==="false") {
 
 }
 }
-console.log('CookiePAGE Value: ' + Setting14bu + "SzGames-Scripts Loaded")
-checkPageClose2()
+console.log('cookiepage value: ' + setting14bu + "szgames-scripts loaded")
+checkpageclose2()
 
 </script>
-<!--PageScript1-->
+<!--pagescript1-->
 </head>
 
 <style>
@@ -127,7 +127,7 @@ checkPageClose2()
 
 body {
   background: rgb(39, 39, 39);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: arial, helvetica, sans-serif;
   background-repeat: none;
   background-size: cover;
 }
@@ -141,15 +141,15 @@ z-index: 1;
 }
 
 .btn-group button {
-  background-color: black; /* Green background */
+  background-color: black; /* green background */
  
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  float: left; /* Float the buttons side by side */
+  color: white; /* white text */
+  padding: 10px 24px; /* some padding */
+  cursor: pointer; /* pointer/hand icon */
+  float: left; /* float the buttons side by side */
 }
 
-/* Clear floats (clearfix hack) */
+/* clear floats (clearfix hack) */
 .btn-group:after {
   content: "";
   clear: both;
@@ -157,15 +157,15 @@ z-index: 1;
 }
 
 .btn-group button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
+  border-right: none; /* prevent double borders */
 }
 
-/* Add a background color on hover */
+/* add a background color on hover */
 .btn-group button:hover {
   background-color: grey;
 }
 
-/* Header/Logo Title */
+/* header/logo title */
 .header-halloween {
   padding: 60px;
   text-align: center;
@@ -175,7 +175,7 @@ z-index: 1;
   font-size: 30px;
   position: relative;
 z-index: 1;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: arial, helvetica, sans-serif;
   border-radius: 15px;
 }
 
@@ -188,11 +188,11 @@ z-index: 1;
   width: auto;
   font-size: 30px;
  
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: arial, helvetica, sans-serif;
   border-radius: 15px;
 }
 
-/* Page Content */
+/* page content */
 
 </style>
 
@@ -206,7 +206,7 @@ color: white;
 
   transform: scale(1.8);
   z-index: 3;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: arial, helvetica, sans-serif;
     }
     .fade {
         position: absolute;
@@ -245,7 +245,7 @@ img,
 }
 
 .day {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: arial, helvetica, sans-serif;
   text-align: center;
   color: white;
   position: relative;
@@ -255,14 +255,14 @@ z-index: 1;
 @keyframes rise{
   0%{
     bottom:-100px;
-    transform:translateX(0);
+    transform:translatex(0);
   }
   50%{
     transform:translate(100px);
   }
   100%{
     bottom:1080px;
-    transform:translateX(-200px);
+    transform:translatex(-200px);
   }
 }
 
@@ -332,29 +332,29 @@ p {
   color: white;
 
 }
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder { /* chrome, firefox, opera, safari 10.1+ */
   color: white;
 text-align: center; 
- opacity: 1; /* Firefox */
+ opacity: 1; /* firefox */
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder { /* internet explorer 10-11 */
   color: white;
   text-align: center; 
- opacity: 1; /* Firefox */
+ opacity: 1; /* firefox */
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder { /* microsoft edge */
   color: white;
   text-align: center; 
- opacity: 1; /* Firefox */
+ opacity: 1; /* firefox */
 }
-.BTN {
+.btn {
   transition: 0.5s;
   transform-origin: center;
 
 }
-.BTN:hover {
+.btn:hover {
   transform: translate(-50%, -0%) scale(1.1) !important;
   overflow: hidden;
   transform-origin: center;
@@ -369,8 +369,8 @@ text-align: center;
 
 
       <!--div class="header">
-        <img src="https://github.com/sz-games/home/blob/main/G.png?raw=true" style="position: relative; width: 150px; height: 150px;" alt="img">
-        <h1>About</h1>
+        <img src="https://github.com/sz-games/home/blob/main/g.png?raw=true" style="position: relative; width: 150px; height: 150px;" alt="img">
+        <h1>about</h1>
       </div-->
   
       
@@ -379,7 +379,7 @@ text-align: center;
 
 <!--div class="hello" style=" margin-right: auto; margin-left: auto; width: 430px;">
   <a href="https://sites.google.com/view/fnf-unblockedhehe/home">
-      <p class="game" style="left: 105px;" >Infinite Tower</p>
+      <p class="game" style="left: 105px;" >infinite tower</p>
       <div class="fade" ></div>
    <img style="border-radius: 15px; width: 400px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/cover/fn.png?raw=true" alt="game">
   </a>
@@ -387,65 +387,65 @@ text-align: center;
   
 </div-->
 <style>
-  @keyframes OUT {
+  @keyframes out {
     from {position: absolute; transition: 0.5s; opacity: 1; left: 0px; }
     to{position: absolute; transition: 0.5s; opacity: 0; left: 100%; }
   }
-  @keyframes IN {
+  @keyframes in {
     from {position: absolute; transition: 0.5s; opacity: 0; left: -100%; }
     to{position: absolute; transition: 0.5s; opacity: 1; left: 0px; }
   }
 
-  @keyframes OUT2 {
+  @keyframes out2 {
     from {position: absolute; transition: 0.5s; opacity: 1; left: 0px; }
     to{position: absolute; transition: 0.5s; opacity: 0; left: -100%; }
   }
-  @keyframes IN2 {
+  @keyframes in2 {
     from {position: absolute; transition: 0.5s; opacity: 0; left: 100%; }
     to{position: absolute; transition: 0.5s; opacity: 1; left: 0px; }
   }
 </style>
 
 <script>
-  function back(PG, To) {
+  function back(pg, to) {
     document.body.style.overflow = 'hidden';
 
-    document.getElementById(PG).style.animation = 'none';
-    document.getElementById(PG).style.animation = "OUT 0.8s"
-    setTimeout(() => {
-      document.getElementById(To).style.animation = 'none'
-      document.getElementById(To).style.display = "block"
+    document.getelementbyid(pg).style.animation = 'none';
+    document.getelementbyid(pg).style.animation = "out 0.8s"
+    settimeout(() => {
+      document.getelementbyid(to).style.animation = 'none'
+      document.getelementbyid(to).style.display = "block"
 
-      document.getElementById(To).style.animation = 'IN 0.8s'
+      document.getelementbyid(to).style.animation = 'in 0.8s'
 
     }, 300);
 
-    setTimeout(() => {
-      document.getElementById(PG).style.display = "none"
+    settimeout(() => {
+      document.getelementbyid(pg).style.display = "none"
       document.body.style.overflow = 'auto';
 
     }, 800);
 
   }
-  function to(PG, To) {
+  function to(pg, to) {
     document.body.style.overflow = 'hidden';
 
-    document.getElementById(PG).style.animation = 'none';
-    document.getElementById(PG).style.animation = "OUT2 0.8s"
-    setTimeout(() => {
-      document.getElementById(To).style.animation = 'none'
-      document.getElementById(To).style.display = "block"
+    document.getelementbyid(pg).style.animation = 'none';
+    document.getelementbyid(pg).style.animation = "out2 0.8s"
+    settimeout(() => {
+      document.getelementbyid(to).style.animation = 'none'
+      document.getelementbyid(to).style.display = "block"
 
-      document.getElementById(To).style.animation = 'IN2 0.8s'
+      document.getelementbyid(to).style.animation = 'in2 0.8s'
 
     }, 200);
 
-    setTimeout(() => {
+    settimeout(() => {
 
-      document.getElementById(PG).style.display = "none"
+      document.getelementbyid(pg).style.display = "none"
 
     },800);
-    setTimeout(() => {
+    settimeout(() => {
       document.body.style.overflow = 'auto';
 
     }, 1000);
@@ -457,14 +457,14 @@ text-align: center;
 
 
 <!--a href="./index.html">
-<button onclick=""  class="button">Exit</button>
+<button onclick=""  class="button">exit</button>
 </a-->
 
 
-<!--PG1-->
+<!--pg1-->
 
 
-<div id="PG1" style="display: block; height: 100%; bottom: 0; width: 100%; position: absolute; overflow-y: auto;">
+<div id="pg1" style="display: block; height: 100%; bottom: 0; width: 100%; position: absolute; overflow-y: auto;">
   <div style="width: 100%; height: 45px; background-color: #333;">
     <span onclick="" class="material-icons" style="float: left; cursor: not-allowed; color: rgba(255, 255, 255, 0.369); top: 50%; left: 10px; position: relative; transform: translate(-0%, -50%);">
       arrow_back
@@ -474,14 +474,14 @@ text-align: center;
           close
         </a>
         </span>
-      <h1 style="text-decoration: none;  color: white; right: 20px; top: 50%; font-size: 20px; position: relative;transform: translate(-0%, -50%); float: right;">Main Menu</h1>
+      <h1 style="text-decoration: none;  color: white; right: 20px; top: 50%; font-size: 20px; position: relative;transform: translate(-0%, -50%); float: right;">main menu</h1>
   
   </div>
   
   <br>
       <br> 
     <button
-      class="BTN" onclick="to('PG1', 'PG3')"
+      class="btn" onclick="to('pg1', 'pg3')"
       style="
         border: none;
         background-color: rgb(27, 27, 27);
@@ -498,7 +498,7 @@ text-align: center;
         <span  class="material-icons" style="top: 50%; position: relative; transform: translate(-0%, -85%);">
           settings
           </span>
-       Main Settings
+       main settings
        </button>
 
 
@@ -506,7 +506,7 @@ text-align: center;
        <br>
        <br>
        <button 
-       class="BTN" onclick="to('PG1', 'PG4')"
+       class="btn" onclick="to('pg1', 'pg4')"
        style="
          border: none;
          background-color: rgb(27, 27, 27);
@@ -524,14 +524,14 @@ text-align: center;
           error
 
            </span>
-        Panic Button
+        panic button
         </button>
 
        <br>
        <br>
        <br>
-       <button id="110" onclick="to('PG1', 'PG2')"
-       class="BTN"
+       <button id="110" onclick="to('pg1', 'pg2')"
+       class="btn"
        style="
          border: none;
          background-color: rgb(27, 27, 27);
@@ -549,20 +549,20 @@ text-align: center;
           article
 
            </span>
-        About:blank Page Maker
+        about:blank page maker
         </button>
   </div>
 
-<!--PG1 END-->
+<!--pg1 end-->
 
 
 
-<!--Content PG 2-->
+<!--content pg 2-->
 
-<div id="PG2" style="display: none; height: 100%; bottom: 0; width: 100%; position: absolute; overflow-y: auto;">
+<div id="pg2" style="display: none; height: 100%; bottom: 0; width: 100%; position: absolute; overflow-y: auto;">
 <div style="width: 100%; height: 45px; background-color: #333;">
 
-    <span onclick="back('PG2', 'PG1')" class="material-icons" style="float: left; cursor: pointer; color: rgb(255, 255, 255.369); top: 50%; left: 10px; position: relative; transform: translate(-0%, -50%);">
+    <span onclick="back('pg2', 'pg1')" class="material-icons" style="float: left; cursor: pointer; color: rgb(255, 255, 255.369); top: 50%; left: 10px; position: relative; transform: translate(-0%, -50%);">
       arrow_back
       </span>
       <span onclick="" class="material-icons" style="float: left; cursor: pointer; color: rgb(255, 255, 255); top: 50%; left: 15px; position: relative; transform: translate(-0%, -50%);">
@@ -570,12 +570,12 @@ text-align: center;
           close
         </a>
         </span>
-    <h1 style="text-decoration: none;  color: white; right: 20px; top: 50%; font-size: 20px; position: relative;transform: translate(-0%, -50%); float: right;">About:Blank Page Maker</h1>
+    <h1 style="text-decoration: none;  color: white; right: 20px; top: 50%; font-size: 20px; position: relative;transform: translate(-0%, -50%); float: right;">about:blank page maker</h1>
 
 </div>
 
 <br>
-    <p style="text-decoration: none; color: white; font-size: 20px; text-align: center;">A  About:Blank Page Will Show Up As a blank page in your tabs, Enter a url below and create a page. </p>
+    <p style="text-decoration: none; color: white; font-size: 20px; text-align: center;">a  about:blank page will show up as a blank page in your tabs, enter a url below and create a page. </p>
     <br> 
     <input
         style="
@@ -592,7 +592,7 @@ text-align: center;
         "
         id="url-target"
         value=""
-        placeholder="Website URL"
+        placeholder="website url"
         autocomplete="on"
         type="text"
         autofocus
@@ -600,7 +600,7 @@ text-align: center;
     </p>
     <br>
     <button id="create"
-    class="BTN"
+    class="btn"
     style="
       border: none;
       background-color: rgb(27, 27, 27);
@@ -612,16 +612,16 @@ text-align: center;
       left: 50%;
       transform: translate(-50%, -0%);
       color:white;
-     ">Create page
+     ">create page
      </button>
 </div>
 
 <script>
-  const urlInput2 = document.getElementById("url-target");
-      const urlObject2 = new URL(window.location.href);
+  const urlinput2 = document.getelementbyid("url-target");
+      const urlobject2 = new url(window.location.href);
 
-      document.getElementById("create").onclick = function () {
-        let url2 = urlInput2.value;
+      document.getelementbyid("create").onclick = function () {
+        let url2 = urlinput2.value;
 
         if (
           url2.substring(0, 8) !== "https://" &&
@@ -632,11 +632,11 @@ text-align: center;
           url2 = "https://" + url2.split("http://").pop();
         }
 
-        const newWindow = window.open();
-        newWindow.document.body.style.margin = "0";
-        newWindow.document.body.style.height = "100vh";
+        const newwindow = window.open();
+        newwindow.document.body.style.margin = "0";
+        newwindow.document.body.style.height = "100vh";
 
-        const iframe = newWindow.document.createElement("iframe");
+        const iframe = newwindow.document.createelement("iframe");
         iframe.style.border = "none";
         iframe.style.width = "100%";
         iframe.style.height = "100%";
@@ -645,19 +645,19 @@ text-align: center;
         iframe.allow = "fullscreen";
         iframe.src = url;
 
-        newWindow.document.body.appendChild(iframe);
+        newwindow.document.body.appendchild(iframe);
       };
 </script>
 
-<!--PG 2 END-->
+<!--pg 2 end-->
 
 
-<!--Content PG 4-->
+<!--content pg 4-->
 
-<div id="PG3" style="display: none; height: 100%; bottom: 0; width: 100%; position: absolute; overflow-y: auto;">
+<div id="pg3" style="display: none; height: 100%; bottom: 0; width: 100%; position: absolute; overflow-y: auto;">
   <div style="width: 100%; height: 45px; background-color: #333;">
   
-      <span onclick="back('PG3', 'PG1')" class="material-icons" style="float: left; cursor: pointer; color: rgb(255, 255, 255.369); top: 50%; left: 10px; position: relative; transform: translate(-0%, -50%);">
+      <span onclick="back('pg3', 'pg1')" class="material-icons" style="float: left; cursor: pointer; color: rgb(255, 255, 255.369); top: 50%; left: 10px; position: relative; transform: translate(-0%, -50%);">
         arrow_back
         </span>
         <span onclick="" class="material-icons" style="float: left; cursor: pointer; color: rgb(255, 255, 255); top: 50%; left: 15px; position: relative; transform: translate(-0%, -50%);">
@@ -665,13 +665,13 @@ text-align: center;
             close
           </a>
           </span>
-      <h1 style="text-decoration: none;  color: white; right: 20px; top: 50%; font-size: 20px; position: relative;transform: translate(-0%, -50%); float: right;">Main Settings</h1>
+      <h1 style="text-decoration: none;  color: white; right: 20px; top: 50%; font-size: 20px; position: relative;transform: translate(-0%, -50%); float: right;">main settings</h1>
   
   </div>
   
 
   <style>
-    .OptionSet {
+    .optionset {
       width: 95%; 
       left: 50%;
       cursor: pointer;
@@ -684,7 +684,7 @@ text-align: center;
       transition: 0.5s;
     }
 
-    .OptionSet:hover {
+    .optionset:hover {
       transform: translate(-50%, -0%) scale(1.03);
     }
   </style>
@@ -692,152 +692,152 @@ text-align: center;
     <br>
     <br>
 
-    <div style="" onclick="toggleOptionSet('PageClose')" class="OptionSet">
-      <p style="color: white; word-wrap: break-word; width: 55%;  top: 50%; left: 15px; position: relative; " >Prevent Page Close</p>
-      <p id="Op1-Stat" style="transition: 0.5s; word-wrap: break-word; color: white; top: 50%; right: 15px; position: absolute; transform: translate(-0%, -50%);" >Off</p>
+    <div style="" onclick="toggleoptionset('pageclose')" class="optionset">
+      <p style="color: white; word-wrap: break-word; width: 55%;  top: 50%; left: 15px; position: relative; " >prevent page close</p>
+      <p id="op1-stat" style="transition: 0.5s; word-wrap: break-word; color: white; top: 50%; right: 15px; position: absolute; transform: translate(-0%, -50%);" >off</p>
 
     </div>
     <br>
     <br>
     <br>
-    <h1 style="text-align: center; color: white;">Tab Cloak Presets</h1>
+    <h1 style="text-align: center; color: white;">tab cloak presets</h1>
 
       <div style="left: 50%; position: relative; transform: translate(-50%, -0%); cursor: pointer;" id="buttons-container"></div>
     <br>
-      <button style="color: white; font-size: 19px; cursor: pointer; left: 50%; position: relative; transform: translate(-50%, -0%); height: 35px; width: 40%; background-color: #1d1d1d; border-radius: 15px; border: none;" onclick="resetTab()">Clear</button>
+      <button style="color: white; font-size: 19px; cursor: pointer; left: 50%; position: relative; transform: translate(-50%, -0%); height: 35px; width: 40%; background-color: #1d1d1d; border-radius: 15px; border: none;" onclick="resettab()">clear</button>
 
-    <!--PageScript1-->
-    <script id="CHECK">
-          function getCookie2(name) {
-        const cookieName = name + "=";
+    <!--pagescript1-->
+    <script id="check">
+          function getcookie2(name) {
+        const cookiename = name + "=";
         const cookies = document.cookie.split(';');
         for (let i = 0; i < cookies.length; i++) {
             let cookie = cookies[i];
-            while (cookie.charAt(0) === ' ') {
+            while (cookie.charat(0) === ' ') {
                 cookie = cookie.substring(1);
             }
-            if (cookie.indexOf(cookieName) === 0) {
-                return cookie.substring(cookieName.length, cookie.length);
+            if (cookie.indexof(cookiename) === 0) {
+                return cookie.substring(cookiename.length, cookie.length);
             }
         }
         return '';
     }
  
     
-    let Setting1e4bu = getCookie2("PagePrevent");
+    let setting1e4bu = getcookie2("pageprevent");
 
-    function checkPageClose(event) {
+    function checkpageclose(event) {
       
         
-            event.returnValue = "Prevent Page Close Is Active, You Can Click Off Of This";
+            event.returnvalue = "prevent page close is active, you can click off of this";
       
        
      
     }
-    function checkPageClose2() {
-        if(Setting1e4bu==="true") {
+    function checkpageclose2() {
+        if(setting1e4bu==="true") {
         
             window.onbeforeunload = function(event) {
                 // return a string to prevent the page from closing
-                event.preventDefault();
-                return "Prevent Page Close Is Active, You Can Click Off Of This";
+                event.preventdefault();
+                return "prevent page close is active, you can click off of this";
             };
-            window.addEventListener("beforeunload", checkPageClose);
+            window.addeventlistener("beforeunload", checkpageclose);
 
         } 
-        if(Setting1e4bu==="false") {
+        if(setting1e4bu==="false") {
         
         }
     }
-    console.log('CookiePAGE Value: ' + Setting1e4bu + "SzGames-Scripts Loaded")
-    checkPageClose2()
+    console.log('cookiepage value: ' + setting1e4bu + "szgames-scripts loaded")
+    checkpageclose2()
 
     </script>
 
 
     <script>
 
-      function getCookie(name) {
-          const cookieName = name + "=";
+      function getcookie(name) {
+          const cookiename = name + "=";
           const cookies = document.cookie.split(';');
           for (let i = 0; i < cookies.length; i++) {
               let cookie = cookies[i];
-              while (cookie.charAt(0) === ' ') {
+              while (cookie.charat(0) === ' ') {
                   cookie = cookie.substring(1);
               }
-              if (cookie.indexOf(cookieName) === 0) {
-                  return cookie.substring(cookieName.length, cookie.length);
+              if (cookie.indexof(cookiename) === 0) {
+                  return cookie.substring(cookiename.length, cookie.length);
               }
           }
           return '';
       }
 
-      // Usage
+      // usage
    
 
 
-      function setCookie(name, value, years) {
-          const expirationDate = new Date();
-          expirationDate.setFullYear(expirationDate.getFullYear() + years);
-          const expires = "expires=" + expirationDate.toUTCString();
+      function setcookie(name, value, years) {
+          const expirationdate = new date();
+          expirationdate.setfullyear(expirationdate.getfullyear() + years);
+          const expires = "expires=" + expirationdate.toutcstring();
           document.cookie = name + "=" + value + ";" + expires + ";path=/";
       }
 
 
 
-      var option1bx = document.getElementById('Op1-Stat')
-      var option2bx = document.getElementById('Op2-Stat')
-      let Setting1e4b = getCookie("PagePrevent");
+      var option1bx = document.getelementbyid('op1-stat')
+      var option2bx = document.getelementbyid('op2-stat')
+      let setting1e4b = getcookie("pageprevent");
 
-      function toggleOptionSet(name) {
+      function toggleoptionset(name) {
 
-        if(name==="PageClose") {
-          if(Setting1e4b==='false' || Setting1e4b==="") {
-            Setting1e4b = getCookie("PagePrevent")
-            setCookie("PagePrevent", 'true', 10); // Set the cookie to expire in 10 years
+        if(name==="pageclose") {
+          if(setting1e4b==='false' || setting1e4b==="") {
+            setting1e4b = getcookie("pageprevent")
+            setcookie("pageprevent", 'true', 10); // set the cookie to expire in 10 years
 
-            //console.log('PagePrevent True')
+            //console.log('pageprevent true')
 
-            //const cookieValue45 = getCookie("PagePrevent");
-            // console.log(cookieValue45); // Print the cookie value to the console
+            //const cookievalue45 = getcookie("pageprevent");
+            // console.log(cookievalue45); // print the cookie value to the console
           }
-          if(Setting1e4b==='true') {
-            Setting1e4b = getCookie("PagePrevent")
+          if(setting1e4b==='true') {
+            setting1e4b = getcookie("pageprevent")
 
-            setCookie("PagePrevent", 'false', 10); // Set the cookie to expire in 10 years
-            //console.log('PagePrevent False')
-            //const cookieValue45 = getCookie("PagePrevent");
+            setcookie("pageprevent", 'false', 10); // set the cookie to expire in 10 years
+            //console.log('pageprevent false')
+            //const cookievalue45 = getcookie("pageprevent");
 
-            // console.log(Setting14b); // Print the cookie value to the console
+            // console.log(setting14b); // print the cookie value to the console
           }
         }
-       // console.log('Code: 89B')
-       CheckSettngs1B()
+       // console.log('code: 89b')
+       checksettngs1b()
 
 
       }
-      function CheckSettngs1B() {
-        Setting1e4b = getCookie("PagePrevent")
-        if(Setting1e4b==="true") {
+      function checksettngs1b() {
+        setting1e4b = getcookie("pageprevent")
+        if(setting1e4b==="true") {
           option1bx.style.opacity = 0
-          setTimeout(() => {
-            option1bx.innerHTML = "Active"
+          settimeout(() => {
+            option1bx.innerhtml = "active"
             option1bx.style.opacity = 1
           }, 500);
-          //NoteLOCK()
+          //notelock()
           
         } 
-        if(Setting1e4b==="false") {
+        if(setting1e4b==="false") {
           option1bx.style.opacity = 0
-          setTimeout(() => {
-            option1bx.innerHTML = "Not Active"
+          settimeout(() => {
+            option1bx.innerhtml = "not active"
             option1bx.style.opacity = 1
           }, 500);
         }
-        console.log('CookiePAGE Value: ' + Setting1e4b)
+        console.log('cookiepage value: ' + setting1e4b)
       }
 
-      CheckSettngs1B()
+      checksettngs1b()
 
    
     </script>
@@ -845,17 +845,17 @@ text-align: center;
   </div>
   
 
-  <!--PG3 END-->
+  <!--pg3 end-->
 
 
 
 
-<!--Content PG 4-->
+<!--content pg 4-->
 
-<div id="PG4" style="display: none; height: 100%; bottom: 0; width: 100%; position: absolute; overflow-y: auto;">
+<div id="pg4" style="display: none; height: 100%; bottom: 0; width: 100%; position: absolute; overflow-y: auto;">
   <div style="width: 100%; height: 45px; background-color: #333;">
   
-      <span onclick="back('PG4', 'PG1')" class="material-icons" style="float: left; cursor: pointer; color: rgb(255, 255, 255.369); top: 50%; left: 10px; position: relative; transform: translate(-0%, -50%);">
+      <span onclick="back('pg4', 'pg1')" class="material-icons" style="float: left; cursor: pointer; color: rgb(255, 255, 255.369); top: 50%; left: 10px; position: relative; transform: translate(-0%, -50%);">
         arrow_back
         </span>
         <span onclick="" class="material-icons" style="float: left; cursor: pointer; color: rgb(255, 255, 255); top: 50%; left: 15px; position: relative; transform: translate(-0%, -50%);">
@@ -863,12 +863,12 @@ text-align: center;
             close
           </a>
           </span>
-      <h1 style="text-decoration: none;  color: white; right: 20px; top: 50%; font-size: 20px; position: relative;transform: translate(-0%, -50%); float: right;">Panic Button</h1>
+      <h1 style="text-decoration: none;  color: white; right: 20px; top: 50%; font-size: 20px; position: relative;transform: translate(-0%, -50%); float: right;">panic button</h1>
   
   </div>
   
   <br>
-      <p style="text-decoration: none; color: white; font-size: 20px; text-align: center;">Press the key "\" on your keyboard and it will change the page to the set URL." </p>
+      <p style="text-decoration: none; color: white; font-size: 20px; text-align: center;">press the key "\" on your keyboard and it will change the page to the set url." </p>
       <br> 
       <input
           style="
@@ -885,7 +885,7 @@ text-align: center;
           "
           id="url-target2"
           value=""
-          placeholder="Website URL"
+          placeholder="website url"
           autocomplete="on"
           type="text"
           autofocus
@@ -893,7 +893,7 @@ text-align: center;
       </p>
       <br>
       <button id="create2"
-      class="BTN" onclick="panicURL()"
+      class="btn" onclick="panicurl()"
       style="
         border: none;
         background-color: rgb(27, 27, 27);
@@ -905,13 +905,13 @@ text-align: center;
         left: 50%;
         transform: translate(-50%, -0%);
         color:white;
-       ">Save
+       ">save
        </button>
        <br>
        <br>
        <br>
        <button id="create3"
-       class="BTN" onclick="clearPANIC()"
+       class="btn" onclick="clearpanic()"
        style="
          border: none;
          background-color: rgb(27, 27, 27);
@@ -923,16 +923,16 @@ text-align: center;
          left: 50%;
          transform: translate(-50%, -0%);
          color:white;
-        ">Disable
+        ">disable
         </button>
   </div>
   
   <script>
-    const urlInput = document.getElementById("url-target");
-        const urlObject = new URL(window.location.href);
+    const urlinput = document.getelementbyid("url-target");
+        const urlobject = new url(window.location.href);
   
-        document.getElementById("create").onclick = function () {
-          let url = urlInput.value;
+        document.getelementbyid("create").onclick = function () {
+          let url = urlinput.value;
   
           if (
             url.substring(0, 8) !== "https://" &&
@@ -943,11 +943,11 @@ text-align: center;
             url = "https://" + url.split("http://").pop();
           }
   
-          const newWindow = window.open();
-          newWindow.document.body.style.margin = "0";
-          newWindow.document.body.style.height = "100vh";
+          const newwindow = window.open();
+          newwindow.document.body.style.margin = "0";
+          newwindow.document.body.style.height = "100vh";
   
-          const iframe = newWindow.document.createElement("iframe");
+          const iframe = newwindow.document.createelement("iframe");
           iframe.style.border = "none";
           iframe.style.width = "100%";
           iframe.style.height = "100%";
@@ -956,11 +956,11 @@ text-align: center;
           iframe.allow = "fullscreen";
           iframe.src = url;
   
-          newWindow.document.body.appendChild(iframe);
+          newwindow.document.body.appendchild(iframe);
         };
   </script>
   
-  <!--PG 4 END-->
+  <!--pg 4 end-->
 
 
 
@@ -968,8 +968,8 @@ text-align: center;
 </body>
 
 <script>
-  if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js');
+  if ('serviceworker' in navigator) {
+      navigator.serviceworker.register('service-worker.js');
     }
 </script>
 

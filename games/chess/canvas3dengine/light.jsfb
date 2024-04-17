@@ -1,75 +1,75 @@
 /*
- * Javascript/Canvas Textured 3D Renderer v0.3
- * Copyright (c) 2008 Jacob Seidelin, cupboy@gmail.com
- * This software is free to use for non-commercial purposes. For anything else, please contact the author.
- * This is a version modified by Stefano Gioffre'.
+ * javascript/canvas textured 3d renderer v0.3
+ * copyright (c) 2008 jacob seidelin, cupboy@gmail.com
+ * this software is free to use for non-commercial purposes. for anything else, please contact the author.
+ * this is a version modified by stefano gioffre'.
  */
 
-var __iLightIDCounter = 0;
+var __ilightidcounter = 0;
 
-Canvas3D.Light = function() {
-	this._oPosition = new Canvas3D.Vec3(0,0,0);
-	this._oColor = {r:255,g:255,b:255};
-	this._fIntensity = 1.0;
+canvas3d.light = function() {
+	this._oposition = new canvas3d.vec3(0,0,0);
+	this._ocolor = {r:255,g:255,b:255};
+	this._fintensity = 1.0;
 
-	this._iLightID = ++__iLightIDCounter;
+	this._ilightid = ++__ilightidcounter;
 };
 
-var proto = Canvas3D.Light.prototype;
+var proto = canvas3d.light.prototype;
 	
-proto.setPosition = function(oPos) {
-	this._oPosition = oPos;
-	this._bDirty = true;
+proto.setposition = function(opos) {
+	this._oposition = opos;
+	this._bdirty = true;
 }
 
-proto.getPosition = function() {
-	return this._oPosition;
+proto.getposition = function() {
+	return this._oposition;
 }
 
-proto.setColor = function(oColor) {
-	this._oColor = oColor;
-	this._bDirty = true;
+proto.setcolor = function(ocolor) {
+	this._ocolor = ocolor;
+	this._bdirty = true;
 }
 
-proto.getColor = function() {
-	return this._oColor;
+proto.getcolor = function() {
+	return this._ocolor;
 }
 
-proto.setIntensity = function(fIntensity) {
-	this._fIntensity = fIntensity;
-	this._bDirty = true;
+proto.setintensity = function(fintensity) {
+	this._fintensity = fintensity;
+	this._bdirty = true;
 }
 
-proto.getIntensity = function(fIntensity) {
-	return this._fIntensity;
+proto.getintensity = function(fintensity) {
+	return this._fintensity;
 }
 
-proto.setScene = function(oScene) {
-	if (this._oScene != oScene) {
-		this._oScene = oScene;
-		this._bDirty = true;
+proto.setscene = function(oscene) {
+	if (this._oscene != oscene) {
+		this._oscene = oscene;
+		this._bdirty = true;
 	}
 }
 
-proto.draw = function(oContext, iOffsetX, iOffsetY) {
-	var oScene = this._oScene;
-	var oCam = oScene.getActiveCamera();
+proto.draw = function(ocontext, ioffsetx, ioffsety) {
+	var oscene = this._oscene;
+	var ocam = oscene.getactivecamera();
 
-	var oPos2D = oCam.transform2D(oCam.transformPoint(this._oPosition));
+	var opos2d = ocam.transform2d(ocam.transformpoint(this._oposition));
 
-	var iRadius = 3;
+	var iradius = 3;
 
-	oContext.beginPath();
-	oContext.moveTo(oPos2D.x + iOffsetX + iRadius, oPos2D.y + iOffsetY);
-	oContext.arc(oPos2D.x + iOffsetX, oPos2D.y + iOffsetY, iRadius, 0, 360, false);
-	oContext.fillStyle = "rgb(255,255,0)";
-	oContext.fill();
+	ocontext.beginpath();
+	ocontext.moveto(opos2d.x + ioffsetx + iradius, opos2d.y + ioffsety);
+	ocontext.arc(opos2d.x + ioffsetx, opos2d.y + ioffsety, iradius, 0, 360, false);
+	ocontext.fillstyle = "rgb(255,255,0)";
+	ocontext.fill();
 }
 
-proto.getDirty = function() {
-	return this._bDirty;
+proto.getdirty = function() {
+	return this._bdirty;
 }
 
-proto.setDirty = function(bDirty) {
-	this._bDirty = bDirty;
+proto.setdirty = function(bdirty) {
+	this._bdirty = bdirty;
 }

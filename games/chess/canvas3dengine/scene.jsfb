@@ -1,290 +1,290 @@
 /*
- * Javascript/Canvas Textured 3D Renderer v0.3.1
- * Copyright (c) 2008 Jacob Seidelin, cupboy@gmail.com
- * This software is free to use for non-commercial purposes. For anything else, please contact the author.
- * This is a version modified by Stefano Gioffre'.
+ * javascript/canvas textured 3d renderer v0.3.1
+ * copyright (c) 2008 jacob seidelin, cupboy@gmail.com
+ * this software is free to use for non-commercial purposes. for anything else, please contact the author.
+ * this is a version modified by stefano gioffre'.
  */
 
-Canvas3D.Scene = function(oContainer, iWidth, iHeight, bObjectCanvas) {
-	this._oContainer = oContainer;
-	this._iWidth = iWidth;
-	this._iHeight = iHeight;
-	var oCanvas = this._oDrawCanvas = document.createElement("canvas");
-	this._oDrawContext = oCanvas.getContext("2d");
-	Canvas3D.addEvent(oCanvas, "selectstart", function() { return(false); });
-	oCanvas.style.position = "absolute";
+canvas3d.scene = function(ocontainer, iwidth, iheight, bobjectcanvas) {
+	this._ocontainer = ocontainer;
+	this._iwidth = iwidth;
+	this._iheight = iheight;
+	var ocanvas = this._odrawcanvas = document.createelement("canvas");
+	this._odrawcontext = ocanvas.getcontext("2d");
+	canvas3d.addevent(ocanvas, "selectstart", function() { return(false); });
+	ocanvas.style.position = "absolute";
 
-	this._oDrawCanvas.width = iWidth;
-	this._oDrawCanvas.height = iHeight;
-	this._oDrawCanvas.style.width = iWidth + "px";
-	this._oDrawCanvas.style.height = iHeight + "px";
+	this._odrawcanvas.width = iwidth;
+	this._odrawcanvas.height = iheight;
+	this._odrawcanvas.style.width = iwidth + "px";
+	this._odrawcanvas.style.height = iheight + "px";
 
-	oContainer.appendChild(this._oDrawCanvas);
+	ocontainer.appendchild(this._odrawcanvas);
 
-	this._oActiveCamera = null;
+	this._oactivecamera = null;
 
-	this._aObjects = [];
+	this._aobjects = [];
 
-	this._bRunning = false;
+	this._brunning = false;
 
 	// if true, each object will be rendered on its own canvas
-	this._bUseObjectCanvas = bObjectCanvas;
+	this._buseobjectcanvas = bobjectcanvas;
 
-	this._bMouseRotate = true;
-	this._bMouseRotateY = true;
-	this._bMouseRotateX = true;
+	this._bmouserotate = true;
+	this._bmouserotatey = true;
+	this._bmouserotatex = true;
 
-	this._oUpVector = new Canvas3D.Vec3(0,1,0);
+	this._oupvector = new canvas3d.vec3(0,1,0);
 
-	this._oAmbientLight = {r:50,g:50,b:50};
+	this._oambientlight = {r:50,g:50,b:50};
 
-	this._bDrawLights = false;
-	this._aLights = [];
+	this._bdrawlights = false;
+	this._alights = [];
 
-	this._iMaxZ = 10000000;
+	this._imaxz = 10000000;
 
-	var oInputOverlay = this._oInputOverlay = document.createElement("span");
-	oInputOverlay.style.width = iWidth + "px";
-	oInputOverlay.style.height = iHeight + "px";
-	oInputOverlay.style.zIndex = this._iMaxZ + 10000000;
-	oInputOverlay.style.position = "absolute";
-	this._oContainer.appendChild(oInputOverlay);
+	var oinputoverlay = this._oinputoverlay = document.createelement("span");
+	oinputoverlay.style.width = iwidth + "px";
+	oinputoverlay.style.height = iheight + "px";
+	oinputoverlay.style.zindex = this._imaxz + 10000000;
+	oinputoverlay.style.position = "absolute";
+	this._ocontainer.appendchild(oinputoverlay);
 
-	Canvas3D.addEvent(oInputOverlay, "selectstart", function() { return(false); });
+	canvas3d.addevent(oinputoverlay, "selectstart", function() { return(false); });
 
 };
 
-Canvas3D.Scene.prototype.getInputLayer = function() { return(this._oInputOverlay); };
+canvas3d.scene.prototype.getinputlayer = function() { return(this._oinputoverlay); };
 
-Canvas3D.Scene.prototype.setUpVector = function(oVec) { this._oUpVector = oVec; };
+canvas3d.scene.prototype.setupvector = function(ovec) { this._oupvector = ovec; };
 
-Canvas3D.Scene.prototype.getUpVector = function() { return(this._oUpVector); };
+canvas3d.scene.prototype.getupvector = function() { return(this._oupvector); };
 
-Canvas3D.Scene.prototype.getAmbientLight = function() {	return(this._oAmbientLight); };
+canvas3d.scene.prototype.getambientlight = function() {	return(this._oambientlight); };
 
-Canvas3D.Scene.prototype.zoomCamera = function(fZoom) { this.getActiveCamera().moveForward(fZoom); };
+canvas3d.scene.prototype.zoomcamera = function(fzoom) { this.getactivecamera().moveforward(fzoom); };
 
-Canvas3D.Scene.prototype.getObjects = function() { return(this._aObjects); };
+canvas3d.scene.prototype.getobjects = function() { return(this._aobjects); };
 
-Canvas3D.Scene.prototype.addObject = function(obj) {
-	if (this._bUseObjectCanvas) {
-		var oObjectCanvas = document.createElement("canvas");
-		if (!oObjectCanvas.getContext) return;
+canvas3d.scene.prototype.addobject = function(obj) {
+	if (this._buseobjectcanvas) {
+		var oobjectcanvas = document.createelement("canvas");
+		if (!oobjectcanvas.getcontext) return;
 	
-		var oObjectContext = oObjectCanvas.getContext("2d");
+		var oobjectcontext = oobjectcanvas.getcontext("2d");
 	
-		Canvas3D.addEvent(oObjectCanvas, "selectstart", function() { return(false); });
+		canvas3d.addevent(oobjectcanvas, "selectstart", function() { return(false); });
 	
-		oObjectCanvas.width = this._iWidth;
-		oObjectCanvas.height = this._iHeight;
+		oobjectcanvas.width = this._iwidth;
+		oobjectcanvas.height = this._iheight;
 	
-		oObjectCanvas.style.width = this._iWidth + "px";
-		oObjectCanvas.style.height = this._iHeight + "px";
+		oobjectcanvas.style.width = this._iwidth + "px";
+		oobjectcanvas.style.height = this._iheight + "px";
 
-		oObjectCanvas.style.position = "absolute";
-		this._oContainer.appendChild(oObjectCanvas);
+		oobjectcanvas.style.position = "absolute";
+		this._ocontainer.appendchild(oobjectcanvas);
 
-		this._aObjects.push({
-			"canvas": oObjectCanvas,
-			"context": oObjectContext,
+		this._aobjects.push({
+			"canvas": oobjectcanvas,
+			"context": oobjectcontext,
 			"object": obj
 			
 		});
 	} else {
-		this._aObjects.push({ "object": obj });
+		this._aobjects.push({ "object": obj });
 	}
-	obj.setScene(this);
-	this.setDirty(true);
+	obj.setscene(this);
+	this.setdirty(true);
 	return(obj);
 };
 /*
-Canvas3D.Scene.prototype.setWidth = function(iWidth) {
-	for (var iCnvsObj = 0; iCnvsObj < this._aObjects.length; iCnvsObj++) {
-		if (this._aObjects[iCnvsObj].hasOwnProperty("canvas")) {
-			this._aObjects[iCnvsObj].canvas.width = iWidth;
-			this._aObjects[iCnvsObj].canvas.style.width = iWidth + "px";
+canvas3d.scene.prototype.setwidth = function(iwidth) {
+	for (var icnvsobj = 0; icnvsobj < this._aobjects.length; icnvsobj++) {
+		if (this._aobjects[icnvsobj].hasownproperty("canvas")) {
+			this._aobjects[icnvsobj].canvas.width = iwidth;
+			this._aobjects[icnvsobj].canvas.style.width = iwidth + "px";
 		}
 	}
-	this._iWidth = iWidth;
-	this._oDrawCanvas.width = iWidth;
-	this._oDrawCanvas.style.width = iWidth + "px";
-	this._oInputOverlay.style.width = iWidth + "px";
+	this._iwidth = iwidth;
+	this._odrawcanvas.width = iwidth;
+	this._odrawcanvas.style.width = iwidth + "px";
+	this._oinputoverlay.style.width = iwidth + "px";
 
 };
 
-Canvas3D.Scene.prototype.setHeight = function(iHeight) {
-	for (var iCnvsObj = 0; iCnvsObj < this._aObjects.length; iCnvsObj++) {
-		if (this._aObjects[iCnvsObj].hasOwnProperty("canvas")) {
-			this._aObjects[iCnvsObj].canvas.height = iHeight;
-			this._aObjects[iCnvsObj].canvas.style.height = iHeight + "px";
+canvas3d.scene.prototype.setheight = function(iheight) {
+	for (var icnvsobj = 0; icnvsobj < this._aobjects.length; icnvsobj++) {
+		if (this._aobjects[icnvsobj].hasownproperty("canvas")) {
+			this._aobjects[icnvsobj].canvas.height = iheight;
+			this._aobjects[icnvsobj].canvas.style.height = iheight + "px";
 		}
 	}
-	this._iHeight = iHeight;
-	this._oDrawCanvas.height = iHeight;
-	this._oDrawCanvas.style.height = iHeight + "px";
-	this._oInputOverlay.style.height = iHeight + "px";
+	this._iheight = iheight;
+	this._odrawcanvas.height = iheight;
+	this._odrawcanvas.style.height = iheight + "px";
+	this._oinputoverlay.style.height = iheight + "px";
 };
 */
-Canvas3D.Scene.prototype.setDimensions = function(iWidth, iHeight) {
-	for (var iCnvsObj = 0; iCnvsObj < this._aObjects.length; iCnvsObj++) {
-		if (this._aObjects[iCnvsObj].hasOwnProperty("canvas")) {
-			this._aObjects[iCnvsObj].canvas.width = iWidth;
-			this._aObjects[iCnvsObj].canvas.height = iHeight;
-			this._aObjects[iCnvsObj].canvas.style.width = iWidth + "px";
-			this._aObjects[iCnvsObj].canvas.style.height = iHeight + "px";
+canvas3d.scene.prototype.setdimensions = function(iwidth, iheight) {
+	for (var icnvsobj = 0; icnvsobj < this._aobjects.length; icnvsobj++) {
+		if (this._aobjects[icnvsobj].hasownproperty("canvas")) {
+			this._aobjects[icnvsobj].canvas.width = iwidth;
+			this._aobjects[icnvsobj].canvas.height = iheight;
+			this._aobjects[icnvsobj].canvas.style.width = iwidth + "px";
+			this._aobjects[icnvsobj].canvas.style.height = iheight + "px";
 		}
 	}
-	this._iWidth = iWidth;
-	this._iHeight = iHeight;
-	this._oDrawCanvas.height = iHeight;
-	this._oDrawCanvas.width = iWidth;
-	this._oDrawCanvas.style.width = iWidth + "px";
-	this._oDrawCanvas.style.height = iHeight + "px";
-	this._oInputOverlay.style.width = iWidth + "px";
-	this._oInputOverlay.style.height = iHeight + "px";
+	this._iwidth = iwidth;
+	this._iheight = iheight;
+	this._odrawcanvas.height = iheight;
+	this._odrawcanvas.width = iwidth;
+	this._odrawcanvas.style.width = iwidth + "px";
+	this._odrawcanvas.style.height = iheight + "px";
+	this._oinputoverlay.style.width = iwidth + "px";
+	this._oinputoverlay.style.height = iheight + "px";
 };
 
-Canvas3D.Scene.prototype.removeObject = function(oObject) {
-	for (var i=0;i<this._aObjects.length;i++) {
-		if (this._aObjects[i].object === oObject) {
-			if (this._bUseObjectCanvas) {
-				this._oContainer.removeChild(this._aObjects[i].canvas);
+canvas3d.scene.prototype.removeobject = function(oobject) {
+	for (var i=0;i<this._aobjects.length;i++) {
+		if (this._aobjects[i].object === oobject) {
+			if (this._buseobjectcanvas) {
+				this._ocontainer.removechild(this._aobjects[i].canvas);
 			}
-			this._aObjects.splice(i, 1);
+			this._aobjects.splice(i, 1);
 		}
 	}
 };
 
-Canvas3D.Scene.prototype.removeAllObjects = function() {
-	if (this._bUseObjectCanvas) {
-		for (var i=0;i<this._aObjects.length;i++) {
-			this._oContainer.removeChild(this._aObjects[i].canvas);
+canvas3d.scene.prototype.removeallobjects = function() {
+	if (this._buseobjectcanvas) {
+		for (var i=0;i<this._aobjects.length;i++) {
+			this._ocontainer.removechild(this._aobjects[i].canvas);
 		}
 	}
-	this._aObjects.splice(0);
+	this._aobjects.splice(0);
 };
 
-Canvas3D.Scene.prototype.addLight = function(oLight) {
-	oLight.setScene(this);
-	return(this._aLights.push(oLight));
+canvas3d.scene.prototype.addlight = function(olight) {
+	olight.setscene(this);
+	return(this._alights.push(olight));
 };
 
-Canvas3D.Scene.prototype.getLights = function() { return(this._aLights); };
+canvas3d.scene.prototype.getlights = function() { return(this._alights); };
 
-Canvas3D.Scene.prototype.clearObjects = function() { this._aObjects.splice(0); };
+canvas3d.scene.prototype.clearobjects = function() { this._aobjects.splice(0); };
 
-Canvas3D.Scene.prototype.setActiveCamera = function(oCam) { this._oActiveCamera = oCam; };
+canvas3d.scene.prototype.setactivecamera = function(ocam) { this._oactivecamera = ocam; };
 
-Canvas3D.Scene.prototype.getActiveCamera = function() { return(this._oActiveCamera); };
+canvas3d.scene.prototype.getactivecamera = function() { return(this._oactivecamera); };
 
-Canvas3D.Scene.prototype.begin = function() {
-	this._bRunning = true;
-	this.getActiveCamera().setDirty(true);
-	this.drawAll();
+canvas3d.scene.prototype.begin = function() {
+	this._brunning = true;
+	this.getactivecamera().setdirty(true);
+	this.drawall();
 	var me = this;
-	this._iInterval = setInterval(function() { me.drawAll(); }, 1000 / 30);
+	this._iinterval = setinterval(function() { me.drawall(); }, 1000 / 30);
 };
 
-Canvas3D.Scene.prototype.end = function() {
-	this._bRunning = false;
-	clearInterval(this._iInterval);
+canvas3d.scene.prototype.end = function() {
+	this._brunning = false;
+	clearinterval(this._iinterval);
 };
 
-Canvas3D.Scene.prototype.setDirty = function(bDirty) {
-	this._bDirty = bDirty;
+canvas3d.scene.prototype.setdirty = function(bdirty) {
+	this._bdirty = bdirty;
 };
 
-Canvas3D.Scene.prototype.getDirty = function() { return(this._bDirty); };
+canvas3d.scene.prototype.getdirty = function() { return(this._bdirty); };
 
-Canvas3D.Scene.prototype.getWidth = function() { return(this._iWidth); };
+canvas3d.scene.prototype.getwidth = function() { return(this._iwidth); };
 
-Canvas3D.Scene.prototype.getHeight = function() { return(this._iHeight); };
+canvas3d.scene.prototype.getheight = function() { return(this._iheight); };
 
-Canvas3D.Scene.prototype.drawAll = function() {
-	if (!this._bRunning) return;
+canvas3d.scene.prototype.drawall = function() {
+	if (!this._brunning) return;
 
-	var oCam = this.getActiveCamera();
+	var ocam = this.getactivecamera();
 
-	var iOffsetX = Math.floor(this._iWidth / 2);
-	var iOffsetY = Math.floor(this._iHeight / 2);
+	var ioffsetx = math.floor(this._iwidth / 2);
+	var ioffsety = math.floor(this._iheight / 2);
 
-	var aObjects = this._aObjects;
-	var bCamDirty = oCam.getDirty();
-	var iObjDrawn = 0;
+	var aobjects = this._aobjects;
+	var bcamdirty = ocam.getdirty();
+	var iobjdrawn = 0;
 
-	var bObjDirty = false;
-	for (var c=0;c<aObjects.length;c++) {
-		if (aObjects[c].object.getDirty()) {
-			bObjDirty = true;
+	var bobjdirty = false;
+	for (var c=0;c<aobjects.length;c++) {
+		if (aobjects[c].object.getdirty()) {
+			bobjdirty = true;
 		}
 	}
 
-	if (bCamDirty || this.getDirty() || bObjDirty) {
-		if (bCamDirty || this.getDirty()) {
-			this._oDrawContext.clearRect(0,0,this._iWidth,this._iHeight);
+	if (bcamdirty || this.getdirty() || bobjdirty) {
+		if (bcamdirty || this.getdirty()) {
+			this._odrawcontext.clearrect(0,0,this._iwidth,this._iheight);
 		}
 
-		var aObjPos = [];
-		for (var c=0;c<aObjects.length;c++) {
-			if (aObjects[c].object.getSortPosition)
-				var oPos = aObjects[c].object.getSortPosition();
+		var aobjpos = [];
+		for (var c=0;c<aobjects.length;c++) {
+			if (aobjects[c].object.getsortposition)
+				var opos = aobjects[c].object.getsortposition();
 			else
-				var oPos = aObjects[c].object.getPosition();
+				var opos = aobjects[c].object.getposition();
 
-			var oObjectPos = oCam.transformPoint(oPos);
-			aObjPos[c] = [aObjects[c], oObjectPos.z];
+			var oobjectpos = ocam.transformpoint(opos);
+			aobjpos[c] = [aobjects[c], oobjectpos.z];
 		}
 
-		var aSortObj = aObjPos.sort(
+		var asortobj = aobjpos.sort(
 			function(a,b) {
 				return(b[1] - a[1]);
 			}
 		);
-		aObjects = aSortObj;
+		aobjects = asortobj;
 
-		for (var c=0;c<aObjects.length;c++) {
-			var oObject = aObjects[c][0];
-			if (oObject.object.isVisible()) {
-				if (this._bUseObjectCanvas) {
-					if (bCamDirty || this.getDirty() || oObject.object.getDirty()) {
-						if (oObject.object.getForcedZ() > -1) {
-							oObject.canvas.style.zIndex = oObject.object.getForcedZ();
+		for (var c=0;c<aobjects.length;c++) {
+			var oobject = aobjects[c][0];
+			if (oobject.object.isvisible()) {
+				if (this._buseobjectcanvas) {
+					if (bcamdirty || this.getdirty() || oobject.object.getdirty()) {
+						if (oobject.object.getforcedz() > -1) {
+							oobject.canvas.style.zindex = oobject.object.getforcedz();
 						} else {
-							var oObjectPos = oCam.transformPoint(oObject.object.getPosition());
-							oObject.canvas.style.zIndex = 10000000 - Math.round(oObjectPos.z*100);
+							var oobjectpos = ocam.transformpoint(oobject.object.getposition());
+							oobject.canvas.style.zindex = 10000000 - math.round(oobjectpos.z*100);
 						}
-						oObject.context.clearRect(0,0,this._iWidth,this._iHeight);
-						if (oObject.object.draw(oObject.context, iOffsetX, iOffsetY)) {
-							iObjDrawn++;
+						oobject.context.clearrect(0,0,this._iwidth,this._iheight);
+						if (oobject.object.draw(oobject.context, ioffsetx, ioffsety)) {
+							iobjdrawn++;
 						}
-						oObject.canvas.style.display = "block";
+						oobject.canvas.style.display = "block";
 					}
 				} else {
-					if (bCamDirty || this.getDirty()) {
-						if (oObject.object.draw(this._oDrawContext, iOffsetX, iOffsetY)) {
-							iObjDrawn++;
+					if (bcamdirty || this.getdirty()) {
+						if (oobject.object.draw(this._odrawcontext, ioffsetx, ioffsety)) {
+							iobjdrawn++;
 						}
 					}
 				}
 			} else {
-				if (this._bUseObjectCanvas) {
-					oObject.canvas.style.display = "none";
+				if (this._buseobjectcanvas) {
+					oobject.canvas.style.display = "none";
 				}
 			}
 		}
 	}
 
-	if (this._bDrawLights) {
-		for (var c=0;c<this._aLights.length;c++) {
-			var oLight = this._aLights[c];
-			oLight.draw(this._oLightContext, iOffsetX, iOffsetY);
+	if (this._bdrawlights) {
+		for (var c=0;c<this._alights.length;c++) {
+			var olight = this._alights[c];
+			olight.draw(this._olightcontext, ioffsetx, ioffsety);
 		}
 	}
 
-	for (var c=0;c<this._aLights.length;c++) {
-		this._aLights[c].setDirty(false);
+	for (var c=0;c<this._alights.length;c++) {
+		this._alights[c].setdirty(false);
 	}
-	oCam.setDirty(false);
-	this.setDirty(false);
+	ocam.setdirty(false);
+	this.setdirty(false);
 
 };

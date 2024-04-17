@@ -1,50 +1,50 @@
-import WindowManager from './WindowManager.js'
+import windowmanager from './windowmanager.js'
 
 
 
-const t = THREE;
+const t = three;
 let camera, scene, renderer, world;
 let near, far;
-let pixR = window.devicePixelRatio ? window.devicePixelRatio : 1;
+let pixr = window.devicepixelratio ? window.devicepixelratio : 1;
 let cubes = [];
-let sceneOffsetTarget = {x: 0, y: 0};
-let sceneOffset = {x: 0, y: 0};
+let sceneoffsettarget = {x: 0, y: 0};
+let sceneoffset = {x: 0, y: 0};
 
-let today = new Date();
-today.setHours(0);
-today.setMinutes(0);
-today.setSeconds(0);
-today.setMilliseconds(0);
-today = today.getTime();
+let today = new date();
+today.sethours(0);
+today.setminutes(0);
+today.setseconds(0);
+today.setmilliseconds(0);
+today = today.gettime();
 
-let internalTime = getTime();
-let windowManager;
+let internaltime = gettime();
+let windowmanager;
 let initialized = false;
 
 // get time in seconds since beginning of the day (so that all windows use the same time)
-function getTime ()
+function gettime ()
 {
-	return (new Date().getTime() - today) / 1000.0;
+	return (new date().gettime() - today) / 1000.0;
 }
 
 
-if (new URLSearchParams(window.location.search).get("clear"))
+if (new urlsearchparams(window.location.search).get("clear"))
 {
-	localStorage.clear();
+	localstorage.clear();
 }
 else
 {	
 	// this code is essential to circumvent that some browsers preload the content of some pages before you actually hit the url
-	document.addEventListener("visibilitychange", () => 
+	document.addeventlistener("visibilitychange", () => 
 	{
-		if (document.visibilityState != 'hidden' && !initialized)
+		if (document.visibilitystate != 'hidden' && !initialized)
 		{
 			init();
 		}
 	});
 
 	window.onload = () => {
-		if (document.visibilityState != 'hidden')
+		if (document.visibilitystate != 'hidden')
 		{
 			init();
 		}
@@ -54,66 +54,66 @@ else
 	{
 		initialized = true;
 
-		// add a short timeout because window.offsetX reports wrong values before a short period 
-		setTimeout(() => {
-			setupScene();
-			setupWindowManager();
+		// add a short timeout because window.offsetx reports wrong values before a short period 
+		settimeout(() => {
+			setupscene();
+			setupwindowmanager();
 			resize();
-			updateWindowShape(false);
+			updatewindowshape(false);
 			render();
-			window.addEventListener('resize', resize);
+			window.addeventlistener('resize', resize);
 		}, 500)	
 	}
 
-	function setupScene ()
+	function setupscene ()
 	{
-		camera = new t.OrthographicCamera(0, 0, window.innerWidth, window.innerHeight, -10000, 10000);
+		camera = new t.orthographiccamera(0, 0, window.innerwidth, window.innerheight, -10000, 10000);
 		
 		camera.position.z = 2.5;
 		near = camera.position.z - .5;
 		far = camera.position.z + 0.5;
 
-		scene = new t.Scene();
-		scene.background = new t.Color(0.0);
+		scene = new t.scene();
+		scene.background = new t.color(0.0);
 		scene.add( camera );
 
-		renderer = new t.WebGLRenderer({antialias: true, depthBuffer: true});
-		renderer.setPixelRatio(pixR);
+		renderer = new t.webglrenderer({antialias: true, depthbuffer: true});
+		renderer.setpixelratio(pixr);
 	    
-	  	world = new t.Object3D();
+	  	world = new t.object3d();
 		scene.add(world);
 
-		renderer.domElement.setAttribute("id", "scene");
-		document.body.appendChild( renderer.domElement );
+		renderer.domelement.setattribute("id", "scene");
+		document.body.appendchild( renderer.domelement );
 	}
 
-	function setupWindowManager ()
+	function setupwindowmanager ()
 	{
-		windowManager = new WindowManager();
-		windowManager.setWinShapeChangeCallback(updateWindowShape);
-		windowManager.setWinChangeCallback(windowsUpdated);
+		windowmanager = new windowmanager();
+		windowmanager.setwinshapechangecallback(updatewindowshape);
+		windowmanager.setwinchangecallback(windowsupdated);
 
 		// here you can add your custom metadata to each windows instance
-		let metaData = {foo: "bar"};
+		let metadata = {foo: "bar"};
 
 		// this will init the windowmanager and add this window to the centralised pool of windows
-		windowManager.init(metaData);
+		windowmanager.init(metadata);
 
 		// call update windows initially (it will later be called by the win change callback)
-		windowsUpdated();
+		windowsupdated();
 	}
 
-	function windowsUpdated ()
+	function windowsupdated ()
 	{
-		updateNumberOfCubes();
+		updatenumberofcubes();
 	}
 
-	function updateNumberOfCubes ()
+	function updatenumberofcubes ()
 	{
-		let wins = windowManager.getWindows();
+		let wins = windowmanager.getwindows();
 
 		// remove all cubes
-		cubes.forEach((c) => {
+		cubes.foreach((c) => {
 			world.remove(c);
 		})
 
@@ -124,11 +124,11 @@ else
 		{
 			let win = wins[i];
 
-			let c = new t.Color();
-			c.setHSL(i * .1, 1.0, .5);
+			let c = new t.color();
+			c.sethsl(i * .1, 1.0, .5);
 
 			let s = 100 + i * 50;
-			let cube = new t.Mesh(new t.BoxGeometry(s, s, s), new t.MeshBasicMaterial({color: c , wireframe: true}));
+			let cube = new t.mesh(new t.boxgeometry(s, s, s), new t.meshbasicmaterial({color: c , wireframe: true}));
 			cube.position.x = win.shape.x + (win.shape.w * .5);
 			cube.position.y = win.shape.y + (win.shape.h * .5);
 
@@ -137,31 +137,31 @@ else
 		}
 	}
 
-	function updateWindowShape (easing = true)
+	function updatewindowshape (easing = true)
 	{
 		// storing the actual offset in a proxy that we update against in the render function
-		sceneOffsetTarget = {x: -window.screenX, y: -window.screenY};
-		if (!easing) sceneOffset = sceneOffsetTarget;
+		sceneoffsettarget = {x: -window.screenx, y: -window.screeny};
+		if (!easing) sceneoffset = sceneoffsettarget;
 	}
 
 
 	function render ()
 	{
-		let t = getTime();
+		let t = gettime();
 
-		windowManager.update();
+		windowmanager.update();
 
 
 		// calculate the new position based on the delta between current offset and new offset times a falloff value (to create the nice smoothing effect)
 		let falloff = .05;
-		sceneOffset.x = sceneOffset.x + ((sceneOffsetTarget.x - sceneOffset.x) * falloff);
-		sceneOffset.y = sceneOffset.y + ((sceneOffsetTarget.y - sceneOffset.y) * falloff);
+		sceneoffset.x = sceneoffset.x + ((sceneoffsettarget.x - sceneoffset.x) * falloff);
+		sceneoffset.y = sceneoffset.y + ((sceneoffsettarget.y - sceneoffset.y) * falloff);
 
 		// set the world position to the offset
-		world.position.x = sceneOffset.x;
-		world.position.y = sceneOffset.y;
+		world.position.x = sceneoffset.x;
+		world.position.y = sceneoffset.y;
 
-		let wins = windowManager.getWindows();
+		let wins = windowmanager.getwindows();
 
 
 		// loop through all our cubes and update their positions based on current window positions
@@ -171,27 +171,27 @@ else
 			let win = wins[i];
 			let _t = t;// + i * .2;
 
-			let posTarget = {x: win.shape.x + (win.shape.w * .5), y: win.shape.y + (win.shape.h * .5)}
+			let postarget = {x: win.shape.x + (win.shape.w * .5), y: win.shape.y + (win.shape.h * .5)}
 
-			cube.position.x = cube.position.x + (posTarget.x - cube.position.x) * falloff;
-			cube.position.y = cube.position.y + (posTarget.y - cube.position.y) * falloff;
+			cube.position.x = cube.position.x + (postarget.x - cube.position.x) * falloff;
+			cube.position.y = cube.position.y + (postarget.y - cube.position.y) * falloff;
 			cube.rotation.x = _t * .5;
 			cube.rotation.y = _t * .3;
 		};
 
 		renderer.render(scene, camera);
-		requestAnimationFrame(render);
+		requestanimationframe(render);
 	}
 
 
 	// resize the renderer to fit the window size
 	function resize ()
 	{
-		let width = window.innerWidth;
-		let height = window.innerHeight
+		let width = window.innerwidth;
+		let height = window.innerheight
 		
-		camera = new t.OrthographicCamera(0, width, 0, height, -10000, 10000);
-		camera.updateProjectionMatrix();
-		renderer.setSize( width, height );
+		camera = new t.orthographiccamera(0, width, 0, height, -10000, 10000);
+		camera.updateprojectionmatrix();
+		renderer.setsize( width, height );
 	}
 }

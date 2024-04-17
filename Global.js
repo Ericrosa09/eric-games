@@ -5,82 +5,82 @@
 
 
 
-var Debug = false; 
+var debug = false; 
 
-    if(Debug) {
-      const LCP_SUB_PARTS = [
-        'Time to first byte',
-        'Resource load delay',
-        'Resource load time',
-        'Element render delay',
+    if(debug) {
+      const lcp_sub_parts = [
+        'time to first byte',
+        'resource load delay',
+        'resource load time',
+        'element render delay',
       ];
 
-    new PerformanceObserver((list) => {
-      const lcpEntry = list.getEntries().at(-1);
-      const navEntry = performance.getEntriesByType('navigation')[0];
-      const lcpResEntry = performance
-        .getEntriesByType('resource')
-        .filter((e) => e.name === lcpEntry.url)[0];
+    new performanceobserver((list) => {
+      const lcpentry = list.getentries().at(-1);
+      const naventry = performance.getentriesbytype('navigation')[0];
+      const lcpresentry = performance
+        .getentriesbytype('resource')
+        .filter((e) => e.name === lcpentry.url)[0];
 
-        // Ignore LCP entries that aren't images to reduce DevTools noise.
-        // Comment this line out if you want to include text entries.
-        if (!lcpEntry.url) return;
+        // ignore lcp entries that aren't images to reduce devtools noise.
+        // comment this line out if you want to include text entries.
+        if (!lcpentry.url) return;
 
-        // Compute the start and end times of each LCP sub-part.
-        // WARNING! If your LCP resource is loaded cross-origin, make sure to add
-        // the `Timing-Allow-Origin` (TAO) header to get the most accurate results.
-        const ttfb = navEntry.responseStart;
-        const lcpRequestStart = Math.max(
+        // compute the start and end times of each lcp sub-part.
+        // warning! if your lcp resource is loaded cross-origin, make sure to add
+        // the `timing-allow-origin` (tao) header to get the most accurate results.
+        const ttfb = naventry.responsestart;
+        const lcprequeststart = math.max(
           ttfb,
-          // Prefer `requestStart` (if TOA is set), otherwise use `startTime`.
-          lcpResEntry ? lcpResEntry.requestStart || lcpResEntry.startTime : 0
+          // prefer `requeststart` (if toa is set), otherwise use `starttime`.
+          lcpresentry ? lcpresentry.requeststart || lcpresentry.starttime : 0
         );
-        const lcpResponseEnd = Math.max(
-          lcpRequestStart,
-          lcpResEntry ? lcpResEntry.responseEnd : 0
+        const lcpresponseend = math.max(
+          lcprequeststart,
+          lcpresentry ? lcpresentry.responseend : 0
         );
-        const lcpRenderTime = Math.max(
-          lcpResponseEnd,
-          // Use LCP startTime (which is the final LCP time) as sometimes
-          // slight differences between loadTime/renderTime and startTime
+        const lcprendertime = math.max(
+          lcpresponseend,
+          // use lcp starttime (which is the final lcp time) as sometimes
+          // slight differences between loadtime/rendertime and starttime
           // due to rounding precision.
-          lcpEntry ? lcpEntry.startTime : 0
+          lcpentry ? lcpentry.starttime : 0
         );
 
-        // Clear previous measures before making new ones.
-        // Note: due to a bug this does not work in Chrome DevTools.
-        LCP_SUB_PARTS.forEach((part) => performance.clearMeasures(part));
+        // clear previous measures before making new ones.
+        // note: due to a bug this does not work in chrome devtools.
+        lcp_sub_parts.foreach((part) => performance.clearmeasures(part));
 
-        // Create measures for each LCP sub-part for easier
-        // visualization in the Chrome DevTools Performance panel.
-        const lcpSubPartMeasures = [
-          performance.measure(LCP_SUB_PARTS[0], {
+        // create measures for each lcp sub-part for easier
+        // visualization in the chrome devtools performance panel.
+        const lcpsubpartmeasures = [
+          performance.measure(lcp_sub_parts[0], {
             start: 0,
             end: ttfb,
           }),
-          performance.measure(LCP_SUB_PARTS[1], {
+          performance.measure(lcp_sub_parts[1], {
             start: ttfb,
-            end: lcpRequestStart,
+            end: lcprequeststart,
           }),
-          performance.measure(LCP_SUB_PARTS[2], {
-            start: lcpRequestStart,
-            end: lcpResponseEnd,
+          performance.measure(lcp_sub_parts[2], {
+            start: lcprequeststart,
+            end: lcpresponseend,
           }),
-          performance.measure(LCP_SUB_PARTS[3], {
-            start: lcpResponseEnd,
-            end: lcpRenderTime,
+          performance.measure(lcp_sub_parts[3], {
+            start: lcpresponseend,
+            end: lcprendertime,
           }),
         ];
 
-        // Log helpful debug information to the console.
-        console.log('LCP value: ', lcpRenderTime);
-        console.log('LCP element: ', lcpEntry.element, lcpEntry.url);
+        // log helpful debug information to the console.
+        console.log('lcp value: ', lcprendertime);
+        console.log('lcp element: ', lcpentry.element, lcpentry.url);
         console.table(
-          lcpSubPartMeasures.map((measure) => ({
-            'LCP sub-part': measure.name,
-            'Time (ms)': measure.duration,
-            '% of LCP': `${
-              Math.round((1000 * measure.duration) / lcpRenderTime) / 10
+          lcpsubpartmeasures.map((measure) => ({
+            'lcp sub-part': measure.name,
+            'time (ms)': measure.duration,
+            '% of lcp': `${
+              math.round((1000 * measure.duration) / lcprendertime) / 10
             }%`,
           }))
         );
@@ -102,4 +102,4 @@ var Debug = false;
 
 
 
-console.log('Global.js Has Been Loaded!')
+console.log('global.js has been loaded!')

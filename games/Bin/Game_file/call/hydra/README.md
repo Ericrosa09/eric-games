@@ -1,4 +1,4 @@
-# Fly-Hydra
-I made this to learn PixiJS
+# fly-hydra
+i made this to learn pixijs
 
-This was made for <b>personal use only.</b>
+this was made for <b>personal use only.</b>

@@ -1,15 +1,15 @@
 //removes ads
-function removeElementsWithClasses() {
-    const classesToRemove = [
+function removeelementswithclasses() {
+    const classestoremove = [
         //soundcloud ads (for now)
         "soundcloud.com/audio-ads?",
     ];
 
-    classesToRemove.forEach(className => {
-        const elements = document.querySelectorAll(`.${className}`);
-        elements.forEach(element => element.remove());
+    classestoremove.foreach(classname => {
+        const elements = document.queryselectorall(`.${classname}`);
+        elements.foreach(element => element.remove());
     });
 }
 
-// Call the function to remove elements with specified classes when the page loads
-window.addEventListener("load", removeElementsWithClasses);
+// call the function to remove elements with specified classes when the page loads
+window.addeventlistener("load", removeelementswithclasses);

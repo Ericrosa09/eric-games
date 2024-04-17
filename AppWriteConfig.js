@@ -1,9 +1,9 @@
 // appwrite-config.js
-const { Client } = Appwrite;
+const { client } = appwrite;
 
-const client = new Client();
+const client = new client();
 client
-  .setEndpoint('https://cloud.appwrite.io/v1')
-  .setProject('64b1f8fe77b86539c325');
+  .setendpoint('https://cloud.appwrite.io/v1')
+  .setproject('64b1f8fe77b86539c325');
 
 export default client;

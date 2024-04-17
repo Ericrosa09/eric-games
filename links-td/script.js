@@ -1,117 +1,117 @@
-document.getElementById("search-input").addEventListener("keydown", function () {
-    const searchValue = document.getElementById("search-input").value;
-    const resultsContainer = document.getElementById("result");
+document.getelementbyid("search-input").addeventlistener("keydown", function () {
+    const searchvalue = document.getelementbyid("search-input").value;
+    const resultscontainer = document.getelementbyid("result");
 
-    while (resultsContainer.firstChild) {
+    while (resultscontainer.firstchild) {
 
 
-        resultsContainer.removeChild(resultsContainer.firstChild);
+        resultscontainer.removechild(resultscontainer.firstchild);
 
     }
-    var breake = document.createElement('br')
-    var breake2 = document.createElement('br')
-    var breake3 = document.createElement('br')
-    var breake4 = document.createElement('br')
+    var breake = document.createelement('br')
+    var breake2 = document.createelement('br')
+    var breake3 = document.createelement('br')
+    var breake4 = document.createelement('br')
 
     
-    resultsContainer.appendChild(breake)
-    resultsContainer.appendChild(breake2)
-    resultsContainer.appendChild(breake3)
-    resultsContainer.appendChild(breake4)
+    resultscontainer.appendchild(breake)
+    resultscontainer.appendchild(breake2)
+    resultscontainer.appendchild(breake3)
+    resultscontainer.appendchild(breake4)
     fetch("lightspeed.txt")
   .then((response) => response.text())
   .then((data) => {
     const links = data.split("\n");
-    const resultsContainer = document.getElementById("result");
+    const resultscontainer = document.getelementbyid("result");
 
     for (const link of links) {
       const [name, url] = link.split(" ");
-      if (name.toLowerCase().includes(searchValue.toLowerCase())) {
+      if (name.tolowercase().includes(searchvalue.tolowercase())) {
 
-        const linkElement = document.createElement("a");
-        linkElement.href = url;
-        linkElement.target = "_blank";
-        linkElement.rel = "noopener,noreferrer";
+        const linkelement = document.createelement("a");
+        linkelement.href = url;
+        linkelement.target = "_blank";
+        linkelement.rel = "noopener,noreferrer";
 
-        const listItem = document.createElement("div");
-        listItem.classList.add('ITEMCLASS')
+        const listitem = document.createelement("div");
+        listitem.classlist.add('itemclass')
       
-        const textstuff = document.createElement('h1')
-        textstuff.textContent = name;
-        textstuff.classList.add('fixedtxt')
+        const textstuff = document.createelement('h1')
+        textstuff.textcontent = name;
+        textstuff.classlist.add('fixedtxt')
 
 
 
 
-        listItem.appendChild(textstuff)
+        listitem.appendchild(textstuff)
 
 
 
        
 
 
-        linkElement.appendChild(listItem);
+        linkelement.appendchild(listitem);
 
-        resultsContainer.appendChild(linkElement);
+        resultscontainer.appendchild(linkelement);
       }
     }
 
-    if (resultsContainer.children.length === 0) {
-      resultsContainer.textContent = "No matching links found.";
+    if (resultscontainer.children.length === 0) {
+      resultscontainer.textcontent = "no matching links found.";
     }
   })
   .catch((error) => {
-    console.error("Error fetching links:", error);
+    console.error("error fetching links:", error);
   });
 
 });
 
-const searchValue = document.getElementById("search-input").value;
+const searchvalue = document.getelementbyid("search-input").value;
 
     fetch("lightspeed.txt")
   .then((response) => response.text())
   .then((data) => {
     const links = data.split("\n");
-    const resultsContainer = document.getElementById("result");
+    const resultscontainer = document.getelementbyid("result");
 
     for (const link of links) {
       const [name, url] = link.split(" ");
-      if (name.toLowerCase().includes(searchValue.toLowerCase())) {
+      if (name.tolowercase().includes(searchvalue.tolowercase())) {
 
-        const linkElement = document.createElement("a");
-        linkElement.href = url;
-        linkElement.target = "_blank";
-        linkElement.rel = "noopener,noreferrer";
+        const linkelement = document.createelement("a");
+        linkelement.href = url;
+        linkelement.target = "_blank";
+        linkelement.rel = "noopener,noreferrer";
 
-        const listItem = document.createElement("div");
-        listItem.classList.add('ITEMCLASS')
+        const listitem = document.createelement("div");
+        listitem.classlist.add('itemclass')
       
-        const textstuff = document.createElement('h1')
-        textstuff.textContent = name;
-        textstuff.classList.add('fixedtxt')
+        const textstuff = document.createelement('h1')
+        textstuff.textcontent = name;
+        textstuff.classlist.add('fixedtxt')
 
 
 
 
-        listItem.appendChild(textstuff)
+        listitem.appendchild(textstuff)
 
 
 
        
 
 
-        linkElement.appendChild(listItem);
+        linkelement.appendchild(listitem);
 
-        resultsContainer.appendChild(linkElement);
+        resultscontainer.appendchild(linkelement);
       }
     }
 
-    if (resultsContainer.children.length === 0) {
-      resultsContainer.textContent = "No matching links found.";
+    if (resultscontainer.children.length === 0) {
+      resultscontainer.textcontent = "no matching links found.";
     }
   })
   .catch((error) => {
-    console.error("Error fetching links:", error);
+    console.error("error fetching links:", error);
   });
 
-  console.warn('Executed Code With Help From Thatblockboi')
+  console.warn('executed code with help from thatblockboi')

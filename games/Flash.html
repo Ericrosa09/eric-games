@@ -1,76 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
   <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-    <link rel="icon" href="https://github.com/sz-games/home/blob/main/G.png?raw=true">
-    <title>Sz Games - Flash Player</title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" href="https://github.com/sz-games/home/blob/main/g.png?raw=true">
+    <title>UTC Games - flash player</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=material+icons">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C78TXR0XFK"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=g-c78txr0xfk"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  window.datalayer = window.datalayer || [];
+  function gtag(){datalayer.push(arguments);}
+  gtag('js', new date());
 
-  gtag('config', 'G-C78TXR0XFK');
+  gtag('config', 'g-c78txr0xfk');
 </script>
 
-<script src="/GobalSettings.js"></script>
+<script src="/gobalsettings.js"></script>
 
- <!--PageScript1-->
- <!--script id="CHECK">
-  function getCookie2(name) {
-const cookieName = name + "=";
+ <!--pagescript1-->
+ <!--script id="check">
+  function getcookie2(name) {
+const cookiename = name + "=";
 const cookies = document.cookie.split(';');
 for (let i = 0; i < cookies.length; i++) {
     let cookie = cookies[i];
-    while (cookie.charAt(0) === ' ') {
+    while (cookie.charat(0) === ' ') {
         cookie = cookie.substring(1);
     }
-    if (cookie.indexOf(cookieName) === 0) {
-        return cookie.substring(cookieName.length, cookie.length);
+    if (cookie.indexof(cookiename) === 0) {
+        return cookie.substring(cookiename.length, cookie.length);
     }
 }
 return '';
 }
 
 
-let Setting14bu = getCookie2("PagePrevent");
+let setting14bu = getcookie2("pageprevent");
 
-function checkPageClose(event) {
+function checkpageclose(event) {
 
 
-    event.returnValue = "Prevent Page Close Is Active, You Can Click Off Of This";
+    event.returnvalue = "prevent page close is active, you can click off of this";
 
 
 
 }
-function checkPageClose2() {
-if(Setting14bu==="true") {
+function checkpageclose2() {
+if(setting14bu==="true") {
 
     window.onbeforeunload = function(event) {
         // return a string to prevent the page from closing
-        event.preventDefault();
-        return "Prevent Page Close Is Active, You Can Click Off Of This";
+        event.preventdefault();
+        return "prevent page close is active, you can click off of this";
     };
-    window.addEventListener("beforeunload", checkPageClose);
+    window.addeventlistener("beforeunload", checkpageclose);
 
 } 
-if(Setting14bu==="false") {
+if(setting14bu==="false") {
 
 }
 }
-console.log('CookiePAGE Value: ' + Setting14bu + "SzGames-Scripts Loaded")
-checkPageClose2()
+console.log('cookiepage value: ' + setting14bu + "szgames-scripts loaded")
+checkpageclose2()
 
 </script-->
-<!--PageScript1-->
+<!--pagescript1-->
 
 <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('https://sz-games.github.io/service-worker.js');
+  if ('serviceworker' in navigator) {
+    navigator.serviceworker.register('https://sz-games.github.io/service-worker.js');
   }
 </script>
 
@@ -79,20 +79,20 @@ checkPageClose2()
 body {
   margin: 0;
  overflow: hidden;
- font-family: Arial, Helvetica, sans-serif;
+ font-family: arial, helvetica, sans-serif;
  background-color: rgb(117, 117, 117);
 }
 
 .btn-group button {
-  background-color: black; /* Green background */
+  background-color: black; /* green background */
  
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  float: left; /* Float the buttons side by side */
+  color: white; /* white text */
+  padding: 10px 24px; /* some padding */
+  cursor: pointer; /* pointer/hand icon */
+  float: left; /* float the buttons side by side */
 }
 
-/* Clear floats (clearfix hack) */
+/* clear floats (clearfix hack) */
 .btn-group:after {
   content: "";
   clear: both;
@@ -100,15 +100,15 @@ body {
 }
 
 .btn-group button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
+  border-right: none; /* prevent double borders */
 }
 
-/* Add a background color on hover */
+/* add a background color on hover */
 .btn-group button:hover {
   background-color: grey;
 }
 
-/* Header/Logo Title */
+/* header/logo title */
 .header {
   padding: 60px;
   text-align: center;
@@ -117,11 +117,11 @@ body {
   width: auto;
   font-size: 30px;
  
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: arial, helvetica, sans-serif;
   border-radius: 15px;
 }
 
-/* Page Content */
+/* page content */
 
 </style>
 </head>
@@ -133,7 +133,7 @@ color: white;
 
   transform: scale(1.8);
   z-index: 3;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: arial, helvetica, sans-serif;
     }
    .fade {
         position: absolute;
@@ -142,10 +142,10 @@ color: white;
         height: 150px;
      border-radius: 15px;
     }
-    .buttonForMenu {
+    .buttonformenu {
       transition: 0.5s;
     }
-    .buttonForMenu:hover {
+    .buttonformenu:hover {
       color: #9a9a9a;
     }
 .em {
@@ -158,13 +158,13 @@ color: white;
    <embed class="em" id="game" width=" 100%;" height="550px" src="" ></embed>
 </div>
 
-<div style="cursor: pointer; position: fixed; border-radius: 15px; color: rgb(224, 224, 224); background-color: #1d1d1dc0; left: 0; bottom: 0px; margin: 10px;" id="Menu">
+<div style="cursor: pointer; position: fixed; border-radius: 15px; color: rgb(224, 224, 224); background-color: #1d1d1dc0; left: 0; bottom: 0px; margin: 10px;" id="menu">
 
 
-  <span class="material-icons buttonForMenu" style="margin: 5px;" onclick="window.location = 'https://sz-games.github.io'" >
+  <span class="material-icons buttonformenu" style="margin: 5px;" onclick="window.location = 'https://sz-games.github.io'" >
     arrow_back
     </span>
-    <span class="material-icons buttonForMenu" style="margin: 5px;" onclick="makeFullScreen()" >
+    <span class="material-icons buttonformenu" style="margin: 5px;" onclick="makefullscreen()" >
       fullscreen
       </span>
   </div>
@@ -172,61 +172,61 @@ color: white;
 
   <script>
 
-var isFUll = false
+var isfull = false
 
 document.body.onkeyup = function(e) {
-  if( e.keyCode == 27 ) {
-    if(isFUll) {
-    //document.getElementById('game').style.width = '800px';
+  if( e.keycode == 27 ) {
+    if(isfull) {
+    //document.getelementbyid('game').style.width = '800px';
     }
   }
 }
 
-function requestFullScreen(element) {
-    // Supports most browsers and their versions.
-    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullscreen;
+function requestfullscreen(element) {
+    // supports most browsers and their versions.
+    var requestmethod = element.requestfullscreen || element.webkitrequestfullscreen || element.mozrequestfullscreen || element.msrequestfullscreen;
     
-    if (requestMethod) { // Native full screen.
-        requestMethod.call(element);
-        let hh = window.innerHeight;
+    if (requestmethod) { // native full screen.
+        requestmethod.call(element);
+        let hh = window.innerheight;
 
-document.getElementById('game').height = hh;
-    } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
-        var wscript = new ActiveXObject("WScript.Shell");
+document.getelementbyid('game').height = hh;
+    } else if (typeof window.activexobject !== "undefined") { // older ie.
+        var wscript = new activexobject("wscript.shell");
         if (wscript !== null) {
-            wscript.SendKeys("{F11}");
+            wscript.sendkeys("{f11}");
         }
     }
 }
-var canvas = document.getElementById('hello');
+var canvas = document.getelementbyid('hello');
 
-function makeFullScreen() {
+function makefullscreen() {
 
-    isFUll = true
-    requestFullScreen(canvas);
+    isfull = true
+    requestfullscreen(canvas);
 }
 
 
-let hh = window.innerHeight;
+let hh = window.innerheight;
 
-document.getElementById('game').height = hh;
+document.getelementbyid('game').height = hh;
 
 
-document.getElementById('game').height = hh;
+document.getelementbyid('game').height = hh;
 window.onresize = function(event) {
-  let hh = window.innerHeight;
+  let hh = window.innerheight;
 
-document.getElementById('game').height = hh;
+document.getelementbyid('game').height = hh;
 }
-var textElement = document.getElementById("game");
+var textelement = document.getelementbyid("game");
 
-// Get the current URL
-var currentUrl = new URL(window.location.href);
+// get the current url
+var currenturl = new url(window.location.href);
 
-// Check for the presence of the "text" parameter in the URL
-if (currentUrl.searchParams.has("game")) {
-  // Set the text of the element to the value of the "text" parameter
-  textElement.src = currentUrl.searchParams.get("game");
+// check for the presence of the "text" parameter in the url
+if (currenturl.searchparams.has("game")) {
+  // set the text of the element to the value of the "text" parameter
+  textelement.src = currenturl.searchparams.get("game");
 }
 
   </script>

@@ -1,15 +1,15 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<title>Mega Os</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=material+icons">
+<title>mega os</title>
 </head>
 <style>
     body {
         margin: 0;
         background-color: black;
     }
-    @keyframes Boot {
+    @keyframes boot {
         from {opacity: 0; background-color: black;}
         to {opacity: 1; background-color: rgb(40, 40, 40);}
     }
@@ -44,18 +44,18 @@
   }
 }
 
-.UserSelect {
+.userselect {
     cursor: pointer;
     transition: 0.5s;
     float: left;
     margin: 10px;
 }
 
-.UserSelect:hover {
+.userselect:hover {
     transform: scale(1.1);
 }
 
-@keyframes SlideIn {
+@keyframes slidein {
     from{position: absolute; bottom: -100%;}
     to {position: absolute; bottom: 0%;}
 }
@@ -64,12 +64,12 @@
   width: 5px;
 }
 
-.ItemBar {
+.itembar {
     transform: scale(1.0);
     transition: 0.5s;
     
 }
-.ItemBar:hover {
+.itembar:hover {
     transform: scale(0.9);
 }
 .window {
@@ -95,7 +95,7 @@
   display: inline-block;
   margin-right: 10px;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: arial, helvetica, sans-serif;
 }
 
 .close-btn {
@@ -106,7 +106,7 @@
   font-weight: bold;
   cursor: pointer;
 }
-.Fullbtn {
+.fullbtn {
   float: right;
   background: none;
   border: none;
@@ -121,7 +121,7 @@
   overflow: auto;
   height: calc(100% - 40px);
 }
-.contentBackup {
+.contentbackup {
   padding: 10px;
   overflow: auto;
   height: calc(100% - 40px);
@@ -137,14 +137,14 @@
   cursor: nwse-resize;
 }
 
-@keyframes SlideMenu {
+@keyframes slidemenu {
   from {
     bottom: 45px;
   } to {
     bottom: -100%;
   }
 }
-@keyframes SlideMenu2 {
+@keyframes slidemenu2 {
   from {
     bottom: -50%;
   } to {
@@ -155,49 +155,49 @@
 
 </style>
 <body>
-    <div id="Alert"  style="display: none; position: absolute; left: 50%;border-radius: 15px; top: 5%; transform: translate(-50%, -5%); z-index: 10000; width: fit-content; padding: 0 15px; background-color: rgba(128, 128, 128, 0.578); transition: 0.5s;">
-        <h1 id="AlertText" style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0); font-size: medium;">Text</h1>
+    <div id="alert"  style="display: none; position: absolute; left: 50%;border-radius: 15px; top: 5%; transform: translate(-50%, -5%); z-index: 10000; width: fit-content; padding: 0 15px; background-color: rgba(128, 128, 128, 0.578); transition: 0.5s;">
+        <h1 id="alerttext" style="font-family: arial, helvetica, sans-serif; color: rgb(0, 0, 0); font-size: medium;">text</h1>
     </div>
 
-    <div id="Start" onclick="Start()" style="cursor: pointer; background-color: black; width: 100%; height: 100%; position: fixed;">
-        <h1 style="font-family:monospace; color: white; left: 50%; transform: translate(-50%, -50%); top: 50%; position: absolute;">Click To Start</h1>
+    <div id="start" onclick="start()" style="cursor: pointer; background-color: black; width: 100%; height: 100%; position: fixed;">
+        <h1 style="font-family:monospace; color: white; left: 50%; transform: translate(-50%, -50%); top: 50%; position: absolute;">click to start</h1>
     </div>
 
-    <div id="BootScreen" style="display: none; background-color: rgb(40, 40, 40); transition: 0.5s; position: fixed; width: 100%; height: 100%;">
-        <img style="transform: translate(-50%, -50%); width: 100px; position: absolute; top: 50%; left: 50%;" src="https://github.com/sz-games/sz-games.github.io/blob/main/Mega%20Os%20Icons/icon.png?raw=true"/>
-        <div id="LoadingBoot" style="transition: 0.5s; display: none; position: absolute; top: 70%; left: 50%; " class="loader"></div>
+    <div id="bootscreen" style="display: none; background-color: rgb(40, 40, 40); transition: 0.5s; position: fixed; width: 100%; height: 100%;">
+        <img style="transform: translate(-50%, -50%); width: 100px; position: absolute; top: 50%; left: 50%;" src="https://github.com/sz-games/sz-games.github.io/blob/main/mega%20os%20icons/icon.png?raw=true"/>
+        <div id="loadingboot" style="transition: 0.5s; display: none; position: absolute; top: 70%; left: 50%; " class="loader"></div>
     </div>
 
-    <div id="LoginScreen" style="transition: 0.5s; display: none; background: url('https://github.com/sz-games/sz-games.github.io/blob/main/Mega%20Os%20Icons/HighResLogin.gif?raw=true'); width: 100%; height: 100%; position: fixed; background-size: cover; background-repeat: no-repeat;">
-        <div id="UserArea" style="transition: 0.5s; margin: 10px; position: absolute; top: 40%; left: 50%; transform: translate(-50%, -40%); width: fit-content; padding: 25px 50px; border-radius: 30px; background-color: rgba(37, 37, 37, 0.647);">
-            <div id="User" onclick="Login('Fishy')" class="UserSelect" style="cursor: pointer;">
+    <div id="loginscreen" style="transition: 0.5s; display: none; background: url('https://github.com/sz-games/sz-games.github.io/blob/main/mega%20os%20icons/highreslogin.gif?raw=true'); width: 100%; height: 100%; position: fixed; background-size: cover; background-repeat: no-repeat;">
+        <div id="userarea" style="transition: 0.5s; margin: 10px; position: absolute; top: 40%; left: 50%; transform: translate(-50%, -40%); width: fit-content; padding: 25px 50px; border-radius: 30px; background-color: rgba(37, 37, 37, 0.647);">
+            <div id="user" onclick="login('fishy')" class="userselect" style="cursor: pointer;">
               
-                <img src="https://github.com/sz-games/sz-games.github.io/blob/main/Mega%20Os%20Icons/User.png?raw=true" style="width: 100px; border-radius: 50%;"/>
-                <h1 style="text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; font-size: medium;">Fishy</h1>
+                <img src="https://github.com/sz-games/sz-games.github.io/blob/main/mega%20os%20icons/user.png?raw=true" style="width: 100px; border-radius: 50%;"/>
+                <h1 style="text-align: center; color: white; font-family: arial, helvetica, sans-serif; font-size: medium;">fishy</h1>
             </div>
-            <div id="Guest" onclick="Login('Guest')" class="UserSelect" style="cursor: pointer;">
+            <div id="guest" onclick="login('guest')" class="userselect" style="cursor: pointer;">
               
-                <img src="https://github.com/sz-games/sz-games.github.io/blob/main/Mega%20Os%20Icons/Guest.png?raw=true" style="width: 100px; border-radius: 50%;"/>
-                <h1 style="text-align: center; color: white; font-family: Arial, Helvetica, sans-serif; font-size: medium;">Guest</h1>
+                <img src="https://github.com/sz-games/sz-games.github.io/blob/main/mega%20os%20icons/guest.png?raw=true" style="width: 100px; border-radius: 50%;"/>
+                <h1 style="text-align: center; color: white; font-family: arial, helvetica, sans-serif; font-size: medium;">guest</h1>
             </div>
         </div>
-        <div id="LoadingLogin" style="display: none;">
-            <h1 style=" color: white; font-family: Arial, Helvetica, sans-serif; position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%);">Loading</h1>
+        <div id="loadinglogin" style="display: none;">
+            <h1 style=" color: white; font-family: arial, helvetica, sans-serif; position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%);">loading</h1>
             <div id="" style="transition: 0.5s;  position: absolute; top: 60%; left: 50%; " class="loader"></div>
         </div>
-        <div id="NotFound" style="display: none;">
-            <h1 style=" color: white; font-family: Arial, Helvetica, sans-serif; position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%);">User Not Found</h1>
+        <div id="notfound" style="display: none;">
+            <h1 style=" color: white; font-family: arial, helvetica, sans-serif; position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%);">user not found</h1>
             
         </div>
     </div>
 
 
     <style>
-      .menuItem2 {
+      .menuitem2 {
         background-color: #2c2c2cd4;
         transition: 0.5s;
       }
-      .menuItem2:hover {
+      .menuitem2:hover {
         background-color: #707070b0 !important;
         transform: scale(1.06);
       }
@@ -206,18 +206,18 @@
      
     </style>
 
-   <div  style="display: none; z-index: 100; background: url('https://github.com/sz-games/sz-games.github.io/blob/main/Mega%20Os%20Icons/HighResLogin.gif?raw=true'); width: 100%; height: 100%; position: fixed; background-size: cover; background-repeat: no-repeat; " id="DesktopArea">
+   <div  style="display: none; z-index: 100; background: url('https://github.com/sz-games/sz-games.github.io/blob/main/mega%20os%20icons/highreslogin.gif?raw=true'); width: 100%; height: 100%; position: fixed; background-size: cover; background-repeat: no-repeat; " id="desktoparea">
 
-        <div id="MenuNav" style="display: none; position: absolute; bottom: 45px; border-radius: 15px; left: 10px; width: 180px; height: 250px; background-color: #2c2c2cbe;">
+        <div id="menunav" style="display: none; position: absolute; bottom: 45px; border-radius: 15px; left: 10px; width: 180px; height: 250px; background-color: #2c2c2cbe;">
          
-          <div onclick="MakeWindow('Explorer', 'https://sz-games.github.io/MegaOs/Explorer.html')" class="menuItem2" style="z-index: 3; cursor: pointer; background-color: #2c2c2cd4; border-radius: 15px; top: 0; position: relative; height: 35px; width: 100%;">
-            <h1  style=" font-family: Arial, Helvetica, sans-serif; top: -5px; color: white; font-size: large; position: absolute; right: 10px;">Browser</h1>
-            <img width="30px" style="position: absolute; top: 3px; left: 6px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/Mega%20Os%20Icons/FileFolder.png?raw=true"/>
+          <div onclick="makewindow('explorer', 'https://sz-games.github.io/megaos/explorer.html')" class="menuitem2" style="z-index: 3; cursor: pointer; background-color: #2c2c2cd4; border-radius: 15px; top: 0; position: relative; height: 35px; width: 100%;">
+            <h1  style=" font-family: arial, helvetica, sans-serif; top: -5px; color: white; font-size: large; position: absolute; right: 10px;">browser</h1>
+            <img width="30px" style="position: absolute; top: 3px; left: 6px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/mega%20os%20icons/filefolder.png?raw=true"/>
           </div>
 
-          <div onclick="LogInScreenBack()" class="menuItem2" style="z-index: 3; cursor: pointer; background-color: #2c2c2cd4; border-radius: 15px; top: 0; position: relative; height: 35px; width: 100%;">
-            <h1  style=" font-family: Arial, Helvetica, sans-serif; top: -5px; color: white; font-size: large; position: absolute; right: 10px;">Log Out</h1>
-            <img width="30px" style="position: absolute; top: 3px; left: 6px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/Mega%20Os%20Icons/logout.png?raw=true"/>
+          <div onclick="loginscreenback()" class="menuitem2" style="z-index: 3; cursor: pointer; background-color: #2c2c2cd4; border-radius: 15px; top: 0; position: relative; height: 35px; width: 100%;">
+            <h1  style=" font-family: arial, helvetica, sans-serif; top: -5px; color: white; font-size: large; position: absolute; right: 10px;">log out</h1>
+            <img width="30px" style="position: absolute; top: 3px; left: 6px;" src="https://github.com/sz-games/sz-games.github.io/blob/main/mega%20os%20icons/logout.png?raw=true"/>
           </div>
 
         </div>
@@ -225,13 +225,13 @@
 
         <div style="display: none;" class="window">
         <div class="title-bar">
-          <span class="title">My Window</span>
+          <span class="title">my window</span>
 
           <span style="color: white;" class="material-icons close-btn">
             close
             </span>
-          <!--button class="Fullbtn">FullScreen</button-->
-          <span style="color: white;" class="material-icons Fullbtn">
+          <!--button class="fullbtn">fullscreen</button-->
+          <span style="color: white;" class="material-icons fullbtn">
             open_in_full
             </span>
         </div>
@@ -250,27 +250,27 @@
       </script>
 
 
-        <div id="BottomBar" style="margin: 5px; animation: SlideIn 0.8s; position: absolute; bottom: 0; background-color: rgba(49, 49, 49, 0.715); height: 35px; width: 99%; border-radius: 30px;">
-            <div id="Mega" onclick="MenuDesk()" class="ItemBar" style=" cursor: pointer; height: 30px; width: 30px; float: left;">
-                <img height="32px" src="https://github.com/sz-games/sz-games.github.io/blob/main/Mega%20Os%20Icons/MenuMega.png?raw=true"/>
+        <div id="bottombar" style="margin: 5px; animation: slidein 0.8s; position: absolute; bottom: 0; background-color: rgba(49, 49, 49, 0.715); height: 35px; width: 99%; border-radius: 30px;">
+            <div id="mega" onclick="menudesk()" class="itembar" style=" cursor: pointer; height: 30px; width: 30px; float: left;">
+                <img height="32px" src="https://github.com/sz-games/sz-games.github.io/blob/main/mega%20os%20icons/menumega.png?raw=true"/>
             </div>
             <div  style="  height: 30px; width: 5px; float: left;">
                
             </div>
-            <div onclick="MakeWindow('Sz Games', 'https://sz-games.github.io')" id="SzGames" class="ItemBar" style=" cursor: pointer; height: 30px; width: 30px; float: left;">
-                <img height="32px" src="https://github.com/sz-games/sz-games.github.io/blob/main/G.png?raw=true"/>
+            <div onclick="makewindow('UTC Games', 'https://sz-games.github.io')" id="szgames" class="itembar" style=" cursor: pointer; height: 30px; width: 30px; float: left;">
+                <img height="32px" src="https://github.com/sz-games/sz-games.github.io/blob/main/g.png?raw=true"/>
             </div>
 
             <div  style="height: 30px; width: 5px; float: left;">
                
             </div>
 
-            <div onclick="MakeWindow('Mega Os Browser', 'https://sz-games.github.io/MegaOs/Web.html')" id="SzGames" class="ItemBar" style=" cursor: pointer; height: 30px; width: 30px; float: left;">
-              <img height="32px" src="https://github.com/sz-games/sz-games.github.io/blob/main/Mega%20Os%20Icons/Web.png?raw=true"/>
+            <div onclick="makewindow('mega os browser', 'https://sz-games.github.io/megaos/web.html')" id="szgames" class="itembar" style=" cursor: pointer; height: 30px; width: 30px; float: left;">
+              <img height="32px" src="https://github.com/sz-games/sz-games.github.io/blob/main/mega%20os%20icons/web.png?raw=true"/>
              </div>
 
 
-            <h1 id="Time" style="color: white; right: 5px; position: absolute; font-family: Arial, Helvetica, sans-serif; font-size: medium; ">--:--</h1>
+            <h1 id="time" style="color: white; right: 5px; position: absolute; font-family: arial, helvetica, sans-serif; font-size: medium; ">--:--</h1>
 
         </div>
 
@@ -281,137 +281,137 @@
 
 
 
-        var startScreen = document.getElementById('Start')
+        var startscreen = document.getelementbyid('start')
 
-        //--Stuff For Code--
+        //--stuff for code--
 
-        function MakeWindow(Name, url) {
-            // Create the elements
+        function makewindow(name, url) {
+            // create the elements
                           
-                        // Create the window div
-              const windowDiv = document.createElement('div');
-              windowDiv.classList.add('window');
-              var WindowScr = document.getElementById('DesktopArea')
-              // Create the title bar
-              const titleBar = document.createElement('div');
-              titleBar.classList.add('title-bar');
+                        // create the window div
+              const windowdiv = document.createelement('div');
+              windowdiv.classlist.add('window');
+              var windowscr = document.getelementbyid('desktoparea')
+              // create the title bar
+              const titlebar = document.createelement('div');
+              titlebar.classlist.add('title-bar');
 
-              // Create the title span
-              const titleSpan = document.createElement('span');
-              titleSpan.classList.add('title');
-              titleSpan.textContent = Name;
-              titleBar.appendChild(titleSpan);
+              // create the title span
+              const titlespan = document.createelement('span');
+              titlespan.classlist.add('title');
+              titlespan.textcontent = name;
+              titlebar.appendchild(titlespan);
 
-              // Create the close button
-              const closeBtn = document.createElement('span');
-              closeBtn.classList.add('material-icons', 'close-btn');
-              closeBtn.style.color = 'white';
-              closeBtn.textContent = 'close';
-              titleBar.appendChild(closeBtn);
+              // create the close button
+              const closebtn = document.createelement('span');
+              closebtn.classlist.add('material-icons', 'close-btn');
+              closebtn.style.color = 'white';
+              closebtn.textcontent = 'close';
+              titlebar.appendchild(closebtn);
 
-              // Create the fullscreen button
-              const fullBtn = document.createElement('span');
-              fullBtn.classList.add('material-icons', 'Fullbtn');
-              fullBtn.style.color = 'white';
-              fullBtn.textContent = 'open_in_full';
-              titleBar.appendChild(fullBtn);
+              // create the fullscreen button
+              const fullbtn = document.createelement('span');
+              fullbtn.classlist.add('material-icons', 'fullbtn');
+              fullbtn.style.color = 'white';
+              fullbtn.textcontent = 'open_in_full';
+              titlebar.appendchild(fullbtn);
 
-              // Add the title bar to the window div
-              windowDiv.appendChild(titleBar);
+              // add the title bar to the window div
+              windowdiv.appendchild(titlebar);
 
-              // Create the content div
-              const contentDiv = document.createElement('div');
-              contentDiv.classList.add('content');
+              // create the content div
+              const contentdiv = document.createelement('div');
+              contentdiv.classlist.add('content');
 
-              // Create the iframe
-              const iframe = document.createElement('iframe');
+              // create the iframe
+              const iframe = document.createelement('iframe');
               iframe.style.width = '100%';
               iframe.style.height = '100%';
               iframe.style.border = 'none';
               iframe.style.position = 'absolute';
               iframe.src = url;
 
-              // Add the iframe to the content div
-              contentDiv.appendChild(iframe);
+              // add the iframe to the content div
+              contentdiv.appendchild(iframe);
 
-              // Add the content div to the window div
-              windowDiv.appendChild(contentDiv);
+              // add the content div to the window div
+              windowdiv.appendchild(contentdiv);
 
-              // Create the resize handle
-              const resizeHandle = document.createElement('div');
-              resizeHandle.classList.add('resize-handle');
+              // create the resize handle
+              const resizehandle = document.createelement('div');
+              resizehandle.classlist.add('resize-handle');
 
-              // Add the resize handle to the window div
-              windowDiv.appendChild(resizeHandle);
+              // add the resize handle to the window div
+              windowdiv.appendchild(resizehandle);
 
-              // Add the window div to the body of the page
-              document.body.appendChild(windowDiv);
-              WindowScr.appendChild(windowDiv)
-            SetupWindowFunctions()
+              // add the window div to the body of the page
+              document.body.appendchild(windowdiv);
+              windowscr.appendchild(windowdiv)
+            setupwindowfunctions()
         }
-        var Opened = false
-        function MenuDesk() {
-          if(Opened===true) {  
+        var opened = false
+        function menudesk() {
+          if(opened===true) {  
           
-          AnimationAdd('MenuNav', 'SlideMenu', '0.8')
-          setTimeout(() => {
-            hide('MenuNav')
-            Opened = false
+          animationadd('menunav', 'slidemenu', '0.8')
+          settimeout(() => {
+            hide('menunav')
+            opened = false
           }, 500);
-          } else if(Opened===false) {
-            show('MenuNav')
-            AnimationAdd('MenuNav', 'SlideMenu2', '0.8')
-            Opened=true
+          } else if(opened===false) {
+            show('menunav')
+            animationadd('menunav', 'slidemenu2', '0.8')
+            opened=true
           }
         }
 
-        function alertMsg(msg) {
-            showFade('Alert')
-            SetInnerHtml('AlertText', msg)
-            setTimeout(() => {
-                hide('Alert')
+        function alertmsg(msg) {
+            showfade('alert')
+            setinnerhtml('alerttext', msg)
+            settimeout(() => {
+                hide('alert')
             }, 5000);
         }
         function hide(item) {
-            document.getElementById(item).style.display = "none"
+            document.getelementbyid(item).style.display = "none"
         }
 
-        function SetInnerHtml(item, msg) {
-            document.getElementById(item).innerHTML = msg;
+        function setinnerhtml(item, msg) {
+            document.getelementbyid(item).innerhtml = msg;
         }
 
         function show(item) {
-            document.getElementById(item).style.display = "block"
+            document.getelementbyid(item).style.display = "block"
         }
-        function showFade(item) {
-            document.getElementById(item).style.opacity = 0;
+        function showfade(item) {
+            document.getelementbyid(item).style.opacity = 0;
 
-            document.getElementById(item).style.display = "block"
-            setTimeout(() => {
-                document.getElementById(item).style.opacity = 1
+            document.getelementbyid(item).style.display = "block"
+            settimeout(() => {
+                document.getelementbyid(item).style.opacity = 1
             }, 300);
             
         }
-        function AnimationAdd(item, name, dur) {
-            document.getElementById(item).style.animation = name + " " + dur + "s"
+        function animationadd(item, name, dur) {
+            document.getelementbyid(item).style.animation = name + " " + dur + "s"
         }
         
-        //--This Will Have Boot Screen Functions--
+        //--this will have boot screen functions--
 
 
-        //--Event Functions--
+        //--event functions--
 
-        function Start() {
-            hide('Start')
-            setTimeout(() => {
-                AnimationAdd('BootScreen', "Boot", "0.5")
-                show('BootScreen')
-                setTimeout(() => {
-                    showFade('LoadingBoot')
-                    setTimeout(() => {
-                        hide('BootScreen')
-                        setTimeout(() => {
-                            LogInScreen()
+        function start() {
+            hide('start')
+            settimeout(() => {
+                animationadd('bootscreen', "boot", "0.5")
+                show('bootscreen')
+                settimeout(() => {
+                    showfade('loadingboot')
+                    settimeout(() => {
+                        hide('bootscreen')
+                        settimeout(() => {
+                            loginscreen()
                         }, 500);
                     }, 3000);
                 }, 1000);
@@ -420,172 +420,172 @@
         }
         
 
-        function LogInScreen() {
-            showFade('LoginScreen')
-            showFade('UserArea')
+        function loginscreen() {
+            showfade('loginscreen')
+            showfade('userarea')
         }
-        function LogInScreenBack() {
-            hide('DesktopArea')
-            hide('Start')
-            showFade('LoginScreen')
-            showFade('UserArea')
+        function loginscreenback() {
+            hide('desktoparea')
+            hide('start')
+            showfade('loginscreen')
+            showfade('userarea')
         }
-        function Login(User) {
-            if(User==='Fishy') {
-                SetupDesktop('Fishy')
+        function login(user) {
+            if(user==='fishy') {
+                setupdesktop('fishy')
                 
             }
              else {
-                NoUser()
+                nouser()
             }
         }
-        function SetupDesktop(user) {
-            hide('UserArea')
-            show('LoadingLogin')
+        function setupdesktop(user) {
+            hide('userarea')
+            show('loadinglogin')
 
-            SetupWindowFunctions()
-            alertMsg('Loaded Desktop Window Scripts!')
-            setTimeout(() => {
-                showFade('DesktopArea')
-                hide('LoadingLogin')
+            setupwindowfunctions()
+            alertmsg('loaded desktop window scripts!')
+            settimeout(() => {
+                showfade('desktoparea')
+                hide('loadinglogin')
             }, 4000);
-            SetTime()
+            settime()
         }
 
-        //--Desktop Setup--
+        //--desktop setup--
 
-        function SetupWindowFunctions() {
-            let windows = document.querySelectorAll('.window');
-let isResizing = false;
-let isDragging = false;
-let resizeHandleWlet 
-let resizeHandleWidth = 10;
-let resizeHandleEl = document.querySelectorAll('.window');
+        function setupwindowfunctions() {
+            let windows = document.queryselectorall('.window');
+let isresizing = false;
+let isdragging = false;
+let resizehandlewlet 
+let resizehandlewidth = 10;
+let resizehandleel = document.queryselectorall('.window');
 
-let windowEl = document.querySelector('.window');
+let windowel = document.queryselector('.window');
 let x = 0;idth = 10;
 
-let minWidth = 200;
-let minHeight = 150;
-let initialWidth = 0;
-let initialHeight = 0;
-let initialX = 0;
-let initialY = 0;
-let initialMouseX = 0;
-let initialMouseY = 0;
-let activeWindow = null;
+let minwidth = 200;
+let minheight = 150;
+let initialwidth = 0;
+let initialheight = 0;
+let initialx = 0;
+let initialy = 0;
+let initialmousex = 0;
+let initialmousey = 0;
+let activewindow = null;
 
-// Add event listeners for resizing and dragging each window
+// add event listeners for resizing and dragging each window
 for (let i = 0; i < windows.length; i++) {
-  let windowEl = windows[i];
-  let resizeHandleEl = windowEl.querySelector('.resize-handle');
-  let titleBarEl = windowEl.querySelector('.title-bar');
-  let closeBtnEl = windowEl.querySelector('.close-btn');
-  let FullBt = windowEl.querySelector('.fullbtn');
-  var IsFull = false
+  let windowel = windows[i];
+  let resizehandleel = windowel.queryselector('.resize-handle');
+  let titlebarel = windowel.queryselector('.title-bar');
+  let closebtnel = windowel.queryselector('.close-btn');
+  let fullbt = windowel.queryselector('.fullbtn');
+  var isfull = false
 
-  resizeHandleEl.addEventListener('mousedown', function(e) {
-    initialWidth = windowEl.offsetWidth;
-    initialHeight = windowEl.offsetHeight;
-    isResizing = true;
-    activeWindow = windowEl;
+  resizehandleel.addeventlistener('mousedown', function(e) {
+    initialwidth = windowel.offsetwidth;
+    initialheight = windowel.offsetheight;
+    isresizing = true;
+    activewindow = windowel;
   });
 
-  titleBarEl.addEventListener('mousedown', function(e) {
-    isDragging = true;
-    initialMouseX = e.clientX;
-    initialMouseY = e.clientY;
-    initialX = windowEl.offsetLeft;
-    initialY = windowEl.offsetTop;
-    activeWindow = windowEl;
+  titlebarel.addeventlistener('mousedown', function(e) {
+    isdragging = true;
+    initialmousex = e.clientx;
+    initialmousey = e.clienty;
+    initialx = windowel.offsetleft;
+    initialy = windowel.offsettop;
+    activewindow = windowel;
   });
 
-  closeBtnEl.addEventListener('click', function() {
-    windowEl.style.display = 'none';
+  closebtnel.addeventlistener('click', function() {
+    windowel.style.display = 'none';
   });
 
-  FullBt.addEventListener('click', function() {
-    if(IsFull===false) {
-    windowEl.style.width = '100%';
-    windowEl.style.height = '100%';
-    windowEl.style.zIndex = "105"
-    windowEl.style.position = "fixed"
-    activeWindow = windowEl;
-    activeWindow.style.left = 0 + 'px';
-    activeWindow.style.top = 0 + 'px';
-    IsFull = true
+  fullbt.addeventlistener('click', function() {
+    if(isfull===false) {
+    windowel.style.width = '100%';
+    windowel.style.height = '100%';
+    windowel.style.zindex = "105"
+    windowel.style.position = "fixed"
+    activewindow = windowel;
+    activewindow.style.left = 0 + 'px';
+    activewindow.style.top = 0 + 'px';
+    isfull = true
     } else {
-        windowEl.style.width = '300px';
-    windowEl.style.height = '300px';
-    windowEl.style.zIndex = "101"
-    windowEl.style.position = "absolute"
-    IsFull = false
+        windowel.style.width = '300px';
+    windowel.style.height = '300px';
+    windowel.style.zindex = "101"
+    windowel.style.position = "absolute"
+    isfull = false
     }
   });
 
 }
 
-document.addEventListener('mousemove', function(e) {
-  if (isResizing && activeWindow) {
-    let width = initialWidth + (e.clientX - activeWindow.offsetLeft - initialWidth);
-    let height = initialHeight + (e.clientY - activeWindow.offsetTop - initialHeight);
-    activeWindow.style.width = Math.max(width, minWidth) + 'px';
-    activeWindow.style.height = Math.max(height, minHeight) + 'px';
-  } else if (isDragging && activeWindow) {
-    let dx = e.clientX - initialMouseX;
-    let dy = e.clientY - initialMouseY;
-    var stuff1 = initialMouseY + dy;
+document.addeventlistener('mousemove', function(e) {
+  if (isresizing && activewindow) {
+    let width = initialwidth + (e.clientx - activewindow.offsetleft - initialwidth);
+    let height = initialheight + (e.clienty - activewindow.offsettop - initialheight);
+    activewindow.style.width = math.max(width, minwidth) + 'px';
+    activewindow.style.height = math.max(height, minheight) + 'px';
+  } else if (isdragging && activewindow) {
+    let dx = e.clientx - initialmousex;
+    let dy = e.clienty - initialmousey;
+    var stuff1 = initialmousey + dy;
   
-      activeWindow.style.top = stuff1 + 'px';
+      activewindow.style.top = stuff1 + 'px';
   
 
 
   
-      activeWindow.style.left = (initialX + dx) + 'px';
+      activewindow.style.left = (initialx + dx) + 'px';
 
   } else {
     for (let i = 0; i < windows.length; i++) {
-      let windowEl = windows[i];
-      if (e.clientX > windowEl.offsetLeft + windowEl.offsetWidth - resizeHandleWidth &&
-         e.clientY > windowEl.offsetTop + windowEl.offsetHeight - resizeHandleWidth) {
-        windowEl.style.cursor = 'nwse-resize';
+      let windowel = windows[i];
+      if (e.clientx > windowel.offsetleft + windowel.offsetwidth - resizehandlewidth &&
+         e.clienty > windowel.offsettop + windowel.offsetheight - resizehandlewidth) {
+        windowel.style.cursor = 'nwse-resize';
       } else {
-        windowEl.style.cursor = 'default';
+        windowel.style.cursor = 'default';
       }
     }
   }
 });
 
-document.addEventListener('mouseup', function(e) {
-  isResizing = false;
-  isDragging = false;
-  activeWindow = null;
+document.addeventlistener('mouseup', function(e) {
+  isresizing = false;
+  isdragging = false;
+  activewindow = null;
 });
 
 
 
         }
 
-        function SetTime() {
-            setInterval(() => {
-                let now = new Date();
-                let hours = now.getHours();
-                let minutes = now.getMinutes();
+        function settime() {
+            setinterval(() => {
+                let now = new date();
+                let hours = now.gethours();
+                let minutes = now.getminutes();
                 let ampm = hours >= 12 ? 'pm' : 'am';
                 hours = hours % 12;
                 hours = hours ? hours : 12;
                 minutes = minutes < 10 ? '0'+minutes : minutes;
-                let timeString = hours + ':' + minutes + ' ' + ampm;
+                let timestring = hours + ':' + minutes + ' ' + ampm;
                 
 
 
-                SetInnerHtml('Time', timeString)
+                setinnerhtml('time', timestring)
             }, 1000);
         }
 
-        function NoUser(user) {
-            hide('UserArea')
-            show('NotFound')
+        function nouser(user) {
+            hide('userarea')
+            show('notfound')
         }
 
 

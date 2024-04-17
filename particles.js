@@ -1,4 +1,4 @@
-tsParticles.load('particles-js', {
+tsparticles.load('particles-js', {
   particles: {
     number: { value: 47, density: { enable: true, value_area: 500 } },
     color: { value: "#800080" },
@@ -33,7 +33,7 @@ tsParticles.load('particles-js', {
       straight: false,
       out_mode: "out",
       bounce: false,
-      attract: { enable: true, rotateX: 600, rotateY: 1200 }
+      attract: { enable: true, rotatex: 600, rotatey: 1200 }
     }
   },
   interactivity: {
@@ -54,19 +54,19 @@ tsParticles.load('particles-js', {
   retina_detect: true
 });
 var count_particles, stats, update;
-stats = new Stats();
-stats.setMode(0);
-stats.domElement.style.position = "absolute";
-stats.domElement.style.left = "0px";
-stats.domElement.style.top = "0px";
-document.body.appendChild(stats.domElement);
-count_particles = document.querySelector(".js-count-particles");
+stats = new stats();
+stats.setmode(0);
+stats.domelement.style.position = "absolute";
+stats.domelement.style.left = "0px";
+stats.domelement.style.top = "0px";
+document.body.appendchild(stats.domelement);
+count_particles = document.queryselector(".js-count-particles");
 update = function () {
   stats.begin();
   stats.end();
-  if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+  if (window.pjsdom[0].pjs.particles && window.pjsdom[0].pjs.particles.array) {
+    count_particles.innertext = window.pjsdom[0].pjs.particles.array.length;
   }
-  requestAnimationFrame(update);
+  requestanimationframe(update);
 };
-requestAnimationFrame(update);
+requestanimationframe(update);

@@ -1,6 +1,6 @@
-/* Copyright 2013 The Chromium Authors. All rights reserved.
- * Use of this source code is governed by a BSD-style license that can be
- * found in the LICENSE file. */
+/* copyright 2013 the chromium authors. all rights reserved.
+ * use of this source code is governed by a bsd-style license that can be
+ * found in the license file. */
 
 html, body {
   padding: 0;
@@ -25,7 +25,7 @@ html, body {
 }
 
 
-/* Offline page */
+/* offline page */
 
 .offline .interstitial-wrapper {
   color: #2b2b2b;

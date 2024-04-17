@@ -1,46 +1,46 @@
-function createBox() {
-    let span = document.createElement('span');
-    span.classList.add('animated-box');
-    let size = Math.random() * 80;
+function createbox() {
+    let span = document.createelement('span');
+    span.classlist.add('animated-box');
+    let size = math.random() * 80;
     span.style.height = 40 + size + 'px';
     span.style.width = 40 + size + 'px';
-    span.style.top = ((1.3 * Math.random()) * innerHeight) + 'px';
-    span.style.left = ((Math.random()) * (innerWidth)) + 'px';
+    span.style.top = ((1.3 * math.random()) * innerheight) + 'px';
+    span.style.left = ((math.random()) * (innerwidth)) + 'px';
     
-    document.querySelector('#squares').appendChild(span);
+    document.queryselector('#squares').appendchild(span);
     
-    setTimeout(() => {
+    settimeout(() => {
     span.remove();
     }, 6000)
     }
     
-    function loadSquares() {
+    function loadsquares() {
         console.log('squares')
-    if (window.squareInt) return;
-    if (window.pJSDom[0]) {
-    window.pJSDom[0].pJS.fn.vendors.destroypJS();
-    window["pJSDom"] = [];
+    if (window.squareint) return;
+    if (window.pjsdom[0]) {
+    window.pjsdom[0].pjs.fn.vendors.destroypjs();
+    window["pjsdom"] = [];
     }
-    window.squareInt = setInterval(createBox, 300);
-    }
-    
-    function destroySquares() {
-    clearInterval(window.squareInt);
-    window.squareInt = null;
-    document.querySelector('#squares').innerHTML = ""
+    window.squareint = setinterval(createbox, 300);
     }
     
-    function destroyParticles() {
-    if (!window.pJSDom[0]) return;
-    window.pJSDom[0].pJS.fn.vendors.destroypJS();
-    window["pJSDom"] = [];
+    function destroysquares() {
+    clearinterval(window.squareint);
+    window.squareint = null;
+    document.queryselector('#squares').innerhtml = ""
     }
     
-    function loadParticles() {
+    function destroyparticles() {
+    if (!window.pjsdom[0]) return;
+    window.pjsdom[0].pjs.fn.vendors.destroypjs();
+    window["pjsdom"] = [];
+    }
+    
+    function loadparticles() {
         console.log('particles')
-    destroySquares()
-    destroyParticles()
-    particlesJS("particles-js", {
+    destroysquares()
+    destroyparticles()
+    particlesjs("particles-js", {
         "particles": {
           "number": {
             "value": 80,
@@ -99,8 +99,8 @@ function createBox() {
             "bounce": false,
             "attract": {
               "enable": false,
-              "rotateX": 600,
-              "rotateY": 600
+              "rotatex": 600,
+              "rotatey": 600
             }
           }
         },
@@ -147,10 +147,10 @@ function createBox() {
       });
     }
     
-    function loadStars() {
-    destroySquares()
-    destroyParticles()
-    particlesJS("particles-js", {
+    function loadstars() {
+    destroysquares()
+    destroyparticles()
+    particlesjs("particles-js", {
         "particles": {
           "number": {
             "value": 160,
@@ -209,8 +209,8 @@ function createBox() {
             "bounce": false,
             "attract": {
               "enable": false,
-              "rotateX": 600,
-              "rotateY": 600
+              "rotatex": 600,
+              "rotatey": 600
             }
           }
         },
@@ -256,12 +256,12 @@ function createBox() {
         "retina_detect": true
       });
     }
-var background = localStorage.getItem("background") || ""
+var background = localstorage.getitem("background") || ""
 if (background == "default") {
-loadParticles()
+loadparticles()
 } else if (background == "stars") {
-loadStars()
+loadstars()
 } else if (background == "squares") {
     console.log('if squares')
-loadSquares()
+loadsquares()
 }

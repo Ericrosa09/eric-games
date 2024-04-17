@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precipitation Map</title>
+    <title>precipitation map</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
@@ -19,78 +19,78 @@
 
     <script>
        $(document).ready(function() {
-            var map = new ol.Map({
+            var map = new ol.map({
                 target: 'map',
                 layers: [
-                    new ol.layer.Tile({
-                        source: new ol.source.OSM(),
+                    new ol.layer.tile({
+                        source: new ol.source.osm(),
                     }),
                 ],
-                view: new ol.View({
-                    center: ol.proj.fromLonLat([0, 0]),
+                view: new ol.view({
+                    center: ol.proj.fromlonlat([0, 0]),
                     zoom: 2,
                 }),
             });
 
-            function updateWeatherAndMapStyle() {
-                var centerCoords = ol.proj.toLonLat(map.getView().getCenter());
+            function updateweatherandmapstyle() {
+                var centercoords = ol.proj.tolonlat(map.getview().getcenter());
 
                 $.ajax({
-                    url: `https://api.weather.gov/points/${centerCoords[1]},${centerCoords[0]}`,
+                    url: `https://api.weather.gov/points/${centercoords[1]},${centercoords[0]}`,
                     success: function(data) {
-                        var forecastUrl = data.properties.forecast;
+                        var forecasturl = data.properties.forecast;
 
                         $.ajax({
-                            url: forecastUrl,
-                            success: function(forecastData) {
-                                var periods = forecastData.properties.periods;
-                                var precipitationIntensity = periods[0].shortForecast.toLowerCase();
+                            url: forecasturl,
+                            success: function(forecastdata) {
+                                var periods = forecastdata.properties.periods;
+                                var precipitationintensity = periods[0].shortforecast.tolowercase();
                                 var color;
 
-                                // Set color based on precipitation intensity
-                                if (precipitationIntensity.includes('rain') || precipitationIntensity.includes('showers')) {
-                                    color = 'rgba(0, 0, 255, 0.6)'; // Blue for rain
-                                } else if (precipitationIntensity.includes('snow')) {
-                                    color = 'rgba(255, 255, 255, 0.9)'; // White for snow
+                                // set color based on precipitation intensity
+                                if (precipitationintensity.includes('rain') || precipitationintensity.includes('showers')) {
+                                    color = 'rgba(0, 0, 255, 0.6)'; // blue for rain
+                                } else if (precipitationintensity.includes('snow')) {
+                                    color = 'rgba(255, 255, 255, 0.9)'; // white for snow
                                 } else {
-                                    color = 'rgba(255, 255, 255, 0)'; // No precipitation
+                                    color = 'rgba(255, 255, 255, 0)'; // no precipitation
                                 }
 
-                                var style = new ol.style.Style({
-                                    fill: new ol.style.Fill({
+                                var style = new ol.style.style({
+                                    fill: new ol.style.fill({
                                         color: color,
                                     }),
-                                    stroke: new ol.style.Stroke({
+                                    stroke: new ol.style.stroke({
                                         color: 'rgba(0, 0, 0, 0.5)',
                                         width: 1,
                                     }),
                                 });
 
-                                // Find the vector layer on the map
-                                map.getLayers().forEach(function(layer) {
-                                    if (layer instanceof ol.layer.Vector) {
-                                        layer.setStyle(style);
+                                // find the vector layer on the map
+                                map.getlayers().foreach(function(layer) {
+                                    if (layer instanceof ol.layer.vector) {
+                                        layer.setstyle(style);
                                     }
                                 });
 
-                                console.log("Weather forecast data:", forecastData);
+                                console.log("weather forecast data:", forecastdata);
                             },
                             error: function(xhr, status, error) {
-                                console.error("Error fetching weather data:", error);
+                                console.error("error fetching weather data:", error);
                             }
                         });
                     },
                     error: function(xhr, status, error) {
-                        console.error("Error fetching weather data:", error);
+                        console.error("error fetching weather data:", error);
                     }
                 });
             }
 
             map.on('moveend', function() {
-                updateWeatherAndMapStyle();
+                updateweatherandmapstyle();
             });
 
-            updateWeatherAndMapStyle();
+            updateweatherandmapstyle();
         });
       
     </script>

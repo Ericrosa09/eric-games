@@ -1,37 +1,37 @@
 
 
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.0.2/workbox-sw.js');
+importscripts('https://storage.googleapis.com/workbox-cdn/releases/6.0.2/workbox-sw.js');
 
-workbox.routing.registerRoute(
+workbox.routing.registerroute(
     ({request}) => request.destination === 'image',
-    new workbox.strategies.NetworkFirst()
+    new workbox.strategies.networkfirst()
 );
 
-const cacheName = 'SzGames-1';
-// List the files to precache
-const precacheResources = [
- '/Offline.html'
+const cachename = 'szgames-1';
+// list the files to precache
+const precacheresources = [
+ '/offline.html'
 ];
 
-// When the service worker is installing, open the cache and add the precache resources to it
-self.addEventListener('install', (event) => {
-  console.log('Service worker install event!');
-  event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(precacheResources)));
+// when the service worker is installing, open the cache and add the precache resources to it
+self.addeventlistener('install', (event) => {
+  console.log('service worker install event!');
+  event.waituntil(caches.open(cachename).then((cache) => cache.addall(precacheresources)));
 
 });
 
-const cacheNamesToDelete = ['Sz-Games', 'SzGames'];
+const cachenamestodelete = ['sz-games', 'szgames'];
 
-self.addEventListener('activate', (event) => {
-  console.log('Service worker activate event!');
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.filter(cacheName => {
-          // Delete the specific caches
-          return cacheNamesToDelete.includes(cacheName);
-        }).map(cacheName => {
-          return caches.delete(cacheName);
+self.addeventlistener('activate', (event) => {
+  console.log('service worker activate event!');
+  event.waituntil(
+    caches.keys().then(cachenames => {
+      return promise.all(
+        cachenames.filter(cachename => {
+          // delete the specific caches
+          return cachenamestodelete.includes(cachename);
+        }).map(cachename => {
+          return caches.delete(cachename);
         })
       );
     })
@@ -39,8 +39,8 @@ self.addEventListener('activate', (event) => {
 });
 
 
-self.addEventListener('fetch', event => {
-    event.respondWith(
+self.addeventlistener('fetch', event => {
+    event.respondwith(
       caches.match(event.request).then(response => {
         if (response) {
           return response;

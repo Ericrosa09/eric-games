@@ -1,7 +1,7 @@
 // android control support
 // works with mouse too
 // drag to move player
-function onDragStart(event) {
+function ondragstart(event) {
 
     // store a reference to the data
     // the reason for this is because of multitouch
@@ -12,7 +12,7 @@ function onDragStart(event) {
 
 }
 
-function onDragEnd() {
+function ondragend() {
 
     // set player rotation to none
     player.rotation = 0;
@@ -23,29 +23,29 @@ function onDragEnd() {
 
 }
 
-function onDragMove() {
+function ondragmove() {
 
     if (this.dragging) {
 
-        var newPosition = this.data.getLocalPosition(this.parent);
+        var newposition = this.data.getlocalposition(this.parent);
         var delta = 1;
-        var dt = playerMoveSpeed;
-        var dt = 1.0 - Math.exp(1.0 - dt, delta);
-        var objectPosition = this.data.getLocalPosition(this);
+        var dt = playermovespeed;
+        var dt = 1.0 - math.exp(1.0 - dt, delta);
+        var objectposition = this.data.getlocalposition(this);
 
         // use lerp to create distance between the pointer and the sprite
-        if (Math.abs(this.x - newPosition.x) + Math.abs(this.y - newPosition.y) < 1) {
-            this.x = newPosition.x;
-            this.y = newPosition.y;
+        if (math.abs(this.x - newposition.x) + math.abs(this.y - newposition.y) < 1) {
+            this.x = newposition.x;
+            this.y = newposition.y;
         } else {
-            this.x = this.x + (newPosition.x - this.x) * dt;
-            this.y = this.y + (newPosition.y - this.y) * dt;
+            this.x = this.x + (newposition.x - this.x) * dt;
+            this.y = this.y + (newposition.y - this.y) * dt;
         }
 
         // checks if the pointer is going left or right then
         // animate the player sprite going left or right
-        if (objectPosition.x < 0) player.rotation += -0.1;
-        else if (objectPosition.x > 0) player.rotation += 0.1;
+        if (objectposition.x < 0) player.rotation += -0.1;
+        else if (objectposition.x > 0) player.rotation += 0.1;
 
     }
 

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-    <link rel="icon" href="https://github.com/sz-games/home/blob/main/G.png?raw=true">
-    <title>Sz Games</title>
-<meta charset="UTF-8">
+    <link rel="icon" href="https://github.com/sz-games/home/blob/main/g.png?raw=true">
+    <title>UTC Games</title>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
@@ -12,15 +12,15 @@ body {
 }
 
 .btn-group button {
-  background-color: black; /* Green background */
+  background-color: black; /* green background */
  
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  float: left; /* Float the buttons side by side */
+  color: white; /* white text */
+  padding: 10px 24px; /* some padding */
+  cursor: pointer; /* pointer/hand icon */
+  float: left; /* float the buttons side by side */
 }
 
-/* Clear floats (clearfix hack) */
+/* clear floats (clearfix hack) */
 .btn-group:after {
   content: "";
   clear: both;
@@ -28,15 +28,15 @@ body {
 }
 
 .btn-group button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
+  border-right: none; /* prevent double borders */
 }
 
-/* Add a background color on hover */
+/* add a background color on hover */
 .btn-group button:hover {
   background-color: grey;
 }
 
-/* Header/Logo Title */
+/* header/logo title */
 .header {
   padding: 60px;
   text-align: center;
@@ -45,11 +45,11 @@ body {
   width: auto;
   font-size: 30px;
  
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: arial, helvetica, sans-serif;
   border-radius: 15px;
 }
 
-/* Page Content */
+/* page content */
 
 </style>
 </head>
@@ -61,7 +61,7 @@ color: white;
 
   transform: scale(1.8);
   z-index: 3;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: arial, helvetica, sans-serif;
     }
     .fade {
         position: absolute;
@@ -72,20 +72,20 @@ color: white;
     }
 </style>
    <iframe id="game" style="overflow: hidden; width: 100%;" src="https://storage.y8.com/y8-studio/unity/akeemywka/air_fighter/?key=y8&value=default"></iframe>
-<h2 onclick="window.location = 'https://sz-games.github.io'" style="cursor: pointer; text-align: center;">Back</h2>
+<h2 onclick="window.location = 'https://sz-games.github.io'" style="cursor: pointer; text-align: center;">back</h2>
   </body>
 
   <script>
 
-let hh = window.innerHeight - 100;
+let hh = window.innerheight - 100;
 
 
-document.getElementById('game').height = hh;
+document.getelementbyid('game').height = hh;
 window.onresize = function(event) {
-  let hh = window.innerHeight - 100;
+  let hh = window.innerheight - 100;
 
 
-document.getElementById('game').height = hh;
+document.getelementbyid('game').height = hh;
 }
   </script>
 </html>

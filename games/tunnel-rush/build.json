@@ -1,15 +1,15 @@
 {
-"companyName": "Royale Gamers",
-"productName": "Tunnel Rush",
-"dataUrl": "tunnel_rush_v9data.unityweb",
-"wasmCodeUrl": "tunnel_rush_v9wasmcode.unityweb",
-"wasmFrameworkUrl": "tunnel_rush_v9wasmframework.unityweb",
-"asmCodeUrl": "tunnel_rush_v9code.unityweb",
-"asmMemoryUrl": "tunnel_rush_v9memory.unityweb",
-"asmFrameworkUrl": "tunnel_rush_v9framework.unityweb",
-"TOTAL_MEMORY": 268435456,
-"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
-"webglContextAttributes": {"preserveDrawingBuffer": false},
-"splashScreenStyle": "Dark",
-"backgroundColor": "#808080"
+"companyname": "royale gamers",
+"productname": "tunnel rush",
+"dataurl": "tunnel_rush_v9data.unityweb",
+"wasmcodeurl": "tunnel_rush_v9wasmcode.unityweb",
+"wasmframeworkurl": "tunnel_rush_v9wasmframework.unityweb",
+"asmcodeurl": "tunnel_rush_v9code.unityweb",
+"asmmemoryurl": "tunnel_rush_v9memory.unityweb",
+"asmframeworkurl": "tunnel_rush_v9framework.unityweb",
+"total_memory": 268435456,
+"graphicsapi": ["webgl 2.0", "webgl 1.0"],
+"webglcontextattributes": {"preservedrawingbuffer": false},
+"splashscreenstyle": "dark",
+"backgroundcolor": "#808080"
 }

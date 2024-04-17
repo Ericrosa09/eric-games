@@ -1,13 +1,13 @@
 # jplist
 a proxy list of websites to go to 
 
-# How to use the website!!! 
+# how to use the website!!! 
 add the rammerhead into the search bar and add a number like 1,2,3. for example rammerhead1 
 
-# Supported blockers 
+# supported blockers 
 - [x] lightspeed 
 
-# PLEASE READ!!! 
+# please read!!! 
 i am not responsible for the proxy links i add or make if it dosen't work for you then i can't do nothing about it.
 
 # how to contribute? 
@@ -25,9 +25,9 @@ here is how to contribute
 - [x] shadow browser 
 - [x] interstellar
 
-## Credits
+## credits
 
-| Avatar | User | Involvement |
+| avatar | user | involvement |
 | ------ | ---- | ----------- | 
-| ![](https://avatars.githubusercontent.com/u/107599365?v=64) | [Jonnycat](https://github.com/JonnycatMeow) | website creator
-| ![](https://avatars.githubusercontent.com/u/121367528?s=64) | [GhostedZoomer77](https://github.com/Ishan877) | proxy helper
+| ![](https://avatars.githubusercontent.com/u/107599365?v=64) | [jonnycat](https://github.com/jonnycatmeow) | website creator
+| ![](https://avatars.githubusercontent.com/u/121367528?s=64) | [ghostedzoomer77](https://github.com/ishan877) | proxy helper

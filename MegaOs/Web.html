@@ -1,8 +1,8 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<title>Mega Os</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=material+icons">
+<title>mega os</title>
 </head>
 <style>
     body {
@@ -37,10 +37,10 @@
           home
           </span>
 
-      <input id="url" type="text" placeholder="URL" style="left: 50%; transform: translate(-50%, 0%); border-radius: 25px; height: 30px; top: 8px; position: absolute; color: white; width: 40%; border: none; background-color: rgba(128, 128, 128, 0.734);">
+      <input id="url" type="text" placeholder="url" style="left: 50%; transform: translate(-50%, 0%); border-radius: 25px; height: 30px; top: 8px; position: absolute; color: white; width: 40%; border: none; background-color: rgba(128, 128, 128, 0.734);">
   </div>
 
-  <iframe id="iframe" height="93%" width="100%" style="border-radius: 10px; border: none; bottom: 0; position: absolute;" src="https://sz-games.github.io/MegaOs/search.html"></iframe>
+  <iframe id="iframe" height="93%" width="100%" style="border-radius: 10px; border: none; bottom: 0; position: absolute;" src="https://sz-games.github.io/megaos/search.html"></iframe>
     
       
      
@@ -48,43 +48,43 @@
     <script>
 
      
-      var input = document.getElementById('url')
-      var iframe = document.getElementById('iframe');
+      var input = document.getelementbyid('url')
+      var iframe = document.getelementbyid('iframe');
 
       function back() {
 
       
-      iframe.contentWindow.history.back();
+      iframe.contentwindow.history.back();
       }
       function forwards() {
 
             
-      iframe.contentWindow.history.forward();
+      iframe.contentwindow.history.forward();
       }
       function reload() {
 
             
-      iframe.contentWindow.location.reload();
+      iframe.contentwindow.location.reload();
       }
       function home() {
 
                     
-        iframe.src = 'https://sz-games.github.io/MegaOs/search.html'
+        iframe.src = 'https://sz-games.github.io/megaos/search.html'
       }
-      input.addEventListener('keydown', function(event) {
-        if (event.keyCode === 13) {
-          // Enter key was pressed, do something here
+      input.addeventlistener('keydown', function(event) {
+        if (event.keycode === 13) {
+          // enter key was pressed, do something here
           const urledit = 'https://' + input.value;
           if(input.value.includes('https://')) {
           iframe.src = input.value;
-          input.innerHTML = iframe.src;
-          } else if(input.value.toLowerCase()==='google.com' || input.value.toLowerCase()==='https://google.com') {
-            iframe.src = 'https://sz-games.github.io/MegaOs/search.html';
+          input.innerhtml = iframe.src;
+          } else if(input.value.tolowercase()==='google.com' || input.value.tolowercase()==='https://google.com') {
+            iframe.src = 'https://sz-games.github.io/megaos/search.html';
          
           }
           else {
             iframe.src = urledit;
-            input.innerHTML = iframe.src;
+            input.innerhtml = iframe.src;
           }
         }
       });

@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VKQTYK7J87"></script>
+  <!-- google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=g-vkqtyk7j87"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  window.datalayer = window.datalayer || [];
+  function gtag(){datalayer.push(arguments);}
+  gtag('js', new date());
 
-  gtag('config', 'G-VKQTYK7J87');
+  gtag('config', 'g-vkqtyk7j87');
 </script>
-    <link rel="icon" href="https://github.com/Mr-funkinguy/Memehub/blob/main/Memelogo.png?raw=true">
-    <title>MemeHub</title>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" href="https://github.com/mr-funkinguy/memehub/blob/main/memelogo.png?raw=true">
+    <title>memehub</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=material+icons">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
@@ -47,7 +47,7 @@ body {
       transition: filter 0.2s ease-in-out;
     }
 
-    /* Style for the brighter effect */
+    /* style for the brighter effect */
     img:hover {
       filter: brightness(1.5);
     }
@@ -63,7 +63,7 @@ body {
       padding: 10px;
       border: none;
       color: rgb(218, 218, 218);
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: arial, helvetica, sans-serif;
       background-color: rgb(48, 48, 48);
       border-radius: 15px;
       z-index: 999;
@@ -87,7 +87,7 @@ body {
       padding: 10px;
       border: none;
       color: rgb(218, 218, 218);
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: arial, helvetica, sans-serif;
       background-color: rgb(48, 48, 48);
       border-radius: 15px;
       z-index: 999;
@@ -110,30 +110,30 @@ body {
     }
     
   </style>
-<h1  style="font-family: Arial, Helvetica, sans-serif; text-decoration: none; color: white; cursor: pointer; position: absolute; z-index: 5; font-size: large; left: 10px; bottom: 0;"><a style="text-decoration: none; color: #ffffff;" href="https://forms.gle/6xjnojppxtExS2Mm7">Report A Video</a></h1>
+<h1  style="font-family: arial, helvetica, sans-serif; text-decoration: none; color: white; cursor: pointer; position: absolute; z-index: 5; font-size: large; left: 10px; bottom: 0;"><a style="text-decoration: none; color: #ffffff;" href="https://forms.gle/6xjnojppxtexs2mm7">report a video</a></h1>
 
-<h1 id="TakenDownVidText" style="font-family: Arial, Helvetica, sans-serif; color: white; cursor: pointer; position: absolute; z-index: 5; transform: translate(-50%, -50%); left: 50%; top: 30%;">Video Has Been Taken Down</h1>
+<h1 id="takendownvidtext" style="font-family: arial, helvetica, sans-serif; color: white; cursor: pointer; position: absolute; z-index: 5; transform: translate(-50%, -50%); left: 50%; top: 30%;">video has been taken down</h1>
 
 
 <div style="top: 0; position: fixed; height: 52px; border-radius: 10px; width: 100%; background-color: #1c1c1c;">
-<img  src="https://github.com/Mr-funkinguy/Memehub/blob/main/Memelogo.png?raw=true" style="" height="50px" width="50px"/>
-<h1 style="font-family: Arial, Helvetica, sans-serif; color: rgb(211, 211, 211); position: absolute; top: -10px; right: 10px;">MemeHub</h1>
+<img  src="https://github.com/mr-funkinguy/memehub/blob/main/memelogo.png?raw=true" style="" height="50px" width="50px"/>
+<h1 style="font-family: arial, helvetica, sans-serif; color: rgb(211, 211, 211); position: absolute; top: -10px; right: 10px;">memehub</h1>
 </div>
-<h4 id="vidc" style="top: 0; left: 50%; transform: translate(-50%, -50%); font-family: Arial, Helvetica, sans-serif; position: absolute; color: rgb(222, 222, 222);">Current Video 0/0</h4>
+<h4 id="vidc" style="top: 0; left: 50%; transform: translate(-50%, -50%); font-family: arial, helvetica, sans-serif; position: absolute; color: rgb(222, 222, 222);">current video 0/0</h4>
 
 
 <div id="alert">
   <span class="material-icons" style="position: absolute; top: 15px; left: 50%; transform: translate(-50%, -50%);">
     info
     </span>
-  <h2 style="font-family: Arial, Helvetica, sans-serif; font-size: medium;">There are no more videos to watch. Check Again Later!</h2>
+  <h2 style="font-family: arial, helvetica, sans-serif; font-size: medium;">there are no more videos to watch. check again later!</h2>
 </div>
 
 <div id="alertt">
   <span class="material-icons" style="position: absolute; top: 15px; left: 50%; transform: translate(-50%, -50%);">
     error
     </span>
-  <h2 id="errortext" style="font-family: Arial, Helvetica, sans-serif; font-size: large;">There are no more videos to watch. Check Again Later!</h2>
+  <h2 id="errortext" style="font-family: arial, helvetica, sans-serif; font-size: large;">there are no more videos to watch. check again later!</h2>
 </div>
   <div id="video-container"></div>
   <span id="on" onclick="on()" class="material-icons" style="font-size: 30px;  position: absolute;  color: #b9b9b9; cursor: pointer; left: 1%; top: 10%; transition: 0.5s; color: #b9b9b9; position: absolute;  cursor: pointer; border-radius: 50%; height: 30px; width: 30px; background-color: #1c1c1c;" >
@@ -157,243 +157,243 @@ body {
 
   <script>
 
-setInterval(() => {
-  if (window.matchMedia("(max-width: 1170px)").matches) {
+setinterval(() => {
+  if (window.matchmedia("(max-width: 1170px)").matches) {
     // execute some code if the viewport width is less than or equal to 500px
-    console.log("Viewport width is less than or equal to 500px");
-    document.getElementById('up').style.opacity = 0.5;
-    document.getElementById('down').style.opacity = 0.5;
+    console.log("viewport width is less than or equal to 500px");
+    document.getelementbyid('up').style.opacity = 0.5;
+    document.getelementbyid('down').style.opacity = 0.5;
   } else {
-    document.getElementById('up').style.opacity = 1;
-    document.getElementById('down').style.opacity = 1;
+    document.getelementbyid('up').style.opacity = 1;
+    document.getelementbyid('down').style.opacity = 1;
   }
 }, 500);
 
 function off() {
-  document.getElementById('on').style.display = "block"
-  document.getElementById('off').style.display = "none"
-  document.getElementById('up').style.display = "none"
+  document.getelementbyid('on').style.display = "block"
+  document.getelementbyid('off').style.display = "none"
+  document.getelementbyid('up').style.display = "none"
 
-    document.getElementById('down').style.display = "none"
-    document.getElementById('controller').style.display = "none"
+    document.getelementbyid('down').style.display = "none"
+    document.getelementbyid('controller').style.display = "none"
 }
 function on() {
-  document.getElementById('off').style.display = "block"
-  document.getElementById('on').style.display = "none"
-  document.getElementById('controller').style.display = "block"
-    document.getElementById('up').style.display = "block"
-    document.getElementById('down').style.display = "block"
+  document.getelementbyid('off').style.display = "block"
+  document.getelementbyid('on').style.display = "none"
+  document.getelementbyid('controller').style.display = "block"
+    document.getelementbyid('up').style.display = "block"
+    document.getelementbyid('down').style.display = "block"
 }
 
 
 
-    var vidcount = document.getElementById('vidc')
-      const alertElement = document.getElementById("alert");
+    var vidcount = document.getelementbyid('vidc')
+      const alertelement = document.getelementbyid("alert");
 
     const videos = [
 
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/animanIrl.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/3.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/4.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/5.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/icecream.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/6.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/7.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/8.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/9.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/10.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/11.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/12.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/13.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/14.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/15.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/16.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/17.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/18.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/19.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/20.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/21.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/22.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/23.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/24.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/25.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/26.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/27.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/28.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/29.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/30.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/31.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/32.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/33.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/34.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/35.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/36.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/37.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/38.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/39.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/40.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/41.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/42.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/43.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/44.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/45.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/46.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/47.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/48.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/49.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/50.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/51.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/52.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/53.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/54.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/55.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/56.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/57.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/58.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/59.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/60.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/61.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/62.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/63.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/64.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/65.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/66.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/67.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/68.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/69.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/70.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/71.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/72.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/73.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/74.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/75.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/76.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/77.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/78.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/79.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/80.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/81.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/82.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/83.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/84.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/85.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/86.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/87.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/88.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/89.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/90.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/91.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/92.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/93.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/94.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/95.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/96.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/97.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/98.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/99.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/100.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/101.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/102.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/103.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/104.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/105.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/106.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/107.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/108.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/109.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/110.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/111.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/112.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/113.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/114.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/114.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/115.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/116.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/117.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/118.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/119.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/120.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/121.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/122.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/123.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/124.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/125.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/126.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/127.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/128.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/129.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/130.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/131.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/132.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/133.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/134.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/135.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/136.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/137.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/138.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/139.mp4",
-      "https://github.com/Mr-funkinguy/Memehub/raw/main/VidFiles/140.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/animanirl.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/3.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/4.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/5.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/icecream.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/6.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/7.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/8.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/9.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/10.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/11.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/12.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/13.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/14.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/15.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/16.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/17.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/18.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/19.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/20.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/21.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/22.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/23.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/24.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/25.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/26.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/27.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/28.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/29.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/30.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/31.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/32.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/33.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/34.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/35.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/36.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/37.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/38.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/39.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/40.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/41.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/42.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/43.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/44.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/45.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/46.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/47.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/48.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/49.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/50.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/51.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/52.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/53.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/54.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/55.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/56.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/57.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/58.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/59.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/60.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/61.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/62.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/63.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/64.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/65.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/66.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/67.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/68.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/69.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/70.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/71.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/72.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/73.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/74.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/75.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/76.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/77.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/78.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/79.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/80.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/81.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/82.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/83.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/84.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/85.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/86.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/87.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/88.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/89.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/90.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/91.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/92.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/93.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/94.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/95.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/96.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/97.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/98.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/99.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/100.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/101.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/102.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/103.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/104.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/105.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/106.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/107.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/108.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/109.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/110.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/111.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/112.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/113.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/114.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/114.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/115.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/116.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/117.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/118.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/119.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/120.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/121.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/122.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/123.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/124.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/125.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/126.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/127.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/128.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/129.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/130.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/131.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/132.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/133.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/134.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/135.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/136.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/137.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/138.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/139.mp4",
+      "https://github.com/mr-funkinguy/memehub/raw/main/vidfiles/140.mp4",
       
     ];
     off()
-    let currentIndex = parseInt(localStorage.getItem("currentIndex")) || 0;
-    let currentVideo;
-    var currentvideoc = currentIndex;
+    let currentindex = parseint(localstorage.getitem("currentindex")) || 0;
+    let currentvideo;
+    var currentvideoc = currentindex;
     
     function updatec() {
  
-      vidcount.innerHTML = "Current Video " + currentvideoc;
+      vidcount.innerhtml = "current video " + currentvideoc;
     
 
     }
    
 
-    const videoContainer = document.getElementById("video-container");
-    function playRandomVideo() {
-  const randomIndex = Math.floor(Math.random() * videos.length);
-  playVideo(randomIndex);
+    const videocontainer = document.getelementbyid("video-container");
+    function playrandomvideo() {
+  const randomindex = math.floor(math.random() * videos.length);
+  playvideo(randomindex);
 }
 
-var DownTextTXT = document.getElementById("TakenDownVidText")
-    function playVideo(index) {
+var downtexttxt = document.getelementbyid("takendownvidtext")
+    function playvideo(index) {
       if (index < 0 || index >= videos.length) {
         return;
       }
 
-      const videoElement = document.createElement("video");
-      videoElement.setAttribute("controls", true);
-      videoElement.setAttribute("autoplay", true);
-      if ('controlsList' in videoElement) {
-        videoElement.controlsList.add('nodownload');
+      const videoelement = document.createelement("video");
+      videoelement.setattribute("controls", true);
+      videoelement.setattribute("autoplay", true);
+      if ('controlslist' in videoelement) {
+        videoelement.controlslist.add('nodownload');
       }
 
       if(index===0) {
-        DownTextTXT.style.display = "block"
-        videoElement.src = "";
+        downtexttxt.style.display = "block"
+        videoelement.src = "";
 
 
       } else {
-        videoElement.setAttribute("src", videos[index]);
-        DownTextTXT.style.display = "none"
+        videoelement.setattribute("src", videos[index]);
+        downtexttxt.style.display = "none"
       }
 
-      videoContainer.innerHTML = "";
-      videoContainer.appendChild(videoElement);
+      videocontainer.innerhtml = "";
+      videocontainer.appendchild(videoelement);
 
-      if (currentVideo) {
-        currentVideo.pause();
+      if (currentvideo) {
+        currentvideo.pause();
       }
 
-      currentVideo = videoElement;
-      currentIndex = index;
-      localStorage.setItem("currentIndex", currentIndex);
+      currentvideo = videoelement;
+      currentindex = index;
+      localstorage.setitem("currentindex", currentindex);
 
       
     }
       
 
-    window.addEventListener("load", function() {
-      playVideo(currentIndex);
+    window.addeventlistener("load", function() {
+      playvideo(currentindex);
 
     });
 
@@ -401,13 +401,13 @@ var DownTextTXT = document.getElementById("TakenDownVidText")
 
     function up() {
    
-        // Swiping up 
-        if (currentIndex === 0) {
+        // swiping up 
+        if (currentindex === 0) {
       
           } else {
             currentvideoc--
             updatec()
-            playVideo(currentIndex - 1);
+            playvideo(currentindex - 1);
           }
       
    
@@ -415,44 +415,44 @@ var DownTextTXT = document.getElementById("TakenDownVidText")
 
     function down() {
  
-        if (currentIndex >= videos.length - 1) {
-        alertElement.classList.add("show");
-        setTimeout(() => {
-          alertElement.classList.remove("show");
+        if (currentindex >= videos.length - 1) {
+        alertelement.classlist.add("show");
+        settimeout(() => {
+          alertelement.classlist.remove("show");
         }, 5000);
         } else {
           currentvideoc++
           updatec()
-          playVideo(currentIndex + 1);
+          playvideo(currentindex + 1);
         }
       
     }
 
-    window.addEventListener("wheel", function(event) {
-   //   event.preventDefault();
+    window.addeventlistener("wheel", function(event) {
+   //   event.preventdefault();
 
 
 
-      if (event.deltaY < 0) {
-        // Swiping up
-        if (currentIndex === 0) {
+      if (event.deltay < 0) {
+        // swiping up
+        if (currentindex === 0) {
       
         } else {
           currentvideoc--
           updatec()
-          playVideo(currentIndex - 1);
+          playvideo(currentindex - 1);
         }
-      } else if (event.deltaY > 0) {
-        // Swiping down
-        if (currentIndex >= videos.length - 1) {
-        alertElement.classList.add("show");
-        setTimeout(() => {
-          alertElement.classList.remove("show");
+      } else if (event.deltay > 0) {
+        // swiping down
+        if (currentindex >= videos.length - 1) {
+        alertelement.classlist.add("show");
+        settimeout(() => {
+          alertelement.classlist.remove("show");
         }, 5000);
         } else {
           currentvideoc++
           updatec()
-          playVideo(currentIndex + 1);
+          playvideo(currentindex + 1);
         }
       }
 
@@ -462,26 +462,26 @@ var DownTextTXT = document.getElementById("TakenDownVidText")
 
 
    
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowUp') {
+    document.addeventlistener('keydown', (event) => {
+        if (event.key === 'arrowup') {
           console.log('up')
-          if (currentIndex === 0) {
+          if (currentindex === 0) {
       
           } else {
             currentvideoc--
             updatec()
-            playVideo(currentIndex - 1);
+            playvideo(currentindex - 1);
           }
-        } else if (event.key === 'ArrowDown') {
-          if (currentIndex >= videos.length - 1) {
-          alertElement.classList.add("show");
-          setTimeout(() => {
-            alertElement.classList.remove("show");
+        } else if (event.key === 'arrowdown') {
+          if (currentindex >= videos.length - 1) {
+          alertelement.classlist.add("show");
+          settimeout(() => {
+            alertelement.classlist.remove("show");
           }, 5000);
           } else {
             currentvideoc++
             updatec()
-            playVideo(currentIndex + 1);
+            playvideo(currentindex + 1);
           }
         }
       });

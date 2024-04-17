@@ -1,13 +1,13 @@
-    function getCookie(name) {
-        const cookieName = name + "=";
+    function getcookie(name) {
+        const cookiename = name + "=";
         const cookies = document.cookie.split(';');
         for (let i = 0; i < cookies.length; i++) {
             let cookie = cookies[i];
-            while (cookie.charAt(0) === ' ') {
+            while (cookie.charat(0) === ' ') {
                 cookie = cookie.substring(1);
             }
-            if (cookie.indexOf(cookieName) === 0) {
-                return cookie.substring(cookieName.length, cookie.length);
+            if (cookie.indexof(cookiename) === 0) {
+                return cookie.substring(cookiename.length, cookie.length);
             }
         }
         return '';
@@ -17,121 +17,121 @@
      
     
     //alert('hi')
-    let Setting14b = getCookie("PagePrevent");
+    let setting14b = getcookie("pageprevent");
 
-    function checkPageClose(event) {
+    function checkpageclose(event) {
       
         
-            event.returnValue = "Prevent Page Close Is Active, You Can Click Off Of This";
+            event.returnvalue = "prevent page close is active, you can click off of this";
       
        
      
     }
-    function checkPageClose2() {
-        if(Setting14b==="true") {
+    function checkpageclose2() {
+        if(setting14b==="true") {
         
             window.onbeforeunload = function(event) {
                 // return a string to prevent the page from closing
-                event.preventDefault();
-                return "Prevent Page Close Is Active, You Can Click Off Of This";
+                event.preventdefault();
+                return "prevent page close is active, you can click off of this";
             };
-            window.addEventListener("beforeunload", checkPageClose);
+            window.addeventlistener("beforeunload", checkpageclose);
 
         } 
-        if(Setting14b==="false") {
+        if(setting14b==="false") {
         
         }
     }
-    console.log('CookiePAGE Value: ' + Setting14b + "SzGames-Scripts Loaded")
-    checkPageClose2()
+    console.log('cookiepage value: ' + setting14b + "szgames-scripts loaded")
+    checkpageclose2()
 
 
-    //CLOAK
+    //cloak
 
-    let tabData = {};
-const tab = localStorage.getItem("tab");
+    let tabdata = {};
+const tab = localstorage.getitem("tab");
 
 if (tab) {
   try {
-    tabData = JSON.parse(tab);
+    tabdata = json.parse(tab);
   } catch (e) {
-    console.log("Error parsing tab data from localStorage", e);
+    console.log("error parsing tab data from localstorage", e);
   }
 } else {
 
 }
 
-const settingsDefaultTab = {
-  title: "Settings - Sz Games",
-  icon: "https://github.com/sz-games/home/blob/main/G.png?raw=true",
+const settingsdefaulttab = {
+  title: "settings - UTC Games",
+  icon: "https://github.com/sz-games/home/blob/main/g.png?raw=true",
 };
 
-const setTitle = (title = "") => {
-  document.title = title || settingsDefaultTab.title;
+const settitle = (title = "") => {
+  document.title = title || settingsdefaulttab.title;
   if (title) {
-    tabData.title = title;
+    tabdata.title = title;
   } else {
-    delete tabData.title;
+    delete tabdata.title;
   }
-  localStorage.setItem("tab", JSON.stringify(tabData));
+  localstorage.setitem("tab", json.stringify(tabdata));
 };
 
-const setFavicon = (url) => {
-  const faviconLink = document.querySelector("link[rel='icon']");
+const setfavicon = (url) => {
+  const faviconlink = document.queryselector("link[rel='icon']");
   
-  // Try to load the URL as an image
-  const img = new Image();
+  // try to load the url as an image
+  const img = new image();
   img.src = url;
   img.onload = () => {
-    faviconLink.href = url;
+    faviconlink.href = url;
     if (url) {
-      tabData.icon = url;
+      tabdata.icon = url;
     } else {
-      delete tabData.icon;
+      delete tabdata.icon;
     }
-    localStorage.setItem("tab", JSON.stringify(tabData));
+    localstorage.setitem("tab", json.stringify(tabdata));
   };
 
   img.onerror = () => {
-    // If the URL is not an image, use Google's Favicon API
-    const faviconUrl = `https://www.google.com/s2/favicons?sz=64&domain=${url}`;
-    faviconLink.href = faviconUrl || settingsDefaultTab.icon;
+    // if the url is not an image, use google's favicon api
+    const faviconurl = `https://www.google.com/s2/favicons?sz=64&domain=${url}`;
+    faviconlink.href = faviconurl || settingsdefaulttab.icon;
     if (url) {
-      tabData.icon = faviconUrl;
+      tabdata.icon = faviconurl;
     } else {
-      delete tabData.icon;
+      delete tabdata.icon;
     }
-    localStorage.setItem("tab", JSON.stringify(tabData));
+    localstorage.setitem("tab", json.stringify(tabdata));
   };
 };
 
 
-const resetTab = () => {
-  setTitle();
-  setFavicon();
+const resettab = () => {
+  settitle();
+  setfavicon();
 
-  localStorage.setItem("tab", JSON.stringify({}));
+  localstorage.setitem("tab", json.stringify({}));
 };
 
 
-if (tabData.title) {
-  document.title = tabData.title;
+if (tabdata.title) {
+  document.title = tabdata.title;
 }
 
-if (tabData.icon) {
-  const faviconLink = document.querySelector("link[rel='icon']");
-  faviconLink.href = tabData.icon;
+if (tabdata.icon) {
+  const faviconlink = document.queryselector("link[rel='icon']");
+  faviconlink.href = tabdata.icon;
 }
 
-//PANIC
-let PANIC = localStorage.getItem('panic')
+//panic
+let panic = localstorage.getitem('panic')
 
-if(PANIC) {
-    document.addEventListener('keydown', function(event) {
+if(panic) {
+    document.addeventlistener('keydown', function(event) {
         if (event.key === '\\') {
-            // Backslash key was pressed
-            console.log("PANIC");
-            window.location = PANIC;
+            // backslash key was pressed
+            console.log("panic");
+            window.location = panic;
         }
     });
     
@@ -139,29 +139,29 @@ if(PANIC) {
     console.log('clear')
 }
 
-function panicURL() {
-    let URL3 = document.getElementById('url-target2').value
+function panicurl() {
+    let url3 = document.getelementbyid('url-target2').value
 
-    if(URL3.includes("https://")) {
+    if(url3.includes("https://")) {
     
 
-        localStorage.setItem('panic', URL3)
+        localstorage.setitem('panic', url3)
 
-        PANIC = localStorage.getItem('panic')
+        panic = localstorage.getitem('panic')
     } else {
         
 
-        localStorage.setItem('panic', 'https://' + URL3)
+        localstorage.setitem('panic', 'https://' + url3)
 
-        PANIC = localStorage.getItem('panic')
+        panic = localstorage.getitem('panic')
     }
 }
 
-function clearPANIC() {
+function clearpanic() {
 
-    localStorage.clear('panic')
+    localstorage.clear('panic')
 
     console.log('clear')
-    PANIC = localStorage.getItem('panic')
+    panic = localstorage.getitem('panic')
 
 }

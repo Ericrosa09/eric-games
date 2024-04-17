@@ -1,84 +1,84 @@
-@-webkit-keyframes animLand {
+@-webkit-keyframes animland {
     0% { background-position: 0px 0px; }
     100% { background-position: -335px 0px; }
  }
- @-moz-keyframes animLand {
+ @-moz-keyframes animland {
     0% { background-position: 0px 0px; }
     100% { background-position: -335px 0px; }
  }
- @-o-keyframes animLand {
+ @-o-keyframes animland {
     0% { background-position: 0px 0px; }
     100% { background-position: -335px 0px; }
  }
- @keyframes animLand {
+ @keyframes animland {
     0% { background-position: 0px 0px; }
     100% { background-position: -335px 0px; }
  }
  
- @-webkit-keyframes animSky {
+ @-webkit-keyframes animsky {
     0% { background-position: 0px 100%; }
     100% { background-position: -275px 100%; }
  }
- @-moz-keyframes animSky {
+ @-moz-keyframes animsky {
     0% { background-position: 0px 100%; }
     100% { background-position: -275px 100%; }
  }
- @-o-keyframes animSky {
+ @-o-keyframes animsky {
     0% { background-position: 0px 100%; }
     100% { background-position: -275px 100%; }
  }
- @keyframes animSky {
+ @keyframes animsky {
     0% { background-position: 0px 100%; }
     100% { background-position: -275px 100%; }
  }
  
- @-webkit-keyframes animBird {
+ @-webkit-keyframes animbird {
     from { background-position: 0px 0px; }
     to { background-position: 0px -96px; }
  }
- @-moz-keyframes animBird {
+ @-moz-keyframes animbird {
     from { background-position: 0px 0px; }
     to { background-position: 0px -96px; }
  }
- @-o-keyframes animBird {
+ @-o-keyframes animbird {
     from { background-position: 0px 0px; }
     to { background-position: 0px -96px; }
  }
- @keyframes animBird {
+ @keyframes animbird {
     from { background-position: 0px 0px; }
     to { background-position: 0px -96px; }
  }
  
- @-webkit-keyframes animPipe {
+ @-webkit-keyframes animpipe {
     0% { left: 900px; }
     100% { left: -100px; }
  }
- @-moz-keyframes animPipe {
+ @-moz-keyframes animpipe {
     0% { left: 900px; }
     100% { left: -100px; }
  }
- @-o-keyframes animPipe {
+ @-o-keyframes animpipe {
     0% { left: 900px; }
     100% { left: -100px; }
  }
- @keyframes animPipe {
+ @keyframes animpipe {
     0% { left: 900px; }
     100% { left: -100px; }
  }
  
- @-webkit-keyframes animCeiling {
+ @-webkit-keyframes animceiling {
     0% { background-position: 0px 0px; }
     100% { background-position: -63px 0px; }
  }
- @-moz-keyframes animCeiling {
+ @-moz-keyframes animceiling {
     0% { background-position: 0px 0px; }
     100% { background-position: -63px 0px; }
  }
- @-o-keyframes animCeiling {
+ @-o-keyframes animceiling {
     0% { background-position: 0px 0px; }
     100% { background-position: -63px 0px; }
  }
- @keyframes animCeiling {
+ @keyframes animceiling {
     0% { background-position: 0px 0px; }
     100% { background-position: -63px 0px; }
  }
@@ -122,7 +122,7 @@
  }
  
  /*
- Screen - Game
+ screen - game
  */
  #gamescreen
  {
@@ -142,8 +142,8 @@
     background-position: 0px 100%;
     background-color: #4ec0ca;
  
-    -webkit-animation: animSky 7s linear infinite;
-    animation: animSky 7s linear infinite;
+    -webkit-animation: animsky 7s linear infinite;
+    animation: animsky 7s linear infinite;
  }
  
  #flyarea
@@ -163,8 +163,8 @@
     background-image: url('../assets/ceiling.png');
     background-repeat: repeat-x;
  
-    -webkit-animation: animCeiling 481ms linear infinite;
-    animation: animCeiling 481ms linear infinite;
+    -webkit-animation: animceiling 481ms linear infinite;
+    animation: animceiling 481ms linear infinite;
  }
  
  #land
@@ -178,8 +178,8 @@
     background-position: 0px 0px;
     background-color: #ded895;
  
-    -webkit-animation: animLand 2516ms linear infinite;
-    animation: animLand 2516ms linear infinite;
+    -webkit-animation: animland 2516ms linear infinite;
+    animation: animland 2516ms linear infinite;
  }
  
  #bigscore
@@ -298,8 +298,8 @@
     height: 24px;
     background-image: url('../assets/bird.png');
  
-    -webkit-animation: animBird 300ms steps(4) infinite;
-    animation: animBird 300ms steps(4) infinite;
+    -webkit-animation: animbird 300ms steps(4) infinite;
+    animation: animbird 300ms steps(4) infinite;
  }
  
  .pipe
@@ -310,8 +310,8 @@
     height: 100%;
     z-index: 10;
  
-    -webkit-animation: animPipe 7500ms linear;
-    animation: animPipe 7500ms linear;
+    -webkit-animation: animpipe 7500ms linear;
+    animation: animpipe 7500ms linear;
  }
  
  .pipe_upper
